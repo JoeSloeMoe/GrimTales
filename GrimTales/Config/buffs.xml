@@ -627,7 +627,7 @@
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInterloperSecondSpyMessageReceived" >
 					<requirement name="HasBuff" buff="buffInterloperSecondSpyMessageReceived"/>
 				</triggered_effect>
-				<!--mark the first msg as being available at the Receiver-->
+				<!--mark the third msg as being available at the Receiver-->
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperThirdSpyMsgReceived" operation="add" value="1"/>
 			</effect_group>
 			
