@@ -507,7 +507,7 @@
 			</effect_group>
 			
 			<!--the first boss spawn happens when the quest_PigeonsEpilogue quest is completed. The rest of the boss spawns
-				are from a countdown. IF the boss's loot is picked up by the player before the countdown expires it is assumed
+				are from a countdown. IF the boss's loot isnt picked up by the player before the countdown expires it is assumed
 				something failed and the boss will be spawned again up to a max pigeonSpawnAttempts (config var) number if times-->
 			<effect_group>
 				<requirement name="CVarCompare" cvar="finalPigeonBossSpawnCount" operation="LT" value="1"/> 
