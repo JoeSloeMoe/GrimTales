@@ -861,7 +861,7 @@
 			</effect_group>
 			<!--final chapter countdown-->
 			<effect_group>
-				<!--countdown to sending the second transmission.-->
+				<!--countdown to sending the final transmission.-->
 				<requirement name="CVarCompare" cvar="interloperStoryFinalCountdown" operation="GT" value="0"/> 
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="interloperStoryFinalCountdown" operation="subtract" value="@$MetabolismDuration"/>
 			</effect_group>
