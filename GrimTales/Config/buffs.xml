@@ -9,8 +9,7 @@
 			<duration value="0"/>
 			<display_value value=".buffGrandpasWheelchairRacingElixirDisplay"/>
 			<display_value_format value="time"/>
-				
-
+			
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffGrandpasWheelchairRacingElixirDuration" operation="subtract" value="@$MetabolismDuration"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffGrandpasWheelchairRacingElixirDisplay" operation="set" value="@$buffGrandpasWheelchairRacingElixirDuration"/>
