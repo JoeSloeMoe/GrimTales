@@ -122,7 +122,7 @@ quest_PigeonsEpilogue_subtitle,Quest,Pigeon Fancier,,,Steal the cache
 quest_PigeonsEpilogue_hint1,Quest,Pigeon Fancier,,,[00B4FF]Steal the cache[-]
 quest_PigeonsEpilogue_hint2,Quest,Pigeon Fancier,,,[00B4FF]Steal the cache[-]
 quest_PigeonsEpilogueSpawn,items,Interloper,,,"You're being hunted! Kill the Pigeon Fancier!"
-quest_PigeonsEpilogueSpawnDesc,items,Interloper,,,"You are being hunted! Looks like someone deosn't appreciate your pigeon interaction skills and is hunting you.\nKill the Pigeon Fancier!" 
+quest_PigeonsEpilogueSpawnDesc,items,Interloper,,,"You are being hunted! Looks like someone deosn't appreciate your pigeon interaction skills and is hunting you.\nKill the Pigeon Fancier!\n\n[Pigeons Carry Diseases storyline]" 
 quest_PigeonsEpilogueSpawnName,items,Interloper,,,[00B4FF]Hunted![-]
 quest_PigeonsEpilogueSpawn_hint1,Quest,Pigeon Fancier,,,[00B4FF]Kill the Pigeon Fancier[-]
 quest_InterloperEpilogueSpawn,items,Interloper,,,"Find the trade drop."
