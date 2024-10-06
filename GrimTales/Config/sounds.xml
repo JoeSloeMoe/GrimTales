@@ -1,0 +1,13 @@
+<config>
+	<!--Interloper story code-->
+	<!--add a soundnode to play the airplane sound same as sounds.xml:Supply_Crate_Plane_lp but with some noise modifications-->
+	<!--doesnt seem possible to fade or lower sound volume so airprop sound kinda just cuts off without fade-->
+	<insertAfter xpath="/Sounds/SoundDataNode[@name='Supply_Crate_Plane_lp']">
+		<SoundDataNode name="Interloper_Supply_Crate_Plane"> <AudioSource name="Sounds/AudioSource_Distant"/>
+			<Noise ID="5" noise="0" time="3" heat_map_strength="0" heat_map_time="0"/>
+			<AudioClip ClipName="Sounds/SupplyDrops/Supply_Crate_Plane_lp" Loop="true"/>
+			<IgnoreDistanceCheck/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+	</insertAfter>
+	<!--END Interloper story code-->
+</config>

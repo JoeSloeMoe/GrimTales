@@ -18,4 +18,9 @@ The code is free to use and commented with that in mind. A thank you would be ni
 Version Info:
 1.0.1 - 7th Sept 2024
  - Initial release
+
+1.0.2 - 5th Oct 2024
+ - Added sound effect and tweaked timing for final Interloper interaction to improve immersion.
+ - Several minor localisation changes to improve context.
+ - Added conditional to Pigeons Carry Deseases code so prevent timing issues for an uncommon use case. 
  

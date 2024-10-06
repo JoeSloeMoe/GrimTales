@@ -9,7 +9,8 @@
 			<duration value="0"/>
 			<display_value value=".buffGrandpasWheelchairRacingElixirDisplay"/>
 			<display_value_format value="time"/>
-			
+				
+
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffGrandpasWheelchairRacingElixirDuration" operation="subtract" value="@$MetabolismDuration"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffGrandpasWheelchairRacingElixirDisplay" operation="set" value="@$buffGrandpasWheelchairRacingElixirDuration"/>
@@ -447,6 +448,7 @@
 				Up to a max pigeonSpawnAttempts number of times-->
 			<effect_group>
 				<requirement name="PlayerLevel" operation="GTE" value="@secondPigeonLevel"/>
+				<requirement name="CVarCompare" cvar="firstPigeonDeliveryComplete" operation="GTE" value="1"/>
 				<requirement name="CVarCompare" cvar="secondPigeonDeliveryComplete" operation="LT" value="1"/> 
 				<requirement name="!HasBuff" buff="buffSecondPigeonDelivery"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffSecondPigeonDelivery"/>
@@ -456,6 +458,7 @@
 				Up to a max pigeonSpawnAttempts number of times-->
 			<effect_group>
 				<requirement name="PlayerLevel" operation="GTE" value="@thirdPigeonLevel"/>
+				<requirement name="CVarCompare" cvar="secondPigeonDeliveryComplete" operation="GTE" value="1"/> 
 				<requirement name="CVarCompare" cvar="thirdPigeonDeliveryComplete" operation="LT" value="1"/>
 				<requirement name="!HasBuff" buff="buffThirdPigeonDelivery"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffThirdPigeonDelivery"/>
@@ -465,6 +468,7 @@
 				Up to a max pigeonSpawnAttempts number of times-->
 			<effect_group>
 				<requirement name="PlayerLevel" operation="GTE" value="@fourthPigeonLevel"/>
+				<requirement name="CVarCompare" cvar="thirdPigeonDeliveryComplete" operation="GTE" value="1"/> 
 				<requirement name="CVarCompare" cvar="fourthPigeonDeliveryComplete" operation="LT" value="1"/>
 				<requirement name="!HasBuff" buff="buffFourthPigeonDelivery"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFourthPigeonDelivery"/>
@@ -797,7 +801,7 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffInterloperStoryFinished" />
 			</effect_group>
-		</buff>
+		</buff>		
 		
 		<!--Interloper storyline controller-->
 		<!--This buff manages the Interloper storyline and handles consistency across the story. -->
@@ -846,6 +850,15 @@
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="interloperStoryFinalCountdownFinished" operation="add" value="1"/>
 					<!--tell the player that the third msg is received and ready for pickup-->
 					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffInterloperThirdSpyMessageReceived" />
+			</effect_group>
+			
+			<!--listen for the final Supply crate spawn - play airplane sound to simulate airdrop-->
+			<!--Plays an airplane sound for X number of seconds: see gamevents.xml:action_AirplaneSoundStart to adjust duration played-->-->
+			<effect_group> 
+				<requirement name="CVarCompare" cvar="playSupplyCrateAirplaneSound" operation="GTE" value="1"/>
+					<!--reset the trigger-->
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="playSupplyCrateAirplaneSound" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="action_AirplaneSoundStart"/>	
 			</effect_group>
 			
 			<!--countdown stuff-->
@@ -1156,7 +1169,7 @@
 				The Interloper story start with the thrid pigeon kill. Largest level for player getting the interloper story is 58, shortest is 32. Avg: 45
 				Modify the 5 to change the shortest number of levels
 				Modify the 13 to change the longest number of levels
-				The min gap of 5 days between spawns allows time for the previous pigeon's message to be resent if it fails to be delivered-->
+				The min gap of 5 levels between spawns allows time for the previous pigeon's message to be resent if it fails to be delivered-->
 			<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="secondPigeonLevel" operation="set" value="@firstPigeonLevel"/>  
 			<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="secondPigeonLevel" operation="add" value="randomint(5,13)"/>  <!--default level randomint(5,13)-->
 			<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="thirdPigeonLevel" operation="set" value="@secondPigeonLevel"/>   
