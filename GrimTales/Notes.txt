@@ -22,5 +22,5 @@ Version Info:
 1.0.2 - 5th Oct 2024
  - Added sound effect and tweaked timing for final Interloper interaction to improve immersion.
  - Several minor localisation changes to improve context.
- - Added conditional to Pigeons Carry Deseases code so prevent timing issues for an uncommon use case. 
+ - Added conditional to Pigeons Carry Diseases code so prevent timing issues for an uncommon use case. 
  
