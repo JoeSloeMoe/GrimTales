@@ -1,6 +1,7 @@
 <config>
 
 	<append xpath="/recipes">
+		<!--Mary's revenge storyline recipes-->
 		<!--playerExplosiveBarrels - mary's revenge story-->
 		<recipe name="playerExplosiveBarrel" count="1" craft_time="30" craft_area="workbench" tags="workbenchCrafting,learnable">
 			<ingredient name="resourceForgedIron" count="4"/>
@@ -10,6 +11,17 @@
 			<ingredient name="resourceRockSmall" count="50"/>
 		</recipe>
 		
+		<!--A summoning pie made from the bones and hair of Judy, Magrats sister.
+			Used to summon Magrat on placement - mary's revenge story.
+			The player gets the major ingredients (bones & hair) for this recipe from Margrat's sister's (Judy's) grave.-->
+		<recipe name="foodPumpkinJudyPieWhole" count="1" craft_area="chemistryStation" craft_time="720" >
+			<ingredient name="resourceWitchesHair" count="1"/>
+			<ingredient name="resourceCultBoneJudy" count="1"/>
+			<ingredient name="terrDirt" count="1"/>
+			<ingredient name="medicalBloodBag" count="1"/>
+			<ingredient name="foodCropPumpkin" count="2"/>
+		</recipe>
+		<!--END Mary's revenge storyline recipes-->
 		<!--interloper story-->
 		
 		<!--when the interloper story starts the player can then create the Story note again with a recipe, so they can repeat the story if they fail-->
