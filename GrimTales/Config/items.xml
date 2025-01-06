@@ -1,6 +1,6 @@
 <configs>
 	
-	<!-- tags for story items - see also blocks.xml for other tag additions -->
+	<!-- tags for story items - see also blocks.xml for other tag additions --> 
 
 	<!--the expanded drum mag dropped in the pigeons have diseases story - the mod can only be placed on the M60 so need to a specifc tag 'expandedDrumMag' to the M60 for it-->
 	<set xpath ="/items/item[@name='gunMGT3M60']/property[@name='Tags']/@value">expandedDrumMag,weapon,ranged,holdBreathAiming,reloadPenalty,gun,barrelAttachments,sideAttachments,smallTopAttachments,magazine,drumMagazine,bottomAttachments,mediumTopAttachments,attFortitude,perkMachineGunner,perkBookAutoWeapons,attachmentsIncluded,canHaveCosmetic,machinegunSkill</set> 
