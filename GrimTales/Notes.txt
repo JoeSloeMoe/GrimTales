@@ -27,3 +27,9 @@ Version Info:
  
 1.1.0 - 3rd Jan 2025
  - Mary's Revenge is now a full story with an optional side quest and an end boss.
+ 
+1.1.1 - 15th Feb 2025
+ - Code fix for MP IsBloodMoon error.
+ - Minor ammo loot balance.
+ - Code cleanup for Pigeons Carry Diseases boss encounter.
+ - Corrected Magrat's sister's name spelling.

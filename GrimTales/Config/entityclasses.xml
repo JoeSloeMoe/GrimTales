@@ -1,7 +1,7 @@
  <configs>
 	
 	<!--Grim Tales code-->
-	 
+	
 	<!--Mary's revenge code-->
 	<!--append the nav_objects.xml:screamerTrackingSNT nav object to screamers.
 		For Magrat's Left Eye - Mary's revenge story.
@@ -465,6 +465,7 @@
 		<!-- Loot bag for the final boss 'pigeonFinalBoss' in this file. -->
 		<entity_class name="EntityPigeonBossLoot">
 			<property name="Class" value="EntityLootContainer"/>
+			<property name="Tags" value="trackingPigeonBossLoot"/> 
 			<property name="UserSpawnType" value="Console"/>
 			<property name="Mesh" value="@:Entities/LootContainers/zpackRedPrefab.prefab"/>
 			<property name="ModelType" value="Custom"/>
@@ -474,6 +475,7 @@
 			<property name="TimeStayAfterDeath" value="6000"/>
 			<property name="Faction" value="none"/>
 			<property name="LootListOnDeath" value="pigeonFinalBossLoot"/>
+			<property name="NavObject" value="lootbagTrackingFinalPigeon" />
 		</entity_class>
 		
 		<!-- Homing pigeon/vulture base class/template and derived classes-->
@@ -576,7 +578,7 @@
 			<property name="RootMotion" value="true"/>
 			<property name="HasDeathAnim" value="true"/>
 
-			<property name="SizeScale" value="1.6"/>
+			<property name="SizeScale" value="1.15"/>
 			<property name="LegCrawlerThreshold" value="0"/>
 			<property name="LegCrippleThreshold" value="0"/>
 			<property name="KnockdownProneDamageThreshold" value="0"/>
@@ -609,14 +611,17 @@
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/> <!-- fit, feral -->
 			<property name="JumpMaxDistance" value="4.6, 5"/>
 			<effect_group name="Base Effects">
-				<passive_effect name="HealthMax" operation="base_set" value="4000"/> <!--same as zombie bear-->
+				<passive_effect name="HealthMax" operation="base_set" value="3000"/> 
+				<passive_effect name="BlockDamage" operation="perc_add" value="0.50"/>
+				
 				<!--<passive_effect name="EntityDamage" operation="perc_add" value="0"/>--> <!-- Feral damage -->
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="9"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>		
 			</effect_group>
+				
 			<effect_group>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AttachParticleEffectToEntity" particle="RadiatedParticlesOnMesh" local_offset="0,0,0" parent_transform="Head" shape_mesh="true"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AttachParticleEffectToEntity" particle="RadiatedParticlesOnMesh" local_offset="0,0,0" parent_transform="Head" shape_mesh="false"/>
 			</effect_group>
 		</entity_class>
 		

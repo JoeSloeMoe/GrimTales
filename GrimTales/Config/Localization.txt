@@ -73,52 +73,52 @@ EntityMarysRevengeCovenHouseLoot,entityclasses,Entity,,,Cherished Possessions
 marysRevengeCovenHouseBundle,items,Loot Bundle,,,"Witch's Belongings"
 marysRevengeCovenHouseBundleDesc,items,Loot Bundle,,,"A small box with some cherished possessions."
 resourceWitchesHair,items,Witches Hair,,,"Lock of witches hair" 
-resourceWitchesHairDesc,items,Witches Hair,,,"Grimey lock of rotting witches hair from Judy's grave. Boiling this down in an alchemy recipe creates a vestige brew. The brew is used in a recipe that can be used to summon the witch cult leader Margat the Seer. Watch out for the fleas.\n\n[Mary's Revenge storyline]" 
+resourceWitchesHairDesc,items,Witches Hair,,,"Grimey lock of rotting witches hair from Judie's grave. Boiling this down in an alchemy recipe creates a vestige brew. The brew is used in a recipe that can be used to summon the witch cult leader Margat the Seer. Watch out for the fleas.\n\n[Mary's Revenge storyline]" 
 resourceUsedToiletPaper,items,Toilet Paper,,,"Much used toilet paper" 
 resourceLavenderFlowers,items,Flowers,,,"Lavender Flowers"
 resourceUncookedRice,items,Rice,,,"Uncooked Rice"
 qt_MaryRevengeJudysGrave,items,Grave Ritual,,,"Witch Seer Grave Location"
-qt_MaryRevengeJudysGraveDesc,items,Grave Ritual,,,"Crudely written ritual instructions to guide some kind of occult bloodletting ritual for Magrat's sister (Judy's) grave. A scrawled map shows the witch's grave location.\n\nRead (A) to dig up Judy the Witch's corpse and take what you need before anyone else can mess with the grave.\n\n[Mary's Revenge storyline]"
+qt_MaryRevengeJudysGraveDesc,items,Grave Ritual,,,"Crudely written ritual instructions to guide some kind of occult bloodletting ritual for Magrat's sister (Judie's) grave. A scrawled map shows the witch's grave location.\n\nRead (A) to dig up Judie the Witch's corpse and take what you need before anyone else can mess with the grave.\n\n[Mary's Revenge storyline]"
 createSummoningPie,Quest,Summoning Magrat,,,"The ultimate insult"
-createSummoningPie_description,Quest,Summoning Magrat,,,"Create a cursed pie from Judy's bones and hair. Consuming a slice of the pie will invoke Magrat's wrath.\n\nIn her diary, Mary's was somewhat vague about possible side-effects from eating the pie.\n\nUse (A) to Summon Magrat.\n[Mary's Revenge storyline]"
+createSummoningPie_description,Quest,Summoning Magrat,,,"Create a cursed pie from Judie's bones and hair. Consuming a slice of the pie will invoke Magrat's wrath.\n\nIn her diary, Mary's was somewhat vague about possible side-effects from eating the pie.\n\nUse (A) to Summon Magrat.\n[Mary's Revenge storyline]"
 createSummoningPieName,Quest,Summoning Magrat,,,[00FFB4]Create a Cursed Pumkin Pie[-]
 createSummoningPie_subtitle,Quest,Summoning Magrat,,,Poke the Bear 
-createSummoningPie_hint1,Quest,Summoning Magrat,,,[00FFB4]Gather Bone from Judy's Grave[-]
-createSummoningPie_hint2,Quest,Summoning Magrat,,,[00FFB4]Gather Hair from Judy's Grave[-]
+createSummoningPie_hint1,Quest,Summoning Magrat,,,[00FFB4]Gather Bone from Judie's Grave[-]
+createSummoningPie_hint2,Quest,Summoning Magrat,,,[00FFB4]Gather Hair from Judie's Grave[-]
 createSummoningPie_hint3,Quest,Summoning Magrat,,,[00FFB4]Cut a Cursed Pumkin Pie into slices[-]
 graveRobbingMagratsSisterGroup,Quest,Quest Info,,,"Coven House, Map to secret grave." 
-marysRevengeGraveScreamer,entityclasses,Entity,,,"Judy's Corpse Warden"
+marysRevengeGraveScreamer,entityclasses,Entity,,,"Judie's Corpse Warden"
 resourceDeadBird,items,Dead Bird,,,"Half eaten putrefying bird" 
 resourceIpsloresBoots,items,Old Boots,,,"Ipslore's Boots"
 resourceIpsloresBootsDesc,items,Old Boots,,,"Ipslore's fancy boots, not your size."
 resourceDiscWorldBook,items,Special Book,,,"Disk-something"
 resourceDiscWorldBookDesc,items,Special Book,,,"A worn dusty old book, clearly a series worth reading. The title is hard to read. Disc something, maybe Disc Wonder or Disc World? Who knows...."
 resourceCultBoneJudy,items,Bone,,,"Strange bone" 
-resourceCultBoneJudyDesc,items,Bone,,,"A strange blue bone from Judy's grave. Twisted and deformed, it must have been painful to walk on. There is an outline of a red eye burned into the side of the bone.\nBoiling this down in an alchemy recipe creates a vestige brew. The brew is used in a recipe used to summon the witch leader Margat the Seer.\n\n[Mary's Revenge storyline]" 
+resourceCultBoneJudyDesc,items,Bone,,,"A strange blue bone from Judie's grave. Twisted and deformed, it must have been painful to walk on. There is an outline of a red eye burned into the side of the bone.\nBoiling this down in an alchemy recipe creates a vestige brew. The brew is used in a recipe used to summon the witch leader Margat the Seer.\n\n[Mary's Revenge storyline]" 
 resourceCultBone,items,Bone,,,"Bone" 
 resourceCultBoneDesc,items,Bone,,,"A bone from an animal, tainted with the hue and stench of witch binding." 
-graveRobbingMagratsSister,Quest,Grave Robbing,,,"Judy Witch's Bones"
-graveRobbingMagratsSister_description,Quest,Grave Robbing,,,"The summoning ritual requires you to consume an extract from the bones and hair of a Witch Seer. Following the instructions in Mary's diary, you need to dig up Judy Witch's grave and make a pie using her hair and bones. The notes describe consuming the pie in a ritual to summon Magrat.\nYou copy the recipe for the ritual and start looking for the grave, hoping you read the notes correctly.\n\n[Mary's Revenge storyline]"
-graveRobbingMagratsSister_offer,Quest,Grave Robbing,,,"The summoning ritual requires you to consume an extract from the bones and hair of a Witch Seer. Following the instructions in Mary's diary, you need to dig up Judy Witch's grave and make a pie using her hair and bones. The notes describe consuming the pie in a ritual to summon Magrat.\nYou copy the recipe for the ritual and start looking for the grave, hoping you read the notes correctly.\n\n[Mary's Revenge storyline]"
-graveRobbingMagratsSisterName,Quest,Grave Robbing,,,[00FFB4]Loot Judy's grave[-]
+graveRobbingMagratsSister,Quest,Grave Robbing,,,"Judie Witch's Bones"
+graveRobbingMagratsSister_description,Quest,Grave Robbing,,,"The summoning ritual requires you to consume an extract from the bones and hair of a Witch Seer. Following the instructions in Mary's diary, you need to dig up Judie Witch's grave and make a pie using her hair and bones. The notes describe consuming the pie in a ritual to summon Magrat.\nYou copy the recipe for the ritual and start looking for the grave, hoping you read the notes correctly.\n\n[Mary's Revenge storyline]"
+graveRobbingMagratsSister_offer,Quest,Grave Robbing,,,"The summoning ritual requires you to consume an extract from the bones and hair of a Witch Seer. Following the instructions in Mary's diary, you need to dig up Judie Witch's grave and make a pie using her hair and bones. The notes describe consuming the pie in a ritual to summon Magrat.\nYou copy the recipe for the ritual and start looking for the grave, hoping you read the notes correctly.\n\n[Mary's Revenge storyline]"
+graveRobbingMagratsSisterName,Quest,Grave Robbing,,,[00FFB4]Loot Judie's grave[-]
 graveRobbingMagratsSister_subtitle,Quest,Grave Robbing,,,Loot the bones
 graveRobbingMagratsSister_hint1,Quest,Grave Robbing,,,[00FFB4]Loot bones from the grave[-]
-graveRobbingMagratsSisterComplete,Quest,Quest Info,,,[00FFB4]Judy Witch's grave has been opened[-]
-graveRobbingTwoCoffinClosed,blocks,Block,,,Judy's Casket
-graveRobbingTwoCoffinCracked,blocks,Block,,,Judy's Casket
-graveRobbingTwoCoffinOpen,blocks,Block,,,Judy's Casket
+graveRobbingMagratsSisterComplete,Quest,Quest Info,,,[00FFB4]Judie Witch's grave has been opened[-]
+graveRobbingTwoCoffinClosed,blocks,Block,,,Judie's Casket
+graveRobbingTwoCoffinCracked,blocks,Block,,,Judie's Casket
+graveRobbingTwoCoffinOpen,blocks,Block,,,Judie's Casket
 graveRobbingCovenHouseScreamerSpawn,Quest,Quest Info,,,Hunt the witch.
 graveRobbingCovenHouseScreamerSpawnName,Quest,Grave Robbing,,,[00FFB4]Kill the witch[-]
 graveRobbingCovenHouseScreamerSpawn_offer,Quest,Grave Robbing,,,"Witches will chant at the priest's grave. Kill the witch to get a map to the location of the priest's grave.\n\n[Mary's Revenge storyline]"
 graveRobbingJudysScreamerSpawn,Quest,Quest Info,,,Grave Protectors
 graveRobbingJudysScreamerSpawnName,Quest,Grave Robbing,,,[00FFB4]Kill the cult members[-]
-graveRobbingJudysScreamerSpawn_offer,Quest,Grave Robbing,,,"There are witches protecting Judy's grave, discuss your concerns with them.\n\n[Mary's Revenge storyline]"
-resourceJudysCorpse,items,Item,,,"Judy Witch's Rotting Corpse"
-resourceJudysCorpseDesc,items,Item,,,"Oozing worm riddled carcass of a witch called Judy.\n\nThe stench is overpowering."
+graveRobbingJudysScreamerSpawn_offer,Quest,Grave Robbing,,,"There are witches protecting Judie's grave, discuss your concerns with them.\n\n[Mary's Revenge storyline]"
+resourceJudysCorpse,items,Item,,,"Judie Witch's Rotting Corpse"
+resourceJudysCorpseDesc,items,Item,,,"Oozing worm riddled carcass of a witch called Judie.\n\nThe stench is overpowering."
 foodPumpkinJudyPieWhole,items,Food,,,Cursed Pumkin Pie
-foodPumpkinJudyPieWholeDesc,items,Food,,,"Cold and sticky Judy Witch bone and hair Pumpkin Pie.\nOpen to cut into slices.\n\n[Mary's Revenge storyline]"
+foodPumpkinJudyPieWholeDesc,items,Food,,,"Cold and sticky Judie Witch bone and hair Pumpkin Pie.\nOpen to cut into slices.\n\n[Mary's Revenge storyline]"
 foodPumpkinJudyPieSlice,items,Food,,,A Slice Of Cursed Pumkin Pie
-foodPumpkinJudyPieSliceDesc,items,Food,,,"Disgusting slice of Judy Witch bone and hair Pumpkin Pie.\n\nAn underlined passage in Mary's diary warns that consuming this pie will enrage Judy's sister Magrat the Seer and cause her vengeful manifestation. Quick and strong, Magrat will most likely hunt you when out in the open.\n\nMary's strategic notes:\nTry get a height advantage.\nWhile Magrats alive, damaging her dopplegangers encourages more spawns.\nThe bleed effect of Mary's rifle didn't affect Magrat.\nThe Talisman Side Quest may be helpful.\n[Mary's Revenge storyline]"
+foodPumpkinJudyPieSliceDesc,items,Food,,,"Disgusting slice of Judie Witch bone and hair Pumpkin Pie.\n\nAn underlined passage in Mary's diary warns that consuming this pie will enrage Judie's sister Magrat the Seer and cause her vengeful manifestation. Quick and strong, Magrat will most likely hunt you when out in the open.\n\nMary's strategic notes:\nTry get a height advantage.\nWhile Magrats alive, damaging her dopplegangers encourages more spawns.\nThe bleed effect of Mary's rifle didn't affect Magrat.\nThe Talisman Side Quest may be helpful.\n[Mary's Revenge storyline]"
 resourceWitchBrew,items,Rice,,,"Ubuqili Brew"
 resourceWitchBrewDesc,items,Rice,,,"Specially prepared Ubuqili essence. Has an acidic rotting stink that penetrates deap into your sinuses and stings your eyes. Used in the preparation of summoning a Witch Seer.\n\n[Mary's Revenge storyline]"
 quest_TestCode,Quest,Test code,,,Quest_test_code
@@ -129,10 +129,10 @@ quest_KillMagratDesc,Quest,Challenge Info,,,"Tracking your every position and hi
 resourcePieceOfCheese,items,Cheese,,,"Cheese Wedge"
 resourcePieceOfCheeseDesc,items,Cheese,,,"Cheese wedge that looks like cheddar but isnt, certainly doesn't smell like cheddar. You wonder where the ingredients for the cheese would come from..."
 marysRevengeMagratsSacrificialKnife,items,Knife,,,Magrat's Sacrificial Knife.
-marysRevengeMagratsSacrificialKnifeDesc,items,Knife,,,"Mary's Revenge. A lethal sacrificial witch knife that belonged to Magrat the Witch Seer. Like her sister Judy, Magrat was a depraved sadistic  itch with a tendancy towards psychotic outbursts and the knife reflected her creative outlook on life.\n\nBy examining the knife you learn some of its basic stats but it was Magrats personal knife and its real powers remain unknown to you."
+marysRevengeMagratsSacrificialKnifeDesc,items,Knife,,,"Mary's Revenge. A lethal sacrificial witch knife that belonged to Magrat the Witch Seer. Like her sister Judie, Magrat was a depraved sadistic  itch with a tendancy towards psychotic outbursts and the knife reflected her creative outlook on life.\n\nBy examining the knife you learn some of its basic stats but it was Magrats personal knife and its real powers remain unknown to you."
 buffMarysRevengeFinalBossSummonDisplay,buffs,Buff,,,Cursed
 buffMarysRevengeFinalBossSummon,buffs,Interloper,,,"Kill Magrat the Seer"
-buffMarysRevengeFinalBossSummonDesc,buffs,Interloper,,,"You spit in the witch-seer Magrat's face and consume the essense of her sister. You embody the curse of Judy Witch and summon Magrat to a no rules battle to the death. Deliver Mary's vengence and defeat Magrat.\n\nMagrat's strategy focuses on spawning dopplegangers at random to confuse, overpower and rip her enemies to shreds. She will continue to spawn at random intervals to dominate and destroy you until you kill her.\n\n[Mary's Revenge Storyline]"
+buffMarysRevengeFinalBossSummonDesc,buffs,Interloper,,,"You spit in the witch-seer Magrat's face and consume the essense of her sister. You embody the curse of Judie Witch and summon Magrat to a no rules battle to the death. Deliver Mary's vengence and defeat Magrat.\n\nMagrat's strategy focuses on spawning dopplegangers at random to confuse, overpower and rip her enemies to shreds. She will continue to spawn at random intervals to dominate and destroy you until you kill her.\n\n[Mary's Revenge Storyline]"
 buffMarysRevengeFinalBossSummonName,buffs,Interloper,,,"Kill Magrat the Seer."
 buffMarysRevengeFinalBossSummonTooltip,buffs,Interloper,,,"Kill Magrat."
 quest_SpawnMagrat,Quest,Kill Magrat,,,Kill Magrat the Seer 
@@ -145,7 +145,7 @@ qt_RunMarysRevengeFinalBoss,items,Encrypted Note,,,MarysRevenge Final Boss
 qt_RunMarysRevengeFinalBossDesc,items,Encrypted Note,,,"Test code to run the final interaction of the Marys Revenge story. Spawns final boss and dopplegangers"
 graveRobbingIpsloreTheRed,Quest,Mary's Revenge,,,"Find Ipslore's Talisman"
 graveRobbingIpsloreTheRedName,Quest,Mary's Revenge,,,[00FFB4]Ipslore's Folly[-]
-graveRobbingIpsloreTheRed_offer,Quest,Mary's Revenge,,,"The power of the Witch Sisters, Magrat and Judy, is in their innate ability to summon dopplegangers.\nDuring the war for control of the witch cult, Ipslore the Red created 2 Talismans to mark Magrat and Judy apart from their dopplegangers. He used one to great effect to mark and kill Judy in an ambush, but while the Talisman could identify the true Magrat it was not very useful at detecting rat poison. Ipslore died an agonising death from renal failure and a prolapsed anus. In death his power lingers and his grave is protected by beasts from hell.\n\n[Mary's Revenge Storyline]"			
+graveRobbingIpsloreTheRed_offer,Quest,Mary's Revenge,,,"The power of the Witch Sisters, Magrat and Judie, is in their innate ability to summon dopplegangers.\nDuring the war for control of the witch cult, Ipslore the Red created 2 Talismans to mark Magrat and Judie apart from their dopplegangers. He used one to great effect to mark and kill Judie in an ambush, but while the Talisman could identify the true Magrat it was not very useful at detecting rat poison. Ipslore died an agonising death from renal failure and a prolapsed anus. In death his power lingers and his grave is protected by beasts from hell.\n\n[Mary's Revenge Storyline]"			
 graveRobbingIpsloreTheRedGroup,Quest,Mary's Revenge,,,Ipslore's Folly
 graveRobbingIpsloreTheRed_hint1,Quest,Quest Info,,,[00FFB4]Beware the Gravekeepers[-]
 quest_SpawnGraveKeeperDireWolf,Quest,Hell's Gatekeeper,,,Kill the Grave Keeper 
@@ -157,7 +157,7 @@ quest_SpawnGraveKeeperDireBearDesc,Quest,Hell's Gatekeeper,,,"You have disturbed
 buffTest,buffs,Buff,,,Test
 pigeonFinalBoss,entityclasses,Entity,,,Curtis Pigeonface Colton
 buffGameEventController,buffs,Buff,,,Zombie Kills: 
-buffGameEventControllerDesc,buffs,Buff,,,Zombie kill streak.\nResets on death.\nTriggers Mary's Revenge at 3000.
+buffGameEventControllerDesc,buffs,Buff,,,Zombie kill streak.\nResets on death.\nTriggers Mary's Revenge at 4000.
 buffGraveArtifactComplete,buffs,Buff,,,Cursed Artifact-Strongbox 
 buffGraveArtifactCompleteDesc,buffs,Buff,,,Cursed Artifact-Strongbox
 milestoneBundleZombieKill,buffs,Buff,,,Mary reaches out to you from the grave

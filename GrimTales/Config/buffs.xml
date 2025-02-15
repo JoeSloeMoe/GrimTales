@@ -199,8 +199,8 @@
 				<!--dont spawn if player in vehicle, in a bloodmoon etc-->
 				<requirement name="!IsAttachedToEntity" />
 				<requirement name="!IsIndoors" />
+				<!--IsBloodMoon doesnt work in MP so using IsNight-->
 				<requirement name="!IsNight" />
-				<requirement name="!IsBloodMoon" />
 				<requirement name="CVarCompare" cvar="_sheltered" operation="Equals" value="0"/>
 				<requirement name="CVarCompare" cvar="_shaded" operation="Equals" value="0"/>
 				<requirement name="EntityHasMovementTag" tags="idle"/>
@@ -261,8 +261,8 @@
 				<!--dont spawn if player in vehicle, in a bloodmoon etc-->
 				<requirement name="!IsAttachedToEntity" />
 				<requirement name="!IsIndoors" />
+				<!--IsBloodMoon doesnt work in MP so using IsNight-->
 				<requirement name="!IsNight" />
-				<requirement name="!IsBloodMoon" />
 				<requirement name="CVarCompare" cvar="_sheltered" operation="Equals" value="0"/>
 				<requirement name="CVarCompare" cvar="_shaded" operation="Equals" value="0"/>
 				<requirement name="EntityHasMovementTag" tags="idle"/>
@@ -324,8 +324,8 @@
 				<!--dont spawn if player in vehicle, in a bloodmoon etc-->
 				<requirement name="!IsAttachedToEntity" />
 				<requirement name="!IsIndoors" />
+				<!--IsBloodMoon doesnt work in MP so using IsNight-->
 				<requirement name="!IsNight" />
-				<requirement name="!IsBloodMoon" />
 				<requirement name="CVarCompare" cvar="_sheltered" operation="Equals" value="0"/>
 				<requirement name="CVarCompare" cvar="_shaded" operation="Equals" value="0"/>
 				<requirement name="EntityHasMovementTag" tags="idle"/>
@@ -385,8 +385,8 @@
 				<!--dont spawn if player in vehicle, in a bloodmoon etc-->
 				<requirement name="!IsAttachedToEntity" />
 				<requirement name="!IsIndoors" />
+				<!--IsBloodMoon doesnt work in MP so using IsNight-->
 				<requirement name="!IsNight" />
-				<requirement name="!IsBloodMoon" />
 				<requirement name="CVarCompare" cvar="_sheltered" operation="Equals" value="0"/>
 				<requirement name="CVarCompare" cvar="_shaded" operation="Equals" value="0"/>
 				<requirement name="EntityHasMovementTag" tags="idle"/>
@@ -489,9 +489,9 @@
 			<stack_type value="ignore"/>
 			<duration value="0"/>
 			<effect_group>
-				<passive_effect name="Tracking" operation="base_set" value="1" tags="trackingPigeonBoss"/>
+				<passive_effect name="Tracking" operation="base_set" value="1" tags="trackingPigeonBoss,trackingPigeonBossLoot"/>
 			</effect_group>
-		</buff>	
+		</buff>
 		
 		<!--buff will monitor the final pigeon story boss. If the player doesn't get the final loot. The buff
 			will resend the final boss up to 5 times (pigeonSpawnAttempts) -->
@@ -527,7 +527,12 @@
 					<!--add a buff to red-dot the final boss for the player-->
 					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buff_trackPigeonFinalBoss" >
 						<requirement name="!HasBuff" buff="buff_trackPigeonFinalBoss"/>
-					</triggered_effect>	
+					</triggered_effect>
+					<!--add a buff to red-dot the final boss LOOT for the player-->
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buff_trackPigeonFinalBoss" >
+						<requirement name="!HasBuff" buff="buff_trackPigeonFinalBoss"/>
+					</triggered_effect>
+					
 					<!--spawn final boss-->
 					<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="action_spawn_pigeonBoss"/>
 					<!--set the countdown for the next boss spawn if the loot isnt received-->
@@ -543,8 +548,8 @@
 				<!--dont spawn if player in vehicle, in a bloodmoon etc-->
 				<requirement name="!IsAttachedToEntity" />
 				<requirement name="!IsIndoors" />
+				<!--IsBloodMoon doesnt work in MP so using IsNight-->
 				<requirement name="!IsNight" />
-				<requirement name="!IsBloodMoon" />
 				<requirement name="CVarCompare" cvar="_sheltered" operation="Equals" value="0"/>
 				<requirement name="CVarCompare" cvar="_shaded" operation="Equals" value="0"/>
 				<requirement name="EntityHasMovementTag" tags="idle"/>
@@ -562,13 +567,6 @@
 					<!--if the Boss loot delivery is not received, tick down counter until next boss spawned -->
 					<requirement name="CVarCompare" cvar="finalPigeonBossSpawnCountdown" operation="GT" value="0"/> 
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="finalPigeonBossSpawnCountdown" operation="subtract" value="@$MetabolismDuration"/>
-			</effect_group>
-	
-			<!--remove the pigeon tracking buff when this buff is removed from the player-->
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buff_trackPigeonFinalBoss">
-					<requirement name="HasBuff" buff="buff_trackPigeonFinalBoss"/>
-				</triggered_effect>
 			</effect_group>	
 
 		</buff>
@@ -1199,7 +1197,8 @@
 				<!--dont spawn if player in vehicle, in a bloodmoon etc-->
 				<requirement name="!IsAttachedToEntity" />
 				<requirement name="!IsIndoors" />
-				<requirement name="!IsBloodMoon" />
+				<!--IsBloodMoon doesnt work in MP so using IsNight-->
+				<requirement name="!IsNight" />
 				<requirement name="CVarCompare" cvar="_sheltered" operation="Equals" value="0"/>
 				<requirement name="CVarCompare" cvar="_shaded" operation="Equals" value="0"/>
 				<requirement name="EntityHasMovementTag" tags="idle"/>
@@ -1329,8 +1328,6 @@
 			<!--end test code-->  
 			
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffGameEventControllerDuration" operation="set" value="0"/>
-				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffGameEventControllerDuration" operation="set" value="0" />
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".buffGameEventControllerDisplay" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".buffGameEventControllerDisplay" operation="set" value="0" />
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$numZombieKillsControl" operation="set" value="0"/>
@@ -1341,23 +1338,26 @@
 				<!-- check zombie death count - give reward if passed-->
 				<requirement name="CVarCompare" cvar="$numZombieKillsControl" operation="GTE" value="@killStreakTarget"/>
 				<requirement name="CVarCompare" cvar="burialSiteOneGiven" operation="LTE" value="0"/>
+				<!--only give quest when player idle-->
+				<!--IsBloodMoon doesnt work in MP so using IsNight-->
+				<requirement name="!IsNight" />
+				<requirement name="EntityHasMovementTag" tags="idle"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="give_graveRobbingOneQuest"/>
-					<triggered_effect trigger="onSelfBuffUpdate" action="ShakeCamera" shake_speed="0.04" shake_amplitude="20" shake_time="1"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ShakeCamera" shake_speed="0.04" shake_amplitude="40" shake_time="2"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message_key="milestoneBundleZombieKill"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="burialSiteOneGiven" operation="add" value="1"/>
 			</effect_group>
 			
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffGameEventControllerDuration" operation="add" value="1"/>
+			<!--<effect_group>-->
 				<!--currenty this buff stays with the player for the entire game and will show the number of zombie kills count 
-				   It could be removed after the give_graveRobbingOneQuest event as well-->
+				   It could be removed after the give_graveRobbingOneQuest event as well. Code is here for the stanalone mod.-->
 				<!--<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffGameEventController">
 					<requirement name="CVarCompare" cvar="burialSiteOneGiven" operation="GTE" value="1"/> 
 				</triggered_effect>-->
-			</effect_group>
+			<!--</effect_group>-->
+			
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$numZombieKillsControl" operation="set" value="0"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffGameEventControllerDuration" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffGameEventControllerDisplay" operation="set" value="0"/>
 				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffGameEventControllerDisplay" operation="set" value="0"/>
 			</effect_group>
