@@ -31,7 +31,7 @@ statStunFatigueResistance1,ui_display,Item stat,,,Resist: Infection - Fatigue
 statStunFatigueResistance2,ui_display,Item stat,,,Resist: Laceration - Abrasion
 statStunFatigueResistance3,ui_display,Item stat,,,Resist: Stun - Sprain - Bleeding
 marysRevengeHomemadeRifle,items,Gun,,,Mary's Revenge - Homemade bush rifle.
-marysRevengeHomemadeRifleDesc,items,Gun,,,"Mary's Revenge. Uses .44 Magnum ammo\nBorne from the dark depths of vengeance. Has flawed barrel rifling that causes sporadic bullet tumble - 25% chance of inflicting lethal bleed out. Tumble bullet impact will knock zombies down.\n300% Headshot damage\nMod with Shotgun Barrel Extender.\n8X Scope attachments have full focus range."
+marysRevengeHomemadeRifleDesc,items,Gun,,,"Mary's Revenge. Borne from the dark depths of vengeance. \nHas flawed barrel rifling that causes sporadic bullet tumble - 25% chance of inflicting lethal bleed out. Tumble bullet impact will knock zombies down.\nUses .44 Magnum ammo.\n300% Headshot damage\nMod with Shotgun Barrel Extender.\n8X Scope attachments have full focus range."
 rewardMarysRevengeBundle,items,Item,,,Mary's Revenge
 rewardMarysRevengeBundleDesc,items,Item,,,There are 6 in a Coven.
 marysRevengeArtifactContainer,items,Item,,,Mary's Revenge
