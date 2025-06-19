@@ -33,3 +33,7 @@ Version Info:
  - Minor ammo loot balance.
  - Code cleanup for Pigeons Carry Diseases boss encounter.
  - Corrected Magrat's sister's name spelling.
+ 
+ 2.0.1 - 18th June 2025
+ - 7DTD 2.0 compatibility release.
+ - A number of small context modifications.

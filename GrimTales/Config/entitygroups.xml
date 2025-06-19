@@ -24,6 +24,16 @@
 		<entitygroup name="GraveKeeperDireBearGroup">
 			graveKeeperDireBear
 		</entitygroup>
+		
+		<entitygroup name="RadiatedScreamerSpawnGroup">
+			zombieScreamerRadiated
+		</entitygroup>
+		<entitygroup name="FeralScreamerSpawnGroup">
+			zombieScreamerFeral
+		</entitygroup>
+		<entitygroup name="ScreamerSpawnGroup">
+			zombieScreamer
+		</entitygroup>
 		<!--end Marys Revenge story code-->
 		
 		<!--code for Interloper story -->

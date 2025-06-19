@@ -50,7 +50,7 @@ testRemoveScreamerTrackingBuffDesc,items,TEST,,,"Removes the Screamer tracking b
 resourceMarysDiary,items,Book,,,"Mary's Torn and Bloodstained Diary" 
 resourceMarysDiaryDesc,items,Book,,,"Mary's diary details her daughter's kidnap and murder by a witch cult. Hard to read with pages torn and missing, you manage to piece together about 3 pages worth of legible entries.\n\n\nOpen to review the pages." 
 resourceMarysDiaryPage1,items,Book,,,"Page 1: Mary's Story" 
-resourceMarysDiaryPage1Desc,items,Book,,,"After her daughters death, Mary studied the cult and hunted down their stronghold. Through violent bloody assault Mary identified the cult's leader - Magrat The Seer. By performing some kind of a ritual Mary drew Magrat into a trap but was overrun after a prolonged fight. There is some reference to a continual stream of dopplegangers and Mary being unable to identify and kill the real Magrat. Mary appears to have been able to engineer a retreat but was mortally wounded, her final act was to finish her diary in the hope of future vengeance. Whoever buried her took care to bury her with her last possessions." 
+resourceMarysDiaryPage1Desc,items,Book,,,"After her daughters death, Mary studied the cult and hunted down their stronghold. Through violent bloody assault Mary identified the cult's leader - Magrat The Seer. Mary drew Magrat into a trap by performing some kind of a ritual, but was overrun after a prolonged fight. There is some reference to a continual stream of dopplegangers and Mary being unable to identify and kill the real Magrat. Mary appears to have been able to engineer a retreat but was mortally wounded, her final act was to finish her diary in the hope of future vengeance. Whoever buried her took care to bury her with her last possessions." 
 resourceMarysDiaryPage2,items,Book,,,"Page 2: Mary's Revenge" 
 resourceMarysDiaryPage2Desc,items,Book,,,"Mary learnt some interesting things about the witch cult. She got this information by repeatedly bludgeoning a witch in the face with a spiked club. She had summoned Magrat using hair and bones from the grave of a cult priest. There are some notes on her last fight but her last diary entry, the cult's base location, stares at you from the page.\nYou consider your options.\n\n\nRead (A) to introduce yourself to Magrat the Seer." 
 resourceMarysDiaryPage3,items,Book,,,"Page 3: A side note" 
@@ -78,7 +78,7 @@ resourceUsedToiletPaper,items,Toilet Paper,,,"Much used toilet paper"
 resourceLavenderFlowers,items,Flowers,,,"Lavender Flowers"
 resourceUncookedRice,items,Rice,,,"Uncooked Rice"
 qt_MaryRevengeJudysGrave,items,Grave Ritual,,,"Witch Seer Grave Location"
-qt_MaryRevengeJudysGraveDesc,items,Grave Ritual,,,"Crudely written ritual instructions to guide some kind of occult bloodletting ritual for Magrat's sister (Judie's) grave. A scrawled map shows the witch's grave location.\n\nRead (A) to dig up Judie the Witch's corpse and take what you need before anyone else can mess with the grave.\n\n[Mary's Revenge storyline]"
+qt_MaryRevengeJudysGraveDesc,items,Grave Ritual,,,"Crudely written instructions to guide some kind of occult bloodletting ritual for Magrat's sister (Judie's) grave. A scrawled map shows the witch's grave location.\n\nRead (A) to dig up Judie the Witch's corpse and take what you need before anyone else can mess with the grave.\n\n[Mary's Revenge storyline]"
 createSummoningPie,Quest,Summoning Magrat,,,"The ultimate insult"
 createSummoningPie_description,Quest,Summoning Magrat,,,"Create a cursed pie from Judie's bones and hair. Consuming a slice of the pie will invoke Magrat's wrath.\n\nIn her diary, Mary's was somewhat vague about possible side-effects from eating the pie.\n\nUse (A) to Summon Magrat.\n[Mary's Revenge storyline]"
 createSummoningPieName,Quest,Summoning Magrat,,,[00FFB4]Create a Cursed Pumkin Pie[-]
@@ -110,11 +110,13 @@ graveRobbingTwoCoffinOpen,blocks,Block,,,Judie's Casket
 graveRobbingCovenHouseScreamerSpawn,Quest,Quest Info,,,Hunt the witch.
 graveRobbingCovenHouseScreamerSpawnName,Quest,Grave Robbing,,,[00FFB4]Kill the witch[-]
 graveRobbingCovenHouseScreamerSpawn_offer,Quest,Grave Robbing,,,"Witches will chant at the priest's grave. Kill the witch to get a map to the location of the priest's grave.\n\n[Mary's Revenge storyline]"
-graveRobbingJudysScreamerSpawn,Quest,Quest Info,,,Grave Protectors
+graveRobbingJudysScreamerSpawn,Quest,Quest Info,,,Cult Lunatics
 graveRobbingJudysScreamerSpawnName,Quest,Grave Robbing,,,[00FFB4]Kill the cult members[-]
-graveRobbingJudysScreamerSpawn_offer,Quest,Grave Robbing,,,"There are witches protecting Judie's grave, discuss your concerns with them.\n\n[Mary's Revenge storyline]"
+graveRobbingJudysScreamerSpawn_offer,Quest,Grave Robbing,,,"There are witches guarding Judie's grave, discuss your concerns with them.\n\n[Mary's Revenge storyline]"
 resourceJudysCorpse,items,Item,,,"Judie Witch's Rotting Corpse"
 resourceJudysCorpseDesc,items,Item,,,"Oozing worm riddled carcass of a witch called Judie.\n\nThe stench is overpowering."
+resourceBloodVile,items,Item,,,"Vial of Blood"
+resourceBloodVileDesc,items,Item,,,"A small vial of blood"
 foodPumpkinJudyPieWhole,items,Food,,,Cursed Pumkin Pie
 foodPumpkinJudyPieWholeDesc,items,Food,,,"Cold and sticky Judie Witch bone and hair Pumpkin Pie.\nOpen to cut into slices.\n\n[Mary's Revenge storyline]"
 foodPumpkinJudyPieSlice,items,Food,,,A Slice Of Cursed Pumkin Pie
@@ -128,8 +130,8 @@ quest_KillMagratName,Quest,Homing Pigeons,,,[00FFB4]Kill Magrat the Seer[-]
 quest_KillMagratDesc,Quest,Challenge Info,,,"Tracking your every position and hidding behind dopplegangers, Magrat seeks to enslave and sacrifice you. \n\n\n\n[Mary's Revenge Storyline]"
 resourcePieceOfCheese,items,Cheese,,,"Cheese Wedge"
 resourcePieceOfCheeseDesc,items,Cheese,,,"Cheese wedge that looks like cheddar but isnt, certainly doesn't smell like cheddar. You wonder where the ingredients for the cheese would come from..."
-marysRevengeMagratsSacrificialKnife,items,Knife,,,Magrat's Sacrificial Knife.
-marysRevengeMagratsSacrificialKnifeDesc,items,Knife,,,"Mary's Revenge. A lethal sacrificial witch knife that belonged to Magrat the Witch Seer. Like her sister Judie, Magrat was a depraved sadistic  itch with a tendancy towards psychotic outbursts and the knife reflected her creative outlook on life.\n\nBy examining the knife you learn some of its basic stats but it was Magrats personal knife and its real powers remain unknown to you."
+marysRevengeMagratsSacrificialKnife,items,Knife,,,Concitatio.
+marysRevengeMagratsSacrificialKnifeDesc,items,Knife,,,"Magrat's ancient clunaclus, Concitatio. A lethal sacrificial witch-blade that found its way to Magrat the Witch Seer. Like her sister Judie, Magrat was a depraved sadistic  itch with a tendancy towards psychotic outbursts and the knife reflected her creative outlook on life. The words [FFFFCC]Laetitia Poena[-] are embossed on the hilt.\n\nBy examining Concitatio you learn some of her basic stats but she was Magrats personal blade and her real powers remain unknown to you."
 buffMarysRevengeFinalBossSummonDisplay,buffs,Buff,,,Cursed
 buffMarysRevengeFinalBossSummon,buffs,Interloper,,,"Kill Magrat the Seer"
 buffMarysRevengeFinalBossSummonDesc,buffs,Interloper,,,"You spit in the witch-seer Magrat's face and consume the essense of her sister. You embody the curse of Judie Witch and summon Magrat to a no rules battle to the death. Deliver Mary's vengence and defeat Magrat.\n\nMagrat's strategy focuses on spawning dopplegangers at random to confuse, overpower and rip her enemies to shreds. She will continue to spawn at random intervals to dominate and destroy you until you kill her.\n\n[Mary's Revenge Storyline]"
@@ -154,6 +156,23 @@ quest_SpawnGraveKeeperDireWolfDesc,Quest,Challenge Info,,,"You have disturbed a 
 quest_SpawnGraveKeeperDireBear,Quest,Kill Magrat,,,Kill the Grave Keeper
 quest_SpawnGraveKeeperDireBearName,Quest,Hell's Gatekeeper,,,[00FFB4]Kill the Grave Keeper[-]
 quest_SpawnGraveKeeperDireBearDesc,Quest,Hell's Gatekeeper,,,"You have disturbed a grave protected by a witch's death song. A beast fron hell protects the grave and is hunting you.\n\n\n\n[Mary's Revenge Storyline]"
+resourcePilotsCorpse,items,Item,,,"Pilots Corpse"
+resourcePilotsCorpseDesc,items,Item,,,"The mangled corpse of the pilot, doesn't seem like gyrocopters have airbags. From his state of decomposition, you figure he died about a week or two ago. There is a big hole where his forehead used to be. You poke your finger inside to see if there's anything interesting. A worm squishes out of an eye socket from the pressure of your finger wagging around in the gunk. You dont find anything and as you squeeze some sticky cruor from under your fingernails you wonder if maybe you should've worn gloves or something."
+resourceCIADudeCorpse,items,Item,,,"Special Agent's Corpse"
+resourceCIADudeCorpseDesc,items,Item,,,"The dead man appears to be some kind of Special Agent and clearly didn't die from the crash. You count 5, maybe 6 bullet wounds to his chest and there's not much left of the back of his head. A pistol falls from his shoulder holster as you move him. He appears to have been carrying something that someone desperately wanted. His right hand has been sawn-off at the wrist and the remains of his hand and some bloodied handcuffs lay on the floor attached to an empty briefcase."
+resourceCIASecurityTag,items,Item,,,"Fake IDs"
+resourceCIASecurityTagDesc,items,Item,,,"Several different IDs and aliases. A variety of interesting names and professions with the dead agent's picture smiling wistfully in each of them."
+resourceCIABriefingNote,items,Item,,,"Briefing Note"
+resourceCIABriefingNoteDesc,items,Item,,,"A torn and crumpled note. Flattening it out shows it to be a Top Secret Briefing Note. You can't make much out through the bloodstains. The whole scene reflects a grim tale but there's nothing to indicate what the Agent was so desperate to protect."
+foundGyroRewardSchematic,items,Traps,,,Gyro World
+foundGyroRewardSchematicDesc,items,Traps,,,"Gyro World. \nIts all greek to me! Gyro maintenance & piloting for dummies. Learn the Gyro Accessories and Chassis recipes."
+foundGyroAgentLuggage,items,Item,,,Small Reinforced Case
+foundGyroAgentLuggageDesc,items,Item,,,"An empty smashed metal case. A bloodied hand dangles from a set of handcuffs still attached to the handle. It looks like took a long while to get into the case using a variety of methods." 
+assassinsPistol,items,Pistol,,,Welrod MkXV11 9mm
+assassinsPistolDesc,items,Pistol,,,"Rare sanitised SOE Stealth Pistol. A quiet blow-back pistol with low heat generation. Uses a combination of a polyaramide bolt and an oil-tempered chrome vanadium recoil spring to support 124-grain (+P/+P+) 9mm ammunition.\n\nSneak Bonuses:\nSneak Damage 10X.\nSneak Headshot Damage 400%."
+
+gyrocopterWreck,blocks,block,,,Crashed Gyrocopter
+gyrocopterWreckChassis,blocks,block,,,Crashed Gyrocopter
 buffTest,buffs,Buff,,,Test
 pigeonFinalBoss,entityclasses,Entity,,,Curtis Pigeonface Colton
 buffGameEventController,buffs,Buff,,,Zombie Kills: 
@@ -162,8 +181,17 @@ buffGraveArtifactComplete,buffs,Buff,,,Cursed Artifact-Strongbox
 buffGraveArtifactCompleteDesc,buffs,Buff,,,Cursed Artifact-Strongbox
 milestoneBundleZombieKill,buffs,Buff,,,Mary reaches out to you from the grave
 testbuffmsg,buffs,Buff,,,Buff test Msg
-modGunShotgunTubeExtenderMagazine,item_modifiers,Mod,,,Tube Extender Mod For Shotgun and Mary's Revenge.
-modGunShotgunTubeExtenderMagazineDesc,item_modifiers,Mod,,,Increases magazine capacity for pump shotguns and Mary's Revenge by 3 shells.
+resourceNewsPaperClipping1,items,Clipping,,,"Clipping 1"
+resourceNewsPaperClipping1Desc,items,Clipping,,,"Clipping 1"
+resourceNewsPaperClipping2,items,Clipping,,,"Clipping 2"
+resourceNewsPaperClipping2Desc,items,Clipping,,,"Clipping 2"
+resourceNewsPaperClipping3,items,Clipping,,,"Clipping 3"
+resourceNewsPaperClipping3Desc,items,Clipping,,,"Clipping 3"
+resourceNewsPaperClipping4,items,Clipping,,,"Clipping 4"
+resourceNewsPaperClipping4Desc,items,Clipping,,,"Clipping 4"
+resourceNewsPaperArticle,items,Article,,,"Article 1"
+resourceNewsPaperArticleDesc,items,Article,,,"Article 1"
+
 questMarysRevengeArtifactContainerOpened,Quest,Challenge Info,,,Cursed Container.
 questMarysRevengeArtifactContainerOpenedName,Quest,Challenge Info,,,[00FFB4]Cursed Container[00FFB4]
 questMarysRevengeArtifactContainerOpenedDesc,Quest,Challenge Info,,,Break open the cursed container to get the Artifact inside.
@@ -244,6 +272,9 @@ quest_PigeonsEpilogueName,Quest,Pigeon Fancier,,,[00B4FF]Steal the cache[-]
 quest_PigeonsEpilogue_subtitle,Quest,Pigeon Fancier,,,Steal the cache
 quest_PigeonsEpilogue_hint1,Quest,Pigeon Fancier,,,[00B4FF]Steal the cache[-]
 quest_PigeonsEpilogue_hint2,Quest,Pigeon Fancier,,,[00B4FF]Steal the cache[-]
+buffPigeonOnFinalBossDisplayDesc,buffs,Buff,,,"You are being hunted! Its almost like someone doesn't appreciate your pigeon interaction skills and intends to eviscerate you.\nKill the Pigeon Fancier!\n\n[Pigeons Carry Diseases storyline]"
+buffPigeonOnFinalBossDisplayName,buffs,Buff,,,"Hunted"
+buffPigeonOnFinalBossDisplayTooltip,buffs,Buff,,,"You're being hunted!"
 quest_PigeonsEpilogueSpawn,items,Interloper,,,"You're being hunted! Kill the Pigeon Fancier!"
 quest_PigeonsEpilogueSpawnDesc,items,Interloper,,,"You are being hunted! Looks like someone deosn't appreciate your pigeon interaction skills and is hunting you.\nKill the Pigeon Fancier!\n\n[Pigeons Carry Diseases storyline]"
 quest_PigeonsEpilogueSpawnName,items,Interloper,,,[00B4FF]Hunted![-]
@@ -321,11 +352,11 @@ graveRobbingThreeCoffinOpen,blocks,Block,,,Ipslore's Coffin
 graveRobbingCoffinRandomHelper,blocks,Block,,,= Grave Robbing Coffin = Random Helper =
 graveRobbingCoffinRandomHelperDesc,blocks,Block,,,Grave Robbing Coffin helper - used for spawning Grave Robbing Coffins
 advancedClothingMesh,items,Item,,,Advanced Clothing Mesh
-advancedClothingMeshDesc,items,Item,,,Clothing Mesh for the CrowdControl recipe. \nOnly found in forced opened Police Cars.
+advancedClothingMeshDesc,items,Item,,,"A lightweight material with a green hue. The text [DECEA3]CC VK62-3 ONLY[-] is stamped in the lower right hand corner. Seems like something worth keeping.\n\nOnly found in forced opened Police Cars."
 hafniumHydrideMagnet,items,Item,,,Hafnium Hydride Magnet
-hafniumHydrideMagnetDesc,items,Item,,,Exotic HfH2 Magnet for the CrowdControl recipe. \nOnly found in forced opened Police Cars.
+hafniumHydrideMagnetDesc,items,Item,,,"A rare exotic HfH2 Magnet. You have a distant memory of an article in [FFB400]Gearheads and Ape Hangers[-] about how a Hydride magnet was once used to perform a side-channel attack by exposing electrical emanations at a military DEMARC Point (POD). Seems like a useful thing to keep.\n\nOnly found in forced opened Police Cars."
 chargedNiCdBattery,items,Item,,,Cobalt Oxide Battery
-chargedNiCdBatteryDesc,items,Item,,,Cobalt Oxide Battery for the CrowdControl recipe. \nOnly found in forced opened Police Cars.
+chargedNiCdBatteryDesc,items,Item,,,"A Cobalt Oxide Battery, at least thats what it says on the side. A battery unlike any other you've seen before. It looks brand new and still in its plastic wrapper so might be worth keeping.\n\nOnly found in forced opened Police Cars."
 modCrowdControl,item_modifiers,Mod,,,Crowd Control Mod  
 modCrowdControlDesc,item_modifiers,Mod,,,Tikola Nesla's Crowd Control Mod. Originally developed to keep his relative's kids at a distance during family barbecues.\nToned down for Military & Police operations.\n - 25% chance to ragdoll-shock on contact\n - Disables Rad regen for 90sec\n - Reduces HP loss by 5%\n - Installs in chest armour\n\n  	[Parts found in forced open police cars]
 modCrowdControlSchematic,item_modifiers,mod,,,Schematic for Tikola Nesla's CrowdControl Mod
@@ -335,7 +366,8 @@ modM60DrumMagazine,item_modifiers,Mod,,,High Capacity Magazine Mod
 modM60DrumMagazineDesc,item_modifiers,Mod,,,"Drum magazine for the M60. Double the capacity of standard Drum Magazines."
 modMilitaryStructuralBrace,item_modifiers,Mod,,,Specialist Structural Brace
 modMilitaryStructuralBraceDesc,item_modifiers,Mod,,,"Rare experimental Brace made from a combination of fluoroelastomer and polytetrafluoroethylene. Has a polymetric lipid nanparticle sheathing.\n\nThis modification is for melee weapons, tools and bows: \n - lowers Degradation by 25%.\n - increases Block and Entity damage by 10%." 
-resourceGoreBlockHumanBones,items,Item,,,Human Remains
+resourceMarysRemains,items,Item,,,"Mary's Remains"
+resourceIpsloresRemains,items,Item,,,"Ipslore's Corpse"
 resourceGoreBlockHumanCorpse1,items,Item,,,Human Remains
 resourceGoreBlockHumanCorpse2,items,Item,,,Human Remains
 resourceConeConstruction,items,Item,,,Construction Cone
@@ -343,6 +375,7 @@ resourceCobweb,items,Item,,,Cobweb
 resourcegGraveStone,items,Item,,,Battered Old Gravestone
 resourceHubcap,items,Item,,,Hubcap
 resourceYoDawg,items,Item,,,"Yo dawg, I heard you like police cars ..."
+resourceLuggage,items,Item,,,Empty Broken Luggage
 resourceLetterV,items,Item,,,V
 resourceLetterE,items,Item,,,E
 resourceLetterN,items,Item,,,N
@@ -367,7 +400,7 @@ EntityHomingPigeon2,entityclasses,Entity,,,CooCoo the Homing Pigeon
 EntityHomingPigeon3,entityclasses,Entity,,,Plop the Homing Pigeon
 EntityHomingPigeon4,entityclasses,Entity,,,Sparkle the Homing Pigeon
 homingPigeonNote1Desc,items,Encrypted Note,,,"A scribbled note attached to an infected pigeon who appears to be named 'Puffy'.\n\n//Hey Zeke, I've run out of options. I think channel Echo is compromised so I'm using my precious homing pigeons from now on. Key for messages will be KT_SKY27. Take care of my girls when they arrive, I don't know what I would do if anything happened to them.//\n\nThe note is unsigned."
-homingPigeonNote2Desc,items,Encrypted Note,,,"A coded message deciphered with the Key: KT_SKY27. Splattered in blood, the text is hard to read.\n\n//Zeke, A sample of what I can get my hands on. There is something big going down near one of the traders, I'll see what I can find out. Puffy still hasn't returned, I keep thinking someone's hurt her and its stressing me the hell out.//"
+homingPigeonNote2Desc,items,Encrypted Note,,,"A coded message deciphered with the Key: KT_SKY27. Splattered in blood, the text is hard to read.\n\n//Zeke, a sample of what I can get my hands on. There is something big going down near one of the traders, I'll see what I can find out. Puffy still hasn't returned, I keep thinking someone's hurt her and its stressing me the hell out.//"
 homingPigeonNote4Desc,items,Encrypted Note,,,"A coded message deciphered with the Key: KT_SKY27. This note is written clearly and purposefully.\n\n//As agreed, we've left the stash at a drop-house. Its the last payment so its a bit bigger than normal. Here are the coords, make sure you pick it up as soon as possible.//\n\nAn abrupt note, devoid of rantings about pigeons. The stash isn't too far away, might be worth taking a look. Read(A) to begin."
 homingPigeonNote1,items,Encrypted Note,,,"Puffy's Note."
 homingPigeonNote2,items,Encrypted Note,,,"CooCoo's Note."

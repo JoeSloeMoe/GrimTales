@@ -107,7 +107,14 @@
 			</action>
 		
 		</action_sequence>
-		
+		<!--called when the player places the spy device at the Trader compound-->
+		<action_sequence name="interloperSpywareSetupCompleteNoteAction">
+			<!--add the msg to players inventory depeding on which msg was received-->
+			<action class="AddItems">
+				<property name="added_items" value="interloperSpywareSetupCompleteNote" />
+				<property name="added_item_counts" value="1" />
+			</action>
+		</action_sequence>
 		
 		<!--End Interloper story code -->
 		

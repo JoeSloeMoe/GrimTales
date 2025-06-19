@@ -160,8 +160,7 @@
 			<property name="UserSpawnType" value="None"/>
 			<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
 			<!--feral screamer skin, the feral eyes help with the Magrats Left Eye loot drop-->
-			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZScreamerFeral.prefab"/>
-	
+			<property name="Mesh" value="@:Entities/Zombies/Screamer/ZScreamerFeral.prefab"/>
 			<!--Just mumbles all the time-->
 			<property name="SoundRandom" value="zombiefemalescoutroam"/>
 			<property name="SoundAlert" value="zombiefemalescoutroam"/>
@@ -245,7 +244,7 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="magratt,entity,zombie,walker,feral,radiated"/>
 			<!--feral screamer skin for looks, the feral eyes help with the Magrats Left Eye loot drop-->
-			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZScreamerFeral.prefab"/>
+			<property name="Mesh" value="@:Entities/Zombies/Screamer/ZScreamerFeral.prefab"/>
 	
 			<!--Just mumbles all the time-->
 			<property name="SoundRandom" value="zombiefemalescoutroam"/>
@@ -272,7 +271,7 @@
 				to determine when the boss is dead-->
 			<property name="Tags" value="magrat,entity,zombie,walker,feral,radiated"/>
 			<!--feral screamer skin, the feral eyes help with the Magrats Left Eye loot drop-->
-			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZScreamerFeral.prefab"/>
+			<property name="Mesh" value="@:Entities/Zombies/Screamer/ZScreamerFeral.prefab"/>
 			<!--this ties into the item_modifiers:modMagratTracker, see also nav_objects:screamerTrackingMagrat--> 
 			<property name="NavObject" value="screamerTrackingMagrat" />
 			<!--Just screams all the time-->
@@ -301,7 +300,8 @@
 			<property name="Tags" value="entity,animal,zombie,hostile,wolf,perkAT02,perkAT03"/>
 			<property name="PhysicsBody" value="AWolf"/>
 			<property name="Mass" value="180"/>
-			<property name="Prefab" value="/Entities/Animals/DireWolf/animalDireWolfPrefab"/>
+			<property name="Prefab" value="@:Entities/Animals/DireWolf/animalDireWolfPrefab.prefab"/>
+			<property name="PrefabCombined" value="true"/>
 			<property name="SizeScale" value="1.5"/>
 			<property name="DismemberMultiplierHead" value="0"/>
 
@@ -356,7 +356,8 @@
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="EntityFlags" value="animal,zombie"/>
 			<property name="Tags" value="entity,animal,zombie,hostile,bear"/>
-			<property name="Prefab" value="/Entities/Animals/Bear/animalBearZombiePrefab"/>
+			<property name="Prefab" value="@:Entities/Animals/Bear/animalBearZombiePrefab.prefab"/>
+			<property name="PrefabCombined" value="true"/>
 			<property name="DismemberMultiplierHead" value="0"/>
 
 			<property name="AISeeOffset" value="1"/>
@@ -558,8 +559,9 @@
 			<!--tag for red-dot tracking--> 
 			<property name="Tags" value="entity,zombie,walker,feral,radiated,trackingPigeonBoss"/> 
 			<property name="NavObject" value="bossTrackingFinalPigeon" />
-			
-			<property name="Mesh" value="@:Entities/Zombies/Prefabs/ZTomClark.prefab"/> <!--tom's skin-->
+			<property name="Mesh" value="@:Entities/Zombies/TomClark/ZTomClark.prefab"/><!--tom's skin-->
+			<property name="AltMats" value="@:Entities/Zombies/TomClark/Materials/HD_TomClark2.mat,@:Entities/Zombies/TomClark/Materials/HD_TomClark3.mat"/>
+	
 			<!--<property name="ParticleOnSpawn" value="@:ParticleEffects/RadiatedParticlesOnMesh.prefab" param1="SetShapeToMesh0"/>-->
 			<!--Sounds like a pigeon-->
 			<property name="SoundRandom" value="Animals/Vulture/vultureroam"/>
@@ -633,7 +635,7 @@
 			<property name="Class" value="EntitySupplyCrate"/>
 			<property name="Parent" value="SupplyCrates"/>
 			<property name="Prefab" value="SupplyCrate"/>
-			<property name="Mesh" value="SupplyCrate/SupplyCrateEntityPrefab"/>
+			<property name="Mesh" value="@:Entities/SupplyCrate/SupplyCrateEntityPrefab.prefab"/>
 			<property name="ModelType" value="SupplyCrate"/>
 			<property name="TintColor" value="00a9FF"/>
 			<property name="Faction" value="none"/>
@@ -661,7 +663,7 @@
 			<property name="Class" value="EntitySupplyCrate"/>
 			<property name="Parent" value="SupplyCrates"/>
 			<property name="Prefab" value="SupplyCrate"/>
-			<property name="Mesh" value="SupplyCrate/SupplyCrateEntityPrefab"/>
+			<property name="Mesh" value="@:Entities/SupplyCrate/SupplyCrateEntityPrefab.prefab"/>
 			<property name="ModelType" value="SupplyCrate"/>
 			<property name="TintColor" value="00a9FF"/>
 			<property name="Faction" value="none"/>
@@ -694,7 +696,7 @@
 			<property name="Tags" value="entity,npc,trader"/>
 			<property name="Parent" value="NPC"/>
 			<!--<property name="Mesh" value="@:Other/Items/Weapons/Ranged/Junk Drone/junkDrone_Prefab.prefab"/>-->
-			<property name="Mesh" value="@:Entities/LootContainers/crate_store_ShotgunPrefab.prefab"/>
+			<property name="Mesh" value="@:Entities/LootContainers/shippingCrateShotgunPrefab.prefab"/>
 			<property name="Prefab" value="NPC"/>
 			<property name="ModelType" value="Custom"/>
 			<property name="SurfaceCategory" value="metal"/>

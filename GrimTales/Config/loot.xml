@@ -154,7 +154,7 @@
 		<lootgroup name="groupBuriedPatrolCarLoot" count="all">
 			<item name="resourceGoreBlockHumanCorpse1" count="1"/>
 			<item name="resourceGoreBlockHumanCorpse2" count="1"/>
-			<item name="cntLuggageBigOpen" count="1"/>
+			<item name="resourceLuggage" count="1"/>
 			<item name="resourceHubcap" count="1"/>
 			<item name="modCrowdControlSchematic" count="1"/>
 			<item name="resourceConeConstruction" count="1"/>
@@ -183,7 +183,7 @@
 			<item name="resourceLetterE" count="1"/>
 			
 			<item name="resourcegGraveStone" count="1"/>
-			<item name="resourceGoreBlockHumanBones" count="1"/>
+			<item name="resourceMarysRemains" count="1"/>
 			<item name="coffinClockBroken" count="1"/>
 			<item name="coffinWoodSpikes" count="1"/>
 			<item name="cntBarrelGasOld" count="1"/>
@@ -200,7 +200,7 @@
 		<!--loot containers for Burial Site Coffins - Mary's Revenge, Ipslore The Red's grave-->
 		<lootgroup name="groupIpsloreTheRedCoffin" count="all">		
 			<item name="resourcegGraveStone" count="1"/>
-			<item name="resourceGoreBlockHumanBones" count="1"/>
+			<item name="resourceIpsloresRemains" count="1"/>
 			<item name="resourceDiscWorldBook" count="1"/>
 			<item name="modMagratTracker" count="1"/>
 			<item name="resourceIpsloresBoots" count="1"/>			
@@ -220,13 +220,13 @@
 		</lootcontainer>
 		<!--lootgroup for Magrat's sacrificial knife, its own lootgroup to enforce level 6 quality spawn-->
 		<lootgroup name="groupMarysRevengeMagratsKnife" count="all" loot_quality_template="SNT_level6QualityTemplate"> 
-			<item name="marysRevengeMagratsSacrificialKnife" count="1" /> 
+			<item name="marysRevengeMagratsSacrificialKnife" mods="modDyeOrange,fire" mod_chance="1" count="1" /> 
 		</lootgroup> 
 		
 		<!--lootgroup for the final Marys Revenge  boss entityclasses.xml:marysRevengeFinalBoss -->
 		<lootgroup name="groupMarysRevengeFinalBossLoot" count="all"> 
 			<item name="marysRevengeFinalBossBundle" count="1" />
-			<item group="groupMarysRevengeMagratsKnife" count="1" /> 
+			<item group="groupMarysRevengeMagratsKnife" count="1" />
 			<item name="resourcePieceOfCheese" count="1" />
 		</lootgroup>
 		<!--lootcontainer for the final Marys Revenge boss entityclasses.xml:marysRevengeFinalBoss -->
@@ -249,6 +249,26 @@
 	</append>
 	<!--end loot container for Burial Site Coffins -->
 	
+	<!--found gyro story - story not developed yet, but initial gyro find is in the world-->	
+	<!--loot container for the gyrocopter-->
+	<append xpath="/lootcontainers">
+		<lootgroup name="groupFoundGyroWeapon" loot_quality_template="SNT_level6QualityTemplate"> 
+			<item name="assassinsPistol"/>
+		</lootgroup>
+		<lootgroup name="groupFoundGyro" count="all">
+			<item name="resourcePilotsCorpse" count="1"/>
+			<item name="resourceCIADudeCorpse" count="1"/>
+			<item name="foundGyroAgentLuggage" count="1"/>
+			<item name="resourceCIABriefingNote" count="1"/>
+			<item name="resourceCIASecurityTag" count="1"/>
+			<item name="foundGyroRewardSchematic" count="1"/>
+			<item group="groupFoundGyroWeapon" count="1" /> 
+		</lootgroup>
+		<lootcontainer name="lootGyroWreck" count="1" size="7,2" sound_open="UseActions/open_fridge" sound_close="UseActions/close_fridge" loot_quality_template="qualPlus1Template" ignore_loot_abundance="true">
+			<item group="groupFoundGyro"/> 
+		</lootcontainer>
+	</append>
+	<!-- END found gyro story -->
 	
 	<!-- interloper story loot -->
 	

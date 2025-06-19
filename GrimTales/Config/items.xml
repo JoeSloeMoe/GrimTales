@@ -155,7 +155,7 @@
 	</append>
 	
 	<insertAfter xpath ="items/item[@name='qt_raphael']">
-		<!--books, mags etc for quests-->
+		<!--books, mags etc for general use-->
 		<item name="playerExplosiveBarrelSchematic">
 			<property name="Extends" value="schematicNoQualityMaster"/>
 			<property name="CreativeMode" value="Player"/>
@@ -167,6 +167,73 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
 			</effect_group>
 		</item>
+		
+		<!--The newspaper clippings tell a story, there are 4 parts to the story and the clippings are used 
+			in a recipe to create a 'full newspaper' to get the conclusion of the story.
+			Each Grim Tales story (currently 4) has a clipping somewhere in the story, so the 
+			player completes all the grim tales to get the newspaper story conclusion -->
+		<item name="resourceNewsPaperClipping1">
+			<property name="HoldType" value="45"/>
+			<property name="ItemTypeIcon" value="book"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="CustomIcon" value="newspaperDecor03"/>
+			<property name="DescriptionKey" value="resourceNewsPaperClipping1Desc"/>
+			<property name="Stacknumber" value="10"/> 
+			<property name="EconomicValue" value="0"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		<item name="resourceNewsPaperClipping2">
+			<property name="HoldType" value="45"/>
+			<property name="ItemTypeIcon" value="book"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="CustomIcon" value="newspaperDecor03"/>
+			<property name="DescriptionKey" value="resourceNewsPaperClipping2Desc"/>
+			<property name="Stacknumber" value="10"/> 
+			<property name="EconomicValue" value="0"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		<item name="resourceNewsPaperClipping3">
+			<property name="HoldType" value="45"/>
+			<property name="ItemTypeIcon" value="book"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="CustomIcon" value="newspaperDecor03"/>
+			<property name="DescriptionKey" value="resourceNewsPaperClipping3Desc"/>
+			<property name="Stacknumber" value="10"/> 
+			<property name="EconomicValue" value="0"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		<item name="resourceNewsPaperClipping4">
+			<property name="HoldType" value="45"/>
+			<property name="ItemTypeIcon" value="book"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="CustomIcon" value="newspaperDecor03"/>
+			<property name="DescriptionKey" value="resourceNewsPaperClipping4Desc"/>
+			<property name="Stacknumber" value="10"/> 
+			<property name="EconomicValue" value="0"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		<!--the final article-->
+		<item name="resourceNewsPaperArticle">
+			<property name="HoldType" value="45"/>
+			<property name="ItemTypeIcon" value="book"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="CustomIcon" value="newspaperDecor02"/>
+			<property name="DescriptionKey" value="resourceNewsPaperArticleDesc"/>
+			<property name="Stacknumber" value="10"/> 
+			<property name="EconomicValue" value="0"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		<!--END books, mags etc for general use-->
 		
 		<!--Burial Site inspection quest (Mary's revenge)
 			Test code-->
@@ -645,11 +712,14 @@
 			<property name="CustomIconTint" value="239,200,162"/>
 			<property name="ItemTypeIcon" value="bundle"/>
 			<property name="DescriptionKey" value="rewardMarysRevengeBundleDesc"/>
-
+			<property class="Action0">
+				<property name="Create_item" value="marysRevengeHomemadeRifle,ammo44MagnumBulletAP,resourceMarysDiary"/>
+				<property name="Create_item_count" value="6,300,1"/>
+			</property>
 			<!-- we want to spawn some zombies but dont seem to be able to do that from here-
 				Have to call an event (cant spawn zombies from the event either when using SpawnEntity for some reason)
 				so then have to call a quest (from the event) that then spawns zombies and gives Mary's Revenge-->
-			<effect_group tiered="false">		
+			<effect_group tiered="false">	<reward type="Item" id="rewardMarysRevengeBundle" value="1"/>	
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="eventMarysRevengeArtifactContainerOpened"/>
 			</effect_group>
 		</item>
@@ -854,7 +924,20 @@
 			<property name="EconomicValue" value="0"/>
 			<property name="Group" value="Resources"/>
 		</item>
-		
+		<!--vial of blood, judies corpse loot-->
+		<item name="resourceBloodVile">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaint"/>
+			<property name="CustomIcon" value="modDyeWhite"/>
+			<property name="CustomIconTint" value="149,52,54"/>
+			<property name="DescriptionKey" value="resourceBloodVileDesc"/>
+			<property name="Stacknumber" value="1"/> 
+			<property name="EconomicValue" value="0"/>
+			<property name="Group" value="Resources"/>
+		</item>
+	
 		<!--the output of the concoction the player creates from the hair and bones of Magrats sisters grave-->
 		<!--churchBellHanging  -->
 		<item name="resourceWitchBrew">
@@ -904,7 +987,7 @@
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
-				<property name="Sound_start" value="player_eating"/>
+				<property name="Sound_start" value="eatSickSound"/>
 				<!-- jar from cooking food <property name="Create_item" value="drinkJarEmpty"/> -->
 			</property>
 			<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
@@ -943,7 +1026,7 @@
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
-				<property name="Sound_start" value="eatMagratsEye"/>
+				<property name="Sound_start" value="eatSickSound"/>
 				<property name="Create_item" value="magratsEyeBile"/>
 			</property>
 			<effect_group tiered="false" name="Food Tier 0">
@@ -968,7 +1051,7 @@
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
-				<property name="Sound_start" value="eatMagratsEye"/>
+				<property name="Sound_start" value="eatSickSound"/>
 				<property name="Create_item" value="magratsEyeBile"/>
 			</property>
 
@@ -1015,26 +1098,215 @@
 		</item>
 		<!--END Magrats Eye-->
 		
+		<!--found gyro items-->
+		<!--the assassins pistol is the same as a generic pistol but has a built in silencer
+			and gives a large bonus to stealth damage. This gun is only ever spawned as level 6-->
+		<item name="assassinsPistol">
+			<property name="Tags" value="AP_Stealth,noSilencer,weapon,ranged,holdBreathAiming,reloadPenalty,gun,shortRange,pistol,barrelAttachments,sideAttachments,smallTopAttachments,magazine,firingMode,attAgility,perkGunslinger,9mmGun,attachmentsIncluded,canHaveCosmetic,handgunSkill"/>
+			<property name="DisplayType" value="rangedGun"/>
+			<property name="HoldType" value="1"/> 
+			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/Pistol/PistolPrefab.prefab"/>
+			<property name="Material" value="MHandGunParts"/>
+			<property name="CustomIcon" value="gunHandgunT1Pistol"/>
+			<property name="CustomIconTint" value="209,200,185"/>
+			<property name="Weight" value="1"/>
+			<property name="ScrapTimeOverride" value="10.0"/>
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="SoundJammed" value="weapon_jam"/>
+			<property name="Attachments" value="meleeToolFlashlight02"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+			<property name="Sound_Sight_In" value="pistol_sight_in"/>
+			<property name="Sound_Sight_Out" value="pistol_sight_out"/>
+			<property name="LightSource" value="lightSource"/> <!-- Start: Needed for the attachment flashlight -->
+			<property name="ActivateObject" value="Attachments/flashlight/lightSource"/>
+			<property name="AttachmentFlashlight" value="flashlight02"/> <!-- End: Needed for the attachment flashlight -->
+			<property name="Group" value="Ammo/Weapons,Ranged Weapons"/>
+			<property name="RepairExpMultiplier" value="10.8"/>
+			<property name="LightValue" value=".45"/>
+			<property name="EconomicValue" value="500"/>
+			<property name="ShowQuality" value="true"/>
+			<property name="SoundUnholster" value="weapon_unholster"/>
+			<property name="SoundHolster" value="weapon_holster"/>
+			<property name="SoundPickup" value="pistol_grab"/>
+			<property name="SoundPlace" value="pistol_place"/>
+
+			<property class="Action0">
+				<property name="Class" value="Ranged"/>
+				<property name="Magazine_items" value="ammo9mmBulletBall"/>
+				<!--silencer stuff-->
+				<property name="Sound_start" value="AP_pistol_s_fire"/>   
+				<property name="Sound_loop" value="AP_pistol_s_fire"/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value="dryfire"/>
+				<property name="Sound_reload" value="pistol_reload"/>
+				<property name="AutoReload" value="false"/>
+				<property name="Particles_muzzle_fire" value="gunfire_pistol"/>
+				<property name="Particles_muzzle_fire_fpv" value="gunfire_pistol_fpv"/>
+				<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+				<property name="triggerEffectTriggerPullDualsense" value="PistolTrigger"/>
+				<property name="triggerEffectTriggerPullXbox" value="PistolTrigger"/>
+				<property name="triggerEffectShootDualsense" value="PistolShoot"/>
+				<property name="triggerEffectShootXbox" value="PistolShoot"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Zoom"/>
+				<property name="Zoom_max_out" value="55"/>
+				<property name="Zoom_max_in" value="55"/>
+				<property name="SightsCameraOffset" value="0,.0008,0"/>
+				<property name="zoomTriggerEffectPullDualsense" value="PistolZoom"/>
+				<property name="zoomTriggerEffectPullXb" value="PistolZoom"/>
+			</property>
+			<effect_group name="gunHandgunT1Pistol">
+				<passive_effect name="MaxRange" operation="base_set" value="50" tags="perkGunslinger,9mmGun"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="17" tags="perkGunslinger,9mmGun"/>
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tier="1,6" tags="perkGunslinger,9mmGun"/> <!-- random effective rng -->
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="180" tags="perkGunslinger"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkGunslinger"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="15" tags="perkGunslinger"/>
+				<!--changed modslots-->
+				<passive_effect name="ModSlots" operation="base_set" value="1,1,2,3,4,5" tier="1,2,3,4,5,6"/> 
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="5" tags="perkGunslinger"/> <!-- damage offset -->
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.02,.02" tags="perkGunslinger"/> <!-- random EntityDmg -->
+				<passive_effect name="EntityDamage" operation="perc_add" value=".05,.25" tier="2,6" tags="perkGunslinger"/> <!-- tier bonus -->
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/> <!-- random BlockDmg -->
+				<passive_effect name="BlockDamage" operation="perc_add" value=".15,.75" tier="2,6" tags="perkGunslinger"/> <!-- tier bonus -->
+				<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkGunslinger"/> <!-- random WeaponHandling -->
+
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1.5" tags="perkGunslinger"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1.5" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".4" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" tags="perkGunslinger"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" tags="perkGunslinger"/>
+
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value=".7" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".8" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.25" tags="perkGunslinger"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".25" tags="perkGunslinger"/>
+
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2.0" tags="perkGunslinger,9mmGun"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value=".95" tags="perkGunslinger"/> <!-- crosshair reset speed -->
+
+				<passive_effect name="DegradationMax" operation="base_set" value="300,400" tier="1,6" tags="perkGunslinger,9mmGun"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkGunslinger,9mmGun"/>
+			</effect_group>
+			
+			<!--stealth bonus-->
+			<effect_group tiered="false">
+				<requirement name="CVarCompare" cvar="_crouching" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="_notAlerted" operation="GT" value="0" target="other"/>
+				<requirement name="ItemHasTags" tags="AP_Stealth"/>
+					<!--15x bonus on stealth --> 
+					<passive_effect name="DamageBonus" operation="base_add" value="11"/> 
+					<passive_effect name="EntityDamage" operation="perc_add" value="10"/>
+					<!--300% headshot damage on stealth-->
+					<passive_effect name="DamageModifier" operation="base_add" value="400" tags="head"/>
+			</effect_group>
+			
+			<!--silencer stuff-->
+			<property name="BarrelOffset" value="0,-.006,.127"/>
+			<property name="BarrelScale" value="1,1,1"/>
+			<effect_group tiered="false" name="internal attachment prefab (A19)">
+				<requirement name="HoldingItemHasTags" tags="attachmentsIncluded"/>
+					<triggered_effect trigger="onSelfHoldingItemCreated" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="silencer"/>
+			</effect_group>
+		</item>
+		
+		<item name="resourcePilotsCorpse">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CustomIcon" value="goreBlockHumanCorpse3"/>
+			<property name="DescriptionKey" value="resourcePilotsCorpseDesc"/>
+			<property name="Stacknumber" value="1"/> 
+			<property name="EconomicValue" value="0"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		<item name="resourceCIADudeCorpse">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CustomIcon" value="goreBlockHumanCorpse2"/>
+			<property name="DescriptionKey" value="resourceCIADudeCorpseDesc"/>
+			<property name="Stacknumber" value="1"/> 
+			<property name="EconomicValue" value="0"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		<item name="resourceCIASecurityTag">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="CustomIcon" value="signPosterWantedMissing03"/>
+			<property name="CustomIconTint" value="236,217,198"/>
+			<property name="DescriptionKey" value="resourceCIASecurityTagDesc"/>
+			<property name="Stacknumber" value="1"/> 
+			<property name="EconomicValue" value="0"/>
+			<property name="Group" value="Resources"/>
+		</item> 
+		<item name="resourceCIABriefingNote">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="CustomIcon" value="newspaperDecor03"/>
+			<property name="DescriptionKey" value="resourceCIABriefingNoteDesc"/>
+			<property name="Stacknumber" value="1"/> 
+			<property name="EconomicValue" value="0"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		<item name="foundGyroRewardSchematic">
+			<property name="Extends" value="schematicNoQualityMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="gyrocopterStatic"/>
+			<property name="DescriptionKey" value="foundGyroRewardSchematicDesc"/>
+			<property name="Unlocks" value="vehicleGyroCopterAccessories,vehicleGyroCopterChassis"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="vehicleGyroCopterAccessories" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="vehicleGyroCopterChassis" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="2000"/>
+			</effect_group>
+		</item>
+		<!--END found gyro items-->
+		
 		<!--generic items for visuals in coffins and patrol car loot slots-->
 		<!--simple placeholder item for a gore block in the loot-->
-		<item name="resourceGoreBlockHumanBones">
+		<item name="resourceIpsloresRemains">
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="Morganic"/>
 			<property name="CustomIcon" value="goreBlockHumanBones"/>
-			<property name="DescriptionKey" value="resourceGoreBlockHumanBones"/>
+			<property name="DescriptionKey" value="resourceIpsloresRemains"/>
 			<property name="Stacknumber" value="1"/> 
 			<property name="EconomicValue" value="0"/>
 			<property name="Group" value="Resources"/>
 		</item>
+		<item name="resourceMarysRemains">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CustomIcon" value="goreBlockHumanBones"/>
+			<property name="DescriptionKey" value="resourceMarysRemains"/>
+			<property name="Stacknumber" value="1"/> 
+			<property name="EconomicValue" value="0"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		
 		<item name="resourceGoreBlockHumanCorpse1">
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="Morganic"/>
 			<property name="CustomIcon" value="goreBlockHumanCorpse2"/>
-			<property name="DescriptionKey" value="resourceGoreBlockHumanBones"/>
+			<property name="DescriptionKey" value="resourceGoreBlockHumanCorpse1"/>
 			<property name="Stacknumber" value="1"/> 
 			<property name="EconomicValue" value="0"/>
 			<property name="Group" value="Resources"/>
@@ -1045,7 +1317,7 @@
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="Morganic"/>
 			<property name="CustomIcon" value="goreBlockHumanCorpse"/>
-			<property name="DescriptionKey" value="resourceGoreBlockHumanBones"/>
+			<property name="DescriptionKey" value="resourceGoreBlockHumanCorpse2"/>
 			<property name="Stacknumber" value="1"/> 
 			<property name="EconomicValue" value="0"/>
 			<property name="Group" value="Resources"/>
@@ -1091,6 +1363,33 @@
 			<property name="Material" value="Morganic"/>
 			<property name="CustomIcon" value="cntPoliceCar01"/>
 			<property name="DescriptionKey" value="resourceYoDawg"/>
+			<property name="Stacknumber" value="1"/> 
+			<property name="EconomicValue" value="0"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		
+		<item name="resourceLuggage">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CustomIcon" value="cntLuggageMediumOpen"/>
+			<property name="DescriptionKey" value="resourceLuggage"/>
+			<property name="Stacknumber" value="1"/> 
+			<property name="EconomicValue" value="0"/>
+			<property name="Group" value="Resources"/>
+		</item>
+		
+		<!--end generic items-->
+	
+		<!--luggage for the found gyro storyline-->
+		<item name="foundGyroAgentLuggage">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MresourceScrapPolymers"/>
+			<property name="CustomIcon" value="cntLuggageBigOpen"/>
+			<property name="DescriptionKey" value="foundGyroAgentLuggageDesc"/>
 			<property name="Stacknumber" value="1"/> 
 			<property name="EconomicValue" value="0"/>
 			<property name="Group" value="Resources"/>
@@ -1556,7 +1855,7 @@
 			<property name="CustomIconTint" value="255,152,152"/>
 			<property name="DescriptionKey" value="qt_spawnFinalInterloperLootDropDesc"/>
 			<property class="Action0">
-				<property name="QuestGiven" value="quest_InterloperEpilogueSpawn"/>
+				<property name="QuestGiven" value="quest_InterloperSupplySpawn"/>
 			</property>
 		</item>
 		<!--END These are interloper reward story-->
@@ -1690,10 +1989,6 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buff_homingPigeonBossFinalTrigger"/> 
 				<!--call the reward event as the story is finished-->
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffPigeonsStoryFinishedReward"/> 
-				<!--remove the tracker for the final boss and the loot-->
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buff_trackPigeonFinalBoss">
-					<requirement name="HasBuff" buff="buff_trackPigeonFinalBoss"/>	
-				</triggered_effect>
 			</effect_group>	
 		</item>		
 		

@@ -1,4 +1,64 @@
 <configs>
+	<!--gyrocopter stuff for the found gyro storyline-->
+	<append xpath ="/blocks">
+		<block name="gyrocopterWreckTemplate">
+			<property name="CreativeMode" value="None"/>
+			<property name="Class" value="CarExplodeLoot"/>
+			<property name="LootList" value="lootGyroWreck"/>
+			<property name="DescriptionKey" value="gyrocopterWreck"/>
+			
+			<property class="Explosion">
+				<property name="ParticleIndex" value="5"/> 
+				<property name="RadiusBlocks" value="3.5"/> 
+				<property name="BlockDamage" value="500"/> 
+				<property name="RadiusEntities" value="5"/> 
+				<property name="EntityDamage" value="250"/>
+			</property>
+			
+			<property name="TintColor" value="132,105,84"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="@:Entities/Vehicles/TraderVehicles/traderGyrocopterStaticPrefab.prefab"/>
+			<property name="ModelOffset" value="0,0,0"/>
+			<property name="MultiBlockDim" value="1,1,4"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="Collide" value="sight,movement,melee,bullet,arrow,rocket"/>-->
+
+			<!--<property name="DowngradeBlock" value="gyrocopterFrameworkForcedOpen"/>
+			<property name="DowngradeEvent" value="block_car_alarm_start" />-->
+			
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="PlacementDistance" value="6"/>
+			<property name="BigDecorationRadius" value="5"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="CanDecorateOnSlopes" value="false"/>
+			<property name="MaxDamage" value="500"/>
+			<property name="PassThroughDamage" value="true"/>
+			
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+			<drop event="Harvest" name="resourceMechanicalParts" count="4,10" tag="salvageHarvest"/>
+			<drop event="Harvest" name="ammoGasCan" count="50,200" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceOil" count="0,3" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceMetalPipe" count="5" prob="0.5" tag="salvageHarvest"/>
+			<drop event="Harvest" name="resourceScrapIron" count="70,180" tag="allHarvest"/>
+			<drop event="Destroy" name="scrapIron" count="500"/>
+			
+			<property name="ShowModelOnFall" value="false"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="SortOrder1" value="B967"/>
+			<property name="SortOrder2" value="0101"/>
+			
+		</block>
+
+		<block name="gyrocopterWreckChassis">
+			<property name="Extends" value="gyrocopterWreckTemplate" />
+			<!--<drop event="Destroy" name="vehicleGyroCopterChassis" count="1"/>-->
+			<property name="LootList" value="lootGyroWreck"/>
+		</block>
+
+	</append>
+	<!--END gyrocopter stuff-->
 	
 	<!--GRIM TALES CODE-->
 	<!--coffin treasure chests-->

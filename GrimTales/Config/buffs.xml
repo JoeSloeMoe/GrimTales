@@ -483,15 +483,29 @@
 		</buff>
 		<!--END buff that manages the pigeonsCarryDiseases storyline-->
 		
+		<!--this buff displays that the player is being hunted by the pigeon final boss.
+			The code for the pigeon final boss is in buffPigeonOnFinalBoss below. 
+			This buff is just used for the UI Display as the display text has a different lifespan 
+			than buffPigeonOnFinalBoss or buff_trackPigeonFinalBoss-->
+		<buff name="buffPigeonOnFinalBossDisplay" name_key="buffPigeonOnFinalBossDisplayName" description_key="buffPigeonOnFinalBossDisplayDesc" tooltip_key="buffPigeonOnFinalBossDisplayTooltip" icon="ui_game_symbol_skull" icon_color="0,180,255" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<!--this buff deoesnt do anything, the code is just filler and doesnt run
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPigeonOnFinalBossDisplay" >
+					<requirement name="!HasBuff" buff="buffPigeonOnFinalBossDisplay"/></triggered_effect>
+			</effect_group>-->
+		</buff>	
+		
 		<!--This buff tracks the Final Pigeon Boss specifically for the quests:quest_PigeonsEpilogue quest.
 			Removed when buffPigeonOnFinalBoss is removed-->
-		<buff name="buff_trackPigeonFinalBoss" hidden="true" remove_on_death="true" >
+		<buff name="buff_trackPigeonFinalBoss" hidden="true" remove_on_death="false">
 			<stack_type value="ignore"/>
 			<duration value="0"/>
 			<effect_group>
 				<passive_effect name="Tracking" operation="base_set" value="1" tags="trackingPigeonBoss,trackingPigeonBossLoot"/>
 			</effect_group>
-		</buff>
+		</buff>	
 		
 		<!--buff will monitor the final pigeon story boss. If the player doesn't get the final loot. The buff
 			will resend the final boss up to 5 times (pigeonSpawnAttempts) -->
@@ -524,14 +538,12 @@
 				<requirement name="CVarCompare" cvar="finalPigeonBossSpawnCount" operation="LT" value="1"/> 
 				<requirement name="CVarCompare" cvar="spawnPigeonBossTrigger" operation="GTE" value="1"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="finalPigeonBossSpawnCount" operation="add" value="1"/>
-					<!--add a buff to red-dot the final boss for the player-->
+					<!--add a buff to red-dot the final boss and the boss' loot for the player-->
 					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buff_trackPigeonFinalBoss" >
-						<requirement name="!HasBuff" buff="buff_trackPigeonFinalBoss"/>
-					</triggered_effect>
-					<!--add a buff to red-dot the final boss LOOT for the player-->
-					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buff_trackPigeonFinalBoss" >
-						<requirement name="!HasBuff" buff="buff_trackPigeonFinalBoss"/>
-					</triggered_effect>
+						<requirement name="!HasBuff" buff="buff_trackPigeonFinalBoss"/></triggered_effect>
+					<!--add a buff to display that the player is being hunted by the boss -->
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffPigeonOnFinalBossDisplay" >
+						<requirement name="!HasBuff" buff="buffPigeonOnFinalBossDisplay"/></triggered_effect>
 					
 					<!--spawn final boss-->
 					<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="action_spawn_pigeonBoss"/>
@@ -568,6 +580,14 @@
 					<requirement name="CVarCompare" cvar="finalPigeonBossSpawnCountdown" operation="GT" value="0"/> 
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="finalPigeonBossSpawnCountdown" operation="subtract" value="@$MetabolismDuration"/>
 			</effect_group>	
+			
+			<!--clean up when buff removed-->
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buff_trackPigeonFinalBoss">
+					<requirement name="HasBuff" buff="buff_trackPigeonFinalBoss"/></triggered_effect>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffPigeonOnFinalBossDisplay">
+					<requirement name="HasBuff" buff="buffPigeonOnFinalBossDisplay"/></triggered_effect>
+			</effect_group>
 
 		</buff>
 
@@ -666,7 +686,7 @@
 			<effect_group>
 				<requirement name="HasBuff" buff="buffInterloperFirstSpyMessageReceived"/>
 				<requirement name="CVarCompare" cvar="interloperSecondTransmissionCountdown" operation="LT" value="1"/>
-					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperSecondTransmissionCountdown" operation="set" value="randomint(7800,15000)"/> <!--default 7800(130min), 15000(250min) - 60min==default 7dtd day length-->
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperSecondTransmissionCountdown" operation="set" value="randomint(7800,15000)"/> <!--default randomint(7800,15000) : 7800(130min), 15000(250min) where 60min==default 7dtd day length-->
 			</effect_group>
 
 			<!--mark each transmission as being delivered as needed.-->
@@ -699,7 +719,7 @@
 			<effect_group>
 				<requirement name="HasBuff" buff="buffInterloperFirstSpyMessageReceived"/>
 				<requirement name="CVarCompare" cvar="interloperSecondTransmissionCountdown" operation="LT" value="1"/>
-					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperSecondTransmissionCountdown" operation="set" value="randomint(7800,15000)"/> <!--default 7800(130min), 15000(250min) - 60min==default 7dtd day length-->
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperSecondTransmissionCountdown" operation="set" value="randomint(7800,15000)"/> <!--default randomint(7800,15000) :  7800(130min), 15000(250min) where 60min==default 7dtd day length-->
 			</effect_group>
 
 			<!--mark the transmission as being delivered-->
@@ -832,9 +852,12 @@
 			<effect_group>	
 				<requirement name="CVarCompare" cvar="interloperSpywareComplete" operation="LT" value="1"/>
 				<requirement name="CVarCompare" cvar="spywareSetupComplete" operation="GTE" value="1"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="interloperFirstTransmissionCountdown" operation="set" value="randomint(7800,15000)"/> <!--default 7800(130min), 15000(250min) - 60min==default 7dtd day length-->
-				<!--the player has completed the setup part of the chapter-->
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="interloperSpywareComplete" operation="set" value="1"/>	
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="interloperFirstTransmissionCountdown" operation="set" value="randomint(7800,15000)"/> <!--default randomint(7800,15000):  7800(130min), 15000(250min) where 60min==default 7dtd day length-->
+					<!--the player has completed the setup part of the chapter-->
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="interloperSpywareComplete" operation="set" value="1"/>
+					<!--drop a note in players inventory -->
+					<triggered_effect trigger="onSelfBuffUpdate" action="CallGameEvent" event="interloperSpywareSetupCompleteNoteAction"/>
+
 			</effect_group>
 			
 			<!--This is the transmission of the first msg from the spyware transmitter to the Receiver-->
@@ -925,7 +948,7 @@
 				Intialise the value (in seconds) for the countdown to send the first transmission as the spyware setup is complete.
 				The countdown is used in the buffInterloperStory buff-->
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperFirstTransmissionCountdown" operation="set" value="randomint(7800,15000)"/> <!--default 7800(130min), 15000(250min) - 60min==default 7dtd day length-->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperFirstTransmissionCountdown" operation="set" value="randomint(7800,15000)"/> <!--default randomint(7800,15000) : 7800(130min), 15000(250min) where 60min==default 7dtd day length-->
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperSpywareComplete" operation="set" value="1"/>
 			</effect_group>
 			
@@ -1168,7 +1191,7 @@
 				<!--marysRevengeFinalTrigger is used to determine when to delete this buff.-->
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="marysRevengeFinalTrigger" operation="set" value="0"/>
 				<!--number of times Magrat gets spawned, allows for a cap (@magratSpawnCountMax)-->
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="magratSpawnCount" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$magratSpawnCount" operation="set" value="0"/>
 				<!--used to determine when the Marys revenge storyline is complete. Set when this buff gets removed.-->
 				<!--<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="marysRevengeFinalComplete" operation="set" value="0"/>-->
 				
@@ -1182,7 +1205,7 @@
 				
 				<!--will only spawn Magrat magratSpawnCountMax number of times-->
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffMarysRevengeFinalBossSummon">
-					<requirement name="CVarCompare" cvar="magratSpawnCount" operation="GTE" value="@magratSpawnCountMax"/> 
+					<requirement name="CVarCompare" cvar="$magratSpawnCount" operation="GTE" value="@magratSpawnCountMax"/> 
 				</triggered_effect>
 			</effect_group>
 			
@@ -1389,7 +1412,7 @@
 			<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="killStreakTarget" operation="set" value="3000"/>
 			
 			<!--When the player 'summons' Magrat, there is a delay before she actually spawns.-->
-			<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="magratFirstSpawnCountdownDefault" operation="set" value="randomint(2,7)"/> <!--default 2,7 seconds-->
+			<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="magratFirstSpawnCountdownDefault" operation="set" value="2,7"/> <!--default 2,7 seconds-->
 			<!--If the player doesnt kill Magrat, the final boss, Magrat can respawn magratSpawnCountMax number of times.
 				Default is to only spawn once, the player is given a pie with 6 slices so they can repeat the quest if they fail.
 				If Magrat is set to spawn more than once, she will respawn randomly at another time if the player dies or goes out of render distance.

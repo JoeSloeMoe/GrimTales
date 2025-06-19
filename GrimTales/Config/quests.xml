@@ -193,7 +193,7 @@
 				<property name="value" value="1" />
 				<property name="on_complete" value="true"/>
 			</action>
-			<reward type="Item" id="interloperSpywareSetupCompleteNote" value="1"/>
+			<!--<reward type="Item" id="interloperSpywareSetupCompleteNote" value="1"/>-->
 		</quest>
 		
 		<!--Spawn the Supply drop - called by quest_Interloper_InterceptTheSupplies below-->
@@ -251,7 +251,7 @@
 			<objective type="RallyPoint">
 				<property name="phase" value="2"/>
 				<property name="nav_object" value="rally" />
-				
+				<property name="rally_marker_type" value="questRallyMarkerRestorePower" />
 				<!--this story isnt intended to be a murder fest but can set to only run at night if feeling inclined.
 					Should up reward if doing so - see loot.xml:interloperSecretDrop and loot.xml:groupSecretDrop-->
 				<!--<property name="allowed_start_hour" value="22" /> 
@@ -304,6 +304,7 @@
 			<action type="SetCVar">
 				<property name="cvar" value="playSupplyCrateAirplaneSound" />
 				<property name="value" value="1" />
+				
 			</action>
 			<!--spawn the supply crate-->
 			<action type="SpawnGSEnemy" >
@@ -486,6 +487,7 @@
 			<objective type="RallyPoint">
 				<property name="phase" value="2"/>
 				<property name="nav_object" value="rally" />
+				<property name="rally_marker_type" value="questRallyMarkerClear" />
 			</objective>
 			
 			<objective type="ClearSleepers">
@@ -588,32 +590,32 @@
 		<quest id="questMarysRevengeArtifactContainerOpened">
 			<property name="name_key" value="questMarysRevengeArtifactContainerOpenedName" />
 			<property name="repeatable" value="true"/>
-			<property name="category_key" value="reward"/>
+			<property name="category_key" value="treasure"/>
 			<property name="offer_key" value="questMarysRevengeArtifactContainerOpened" param1="offer" />
 			<property name="description_key" value="questMarysRevengeArtifactContainerOpenedDesc"/>
 			
 			<property name="difficulty" value="medium"/>
 			<property name="shareable" value="false"/>
 			<action type="SpawnGSEnemy">
-					<property name="gamestage_list" value="zombieScreamerRadiated" />
+					<property name="gamestage_list" value="RadiatedScreamerSpawner" />
 					<property name="count" value="3" param1="finish_spawn_count" />
 					<property name="phase" value="1" />
 			</action>
 			
 			<action type="SpawnGSEnemy">
-					<property name="gamestage_list" value="zombieScreamerFeral" />
+					<property name="gamestage_list" value="FeralScreamerSpawner" />
 					<property name="count" value="2" param1="finish_spawn_count" />
 					<property name="phase" value="1" />
 			</action>
 			<action type="SpawnGSEnemy">
-					<property name="gamestage_list" value="zombieScreamer" />
+					<property name="gamestage_list" value="ScreamerSpawner" />
 					<property name="count" value="1" param1="finish_spawn_count" />
 					<property name="phase" value="1" />
 			</action>
-			<!--<reward type="Item" id="rewardMarysRevengeBundle" value="1"/>-->
-			<reward type="Item" id="marysRevengeHomemadeRifle" value="6"/>
-			<reward type="Item" id="ammo44MagnumBulletAP" value="300"/>
-			<reward type="Item" id="resourceMarysDiary" value="1"/>	
+			<!--<reward type="Item" id="rewardMarysRevengeBundle" value="1"/>
+			<reward type="Item" id="marysRevengeHomemadeRifle" value="6"/>-->
+			<!--<reward type="Item" id="ammo44MagnumBulletAP" ischosen="false" isfixed="true" value="300"/>-->
+			<!--<reward type="Item" id="resourceMarysDiary" value="1"/>	-->
 		</quest>
 		
 		<!--quest to find the first burial site.
@@ -736,6 +738,7 @@
 				<property name="start_mode" value="Create"/>
 				<property name="phase" value="2"/>
 				<property name="nav_object" value="rally"/>
+				<property name="rally_marker_type" value="questRallyMarkerBuriedSupplies" />
 				
 				<property name="activate_event" value="spawn_graveKeeperDireWolf"/>
 			</objective>
@@ -863,6 +866,7 @@
 				<property name="phase" value="2"/>
 				<property name="nav_object" value="rally" />
 				<property name="activate_event" value="action_CovenHouseSpawn"/>
+				<property name="rally_marker_type" value="questRallyMarkerClear" />
 			</objective>
 			
 			<objective type="ClearSleepers">
@@ -878,6 +882,8 @@
 			<action type="UnlockPOI" >
 				<property name="phase" value="4"/>
 			</action>
+			
+			<reward type="Exp" value="5000"/>
 		</quest>
 
 		<!--spawns the final group of screamers for the graveRobbingMagratsSister quest below-->
