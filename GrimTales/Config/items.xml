@@ -719,7 +719,7 @@
 			<!-- we want to spawn some zombies but dont seem to be able to do that from here-
 				Have to call an event (cant spawn zombies from the event either when using SpawnEntity for some reason)
 				so then have to call a quest (from the event) that then spawns zombies and gives Mary's Revenge-->
-			<effect_group tiered="false">	<reward type="Item" id="rewardMarysRevengeBundle" value="1"/>	
+			<effect_group tiered="false">	
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CallGameEvent" event="eventMarysRevengeArtifactContainerOpened"/>
 			</effect_group>
 		</item>
