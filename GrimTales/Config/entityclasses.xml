@@ -15,7 +15,10 @@
 	<append xpath="/entity_classes/entity_class[@name='zombieScreamerRadiated']">
 		<property name="NavObject" value="screamerTrackingSNT" />
 	</append>
-	<!--append the trackingSNT tag to screamers-->
+	<append xpath="/entity_classes/entity_class[@name='zombieScreamerCharged']">
+		<property name="NavObject" value="screamerTrackingSNT" />
+	</append>
+	 <!--append the trackingSNT tag to screamers-->
 	<set xpath="/entity_classes/entity_class[@name='zombieScreamer']/property[@name='Tags']/@value">entity,zombie,walker,trackingSNT</set>
 	<set xpath="/entity_classes/entity_class[@name='zombieScreamerFeral']/property[@name='Tags']/@value">entity,zombie,walker,feral,trackingSNT</set>
 	<set xpath="/entity_classes/entity_class[@name='zombieScreamerRadiated']/property[@name='Tags']/@value">entity,zombie,walker,feral,radiated,trackingSNT</set>
@@ -229,11 +232,11 @@
 			<!-- Dismemberment -->
 			<property name ="DismemberTag_L_HeadGore" value="Screamer/Blade/Head;Screamer/Blunt/Head" data="type=blade+target=neck+atp=true+detach=true;type=blunt+target=neck+atp=true"/>
 			<property name ="DismemberTag_L_LeftLowerArmGore" value="Screamer/Blade/LeftLowerArm" data="type=blade+target=leftforearmroll+atp=true+detach=true+mask=true"/>
-			<property name ="DismemberTag_L_LeftLowerLegGore" value="Screamer/Blade/LeftLowerLeg" data="type=blade+target=leftleg+detach=true+mask=true"/>
-			<property name ="DismemberTag_L_LeftUpperArmGore" value="Screamer/Blade/LeftUpperArm" data="type=blade+target=leftarmroll+atp=true+detach=true+mask=true"/>
-			<property name ="DismemberTag_L_RightLowerArmGore" value="Screamer/Blade/RightLowerArm" data="type=blade+target=rightforearmroll+atp=true+detach=true+mask=true"/>
-			<property name ="DismemberTag_L_RightLowerLegGore" value="Screamer/Blade/RightLowerLeg" data="type=blade+target=rightleg+detach=true+mask=true"/>
-			<property name ="DismemberTag_L_RightUpperArmGore" value="Screamer/Blade/RightUpperArm" data="type=blade+target=rightarmroll+atp=true+detach=true+mask=true"/>
+			<property name ="DismemberTag_L_LeftLowerLegGore" value="/Blade/LeftLowerLeg" data="type=blade+target=leftleg+detach=true+mask=true"/>
+			<property name ="DismemberTag_L_LeftUpperArmGore" value="/Blade/LeftUpperArm" data="type=blade+target=leftarmroll+atp=true+detach=true+mask=true"/>
+			<property name ="DismemberTag_L_RightLowerArmGore" value="/Blade/RightLowerArm" data="type=blade+target=rightforearmroll+atp=true+detach=true+mask=true"/>
+			<property name ="DismemberTag_L_RightLowerLegGore" value="/Blade/RightLowerLeg" data="type=blade+target=rightleg+detach=true+mask=true"/>
+			<property name ="DismemberTag_L_RightUpperArmGore" value="/Blade/RightUpperArm" data="type=blade+target=rightarmroll+atp=true+detach=true+mask=true"/>
 			<property name ="DismemberTag_L_LeftUpperLegGore" value="linked" data="DismemberTag_L_LeftLowerLegGore"/>
 			<property name ="DismemberTag_L_RightUpperLegGore" value="linked" data="DismemberTag_L_RightLowerLegGore"/>
 
@@ -243,7 +246,7 @@
 		<entity_class name="marysRevengeFinalBossMinion" extends="marysRevengeFinalBossTemplate">
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="magratt,entity,zombie,walker,feral,radiated"/>
-			<!--feral screamer skin for looks, the feral eyes help with the Magrats Left Eye loot drop-->
+			<!--feral  skin for looks, the feral eyes help with the Magrats Left Eye loot drop-->
 			<property name="Mesh" value="@:Entities/Zombies/Screamer/ZScreamerFeral.prefab"/>
 	
 			<!--Just mumbles all the time-->
