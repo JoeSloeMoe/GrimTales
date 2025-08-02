@@ -44,6 +44,7 @@
 
 			<effect_group tiered="false">
 				<requirement name="EntityTagCompare" target="other" tags="walker,crawler,spider,zombie,feral,radiated,animal,bear,coyote,dog,vulture,wolf"/>
+				<requirement name="TargetRange" target="other" operation="LTE" value="3"/>
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>	
 					<triggered_effect trigger="onOtherDamagedSelf" action="Ragdoll" target="other" duration="3.5" force="400"/>
 					<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="other" buff="buffShocked"/>

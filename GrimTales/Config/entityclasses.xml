@@ -511,7 +511,7 @@
 			<property name="AITarget-4" value=""/>
 			
 			<property name="DeadBodyHitPoints" value="120"/> <!--175-->
-			
+	
 			<effect_group name="Base Effects">
 				<!--weaker than regular vulture - not supposed to be a fighting enemy - just a note delivery pigeon-->
 				<passive_effect name="HealthMax" operation="base_set" value="15"/> <!--30-->
@@ -535,19 +535,42 @@
 		<!-- Pigeon to drop the first delivery package
 			 Need a different pigeon defined for each different delivery drop-->
 		<entity_class name="animalHomingPigeonOne" extends="homingPigeonTemplate">
-			<property name="LootDropEntityClass" value="EntityHomingPigeon1"/>
+			<property name="LootDropEntityClass" value="EntityHomingPigeon1"/> 
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="2"/> 
+			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="15"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="3"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
+			<drop event="Harvest" name="resourcePigeonPoop" tag="allToolsHarvest" count="4"/>
 		</entity_class>
 		<!-- Second pigeon with next delivery package -->
 		<entity_class name="animalHomingPigeonTwo" extends="homingPigeonTemplate">
 			<property name="LootDropEntityClass" value="EntityHomingPigeon2"/>
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="2"/> 
+			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="15"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="3"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
+			<drop event="Harvest" name="resourcePigeonLice" tag="allToolsHarvest" count="3"/>
 		</entity_class>
 		<!-- third pigeon with next delivery package -->
 		<entity_class name="animalHomingPigeonThree" extends="homingPigeonTemplate">
 			<property name="LootDropEntityClass" value="EntityHomingPigeon3"/>
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="2"/> 
+			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="15"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="3"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
 		</entity_class>
 		<!-- Fourth pigeon with next delivery package -->
 		<entity_class name="animalHomingPigeonFour" extends="homingPigeonTemplate">
 			<property name="LootDropEntityClass" value="EntityHomingPigeon4"/>
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="2"/> 
+			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="15"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="3"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
+			<drop event="Harvest" name="resourcePigeonMush" tag="allToolsHarvest" count="2"/>
 		</entity_class>
 		
 		<!-- This is for a flock of pigeons - they dont drop anything - used for the final chapter of the story-->

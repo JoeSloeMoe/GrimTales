@@ -32,13 +32,11 @@
 	<append xpath="/lootcontainers">
 		<!--lootgroup for the first delivery-->
 		<lootgroup name="groupHomingPigeonDelivery1" count="all">
-			<item name="resourcePigeonPoop" count="1" />
 			<item name="homingPigeonContainer1" count="1" />
 			<item name="resourcePigeonBand1" count="1" />
 		</lootgroup>
 		<!--Second delivery lootgroup -->
 		<lootgroup name="groupHomingPigeonDelivery2" count="all">
-			<item name="resourcePigeonLice" count="1" />
 			<item name="homingPigeonContainer2" count="1" />
 			<item name="resourcePigeonBand2" count="1" />
 		</lootgroup>
@@ -50,16 +48,15 @@
 		</lootgroup>
 		<!--Fourth delivery lootgroup -->
 		<lootgroup name="groupHomingPigeonDelivery4" count="all">
-			<item name="resourcePigeonMush" count="1" />
 			<item name="homingPigeonContainer4" count="1" />
 			<item name="resourcePigeonBand4" count="1" />
 		</lootgroup>
 		<!--lootcontainer for the first delivery (each delivery can have a different note)-->
-		<lootcontainer name="homingPigeonDelivery1" count="3" size="3,1" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1">
+		<lootcontainer name="homingPigeonDelivery1" count="2" size="2,1" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1">
 			<item group="groupHomingPigeonDelivery1"/>
 		</lootcontainer>
 		<!--lootcontainer for the second delivery -->
-		<lootcontainer name="homingPigeonDelivery2" count="3" size="3,1" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1">
+		<lootcontainer name="homingPigeonDelivery2" count="2" size="2,1" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1">
 			<item group="groupHomingPigeonDelivery2"/>
 		</lootcontainer>
 		<!--lootcontainer for the third delivery -->
@@ -67,7 +64,7 @@
 			<item group="groupHomingPigeonDelivery3"/>
 		</lootcontainer>
 		<!--lootcontainer for the fourth delivery -->
-		<lootcontainer name="homingPigeonDelivery4" count="3" size="3,1" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1">
+		<lootcontainer name="homingPigeonDelivery4" count="2" size="2,1" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1">
 			<item group="groupHomingPigeonDelivery4"/>
 		</lootcontainer>
 		

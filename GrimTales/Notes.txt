@@ -41,7 +41,12 @@ Version Info:
  2.0.2 - 1st Aug 2025
   - Added localisation for bespoke entities.
   - Ammended summoning pie code for chemistry station.
+  - Added _Other/Items/Food/parcelGenericPrefab.prefab_ to food items.
   - Removed tier notification for bespoke quests.
   - Tweaked Magrat's sacrificial knife to cater for charged and infernals.
   - Tweaked assassins pistol to cater for charged and infernals.
   - Couple other minor adjustments.  
+  
+ 2.0.3 - ongoing
+  - Pigeons can now be harvested
+  - Fixed Crowd Control mod to only reposnd to melee attacks
