@@ -43,6 +43,11 @@ modMagratTrackerDesc,item_modifiers,mod,,,"Town Cryer's witch finder lantern. Tu
 magratsEyeDesc,items,Item,,,"A strange smelling eyeball covered in red mucous and slime. At first glance it resembles hard crystal but it feels spongy in your hand. You feel it vibrating faintly as you hold it - you have a strong urge to consume it even though you suspect any side-effects may be permanent.\n\nUse (A) to consume.\n[Mary's Revenge Storyline]"
 buff_MagratsLeftEye,buffs,Buff,,,"Magrat's Left Eye" 
 buff_MagratsLeftEyeDesc,buffs,Buff,,,"You have the witches sight. Screamers are automatically tagged with an orange dot on the compass, map and on-screen. The undead sense the presence of the Eye and it aggravates them - your Game Stage is increased by 15.\n\nPermanent Buff." 
+marysRevengeCovenHouseScreamer,entityclasses,Entity,,,Coven House Disciple
+marysRevengeCovenHouseLootScreamer,entityclasses,Entity,,,Coven House Disciple
+graveKeeperDireWolf,entityclasses,Entity,,,Witch Bound Dire Wolf
+graveKeeperDireBear,entityclasses,Entity,,,Witch Bound Dire Bear
+animalPigeonFlock,entityclasses,Entity,,,Pigeon
 testGiveScreamerTrackingBuff,items,TEST,,,"Screamer tracking buff"
 testGiveScreamerTrackingBuffDesc,items,TEST,,,"Gives the Screamer tracking buff from Marys Revenge - used for testing."
 testRemoveScreamerTrackingBuff,items,TEST,,,"Remove Screamer tracking buff"
@@ -59,9 +64,9 @@ marysRevengeFinalBossBundle,items,Loot Bundle,,,"Magrat the Witch Seer's bloodie
 marysRevengeFinalBossBundleDesc,items,Corpse,,,"A gleam of light from the corpse catches your eye. You consider digging around in the mess to fish it out.\n\nOpen to dig through the remains. "
 marysRevengeFinalBossLoot,entityclasses,Entity,,,Magrat the Witch Seer's Loot
 EntityMarysRevengeBossLoot,entityclasses,Entity,,,Magrat the Witch Seer's Loot
-marysRevengeFinalBoss,entityclasses,Entity,,,Magrat the Seer - Order of the 3rd Degree Initiation
-marysRevengeFinalBossMinion,entityclasses,Entity,,,Magrat the Witch Seer - Order of the 3rd Degree Initiation
-marysRevengeFinalBossMinion2,entityclasses,Entity,,,Magrat the Witch Seer - Order of the 3rd Degree Initiation
+marysRevengeFinalBoss,entityclasses,Entity,,,Magrat the Witch Seer
+marysRevengeFinalBossMinion,entityclasses,Entity,,,Magrat the Witch Seer
+marysRevengeFinalBossMinion2,entityclasses,Entity,,,Magrat the Witch Seer
 marysRevengeSummoningPieGroup,Quest,Quest Info,,,"Preparing for Magrat"
 graveRobbingCovenHouse,Quest,Coven House,,,"Coven House"
 graveRobbingCovenHouse_description,Quest,Coven House,,,"You're looking for artifacts from a Witch Seer's grave to summon Magrat the Seer. Scout the witch cult's lair called Coven House and introduce yourself. Persuade any witches you meet to share the location of a cult priest's grave with you. \n\n[Mary's Revenge storyline]"
@@ -436,7 +441,7 @@ homingPigeonContainer4,items,Message Tube,,,"Sparkle the pigeon's Message Tube."
 animalHomingPigeonOne,entityclasses,Entity,,,Puffy the homing pigeon
 animalHomingPigeonTwo,entityclasses,Entity,,,CooCoo the homing pigeon
 animalHomingPigeonThree,entityclasses,Entity,,,Plop the homing pigeon
-animalHomingPigeonThree,entityclasses,Entity,,,Sparkle the homing pigeon
+animalHomingPigeonFour,entityclasses,Entity,,,Sparkle the homing pigeon
 pigeonFinalBossBundle,items,Loot Bundle,,,"Pigeon Fancier's Loot"
 pigeonFinalBossBundleDesc,items,Message Tube,,,"A delivery package crudely wrapped in some kind of blanket. It exudes a tangy smell, a combination of body odour and moldy chicken feed.\n\nUse to open and unpack."
 EntityPigeonBossLoot,entityclasses,Entity,,,Pigeonface's Loot

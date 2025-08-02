@@ -37,3 +37,11 @@ Version Info:
  2.0.1 - 18th June 2025
  - 7DTD 2.0 compatibility release.
  - A number of small context modifications.
+ 
+ 2.0.2 - 1st Aug 2025
+  - Added localisation for bespoke entities.
+  - Ammended summoning pie code for chemistry station.
+  - Removed tier notification for bespoke quests.
+  - Tweaked Magrat's sacrificial knife to cater for charged and infernals.
+  - Tweaked assassins pistol to cater for charged and infernals.
+  - Couple other minor adjustments.  

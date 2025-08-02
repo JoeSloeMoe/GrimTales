@@ -3,7 +3,7 @@
 	<!-- tags for story items - see also blocks.xml for other tag additions -->
 
 	<!--the expanded drum mag dropped in the pigeons have diseases story - the mod can only be placed on the M60 so need to a specifc tag 'expandedDrumMag' to the M60 for it-->
-	<set xpath ="/items/item[@name='gunMGT3M60']/property[@name='Tags']/@value">expandedDrumMag,weapon,ranged,holdBreathAiming,reloadPenalty,gun,barrelAttachments,sideAttachments,smallTopAttachments,magazine,drumMagazine,bottomAttachments,mediumTopAttachments,attFortitude,perkMachineGunner,perkBookAutoWeapons,attachmentsIncluded,canHaveCosmetic,machinegunSkill</set> 
+	<set xpath ="/items/item[@name='gunMGT3M60']/property[@name='Tags']/@value">,expandedDrumMag</set> 
 	<!--end tags for story items-->
 
 	<!--solar panels can be repaired as they dont always come out at full health in loot-->
@@ -590,13 +590,23 @@
 				<passive_effect name="EntityDamage" operation="perc_add" value="300" tags="secondary">  <!--way more than needed-->
 					<requirement name="EntityTagCompare" target="other" tags="animal"/>
 				</passive_effect>
-				<!--additional damage to ferals and radiated zombies for Magrats defense-->
-				<!--radiated also have the 'feral' tag so this is cummulative for radiated zombies-->
+				<!--additional damage to ferals and radiated zombies for Magrat's defense-->
+				<!--radiated, charged and infernal also have the 'feral' tag so this is cummulative for radiated zombies-->
 				<passive_effect name="EntityDamage" operation="perc_add" value="2" tags="secondary"> <!-- +200% damage-->
 					<requirement name="EntityTagCompare" target="other" tags="feral"/>
 				</passive_effect>
 				<passive_effect name="EntityDamage" operation="perc_add" value="3" tags="secondary">  <!-- +500% damage-->
 					<requirement name="EntityTagCompare" target="other" tags="radiated"/>
+				</passive_effect> 
+				<passive_effect name="EntityDamage" operation="perc_add" value="7" tags="secondary">  <!-- +700% damage-->
+					<requirement name="EntityTagCompare" target="other" tags="charged"/>
+				</passive_effect>
+				<passive_effect name="EntityDamage" operation="perc_add" value="9" tags="secondary">  <!-- +900% damage-->
+					<requirement name="EntityTagCompare" target="other" tags="infernal"/>
+				</passive_effect>
+				<!--extra dismember change for charged and infernals-->
+				<passive_effect name="DismemberChance" operation="base_add" value="0.2">
+					<requirement name="EntityTagCompare" target="other" tags="charged,infernal"/>
 				</passive_effect>
 				
 			</effect_group>
@@ -964,6 +974,8 @@
 			<property name="CustomIconTint" value="28,142,199"/>
 			<property name="ItemTypeIcon" value="bundle"/>
 			<property name="DescriptionKey" value="foodPumpkinJudyPieWholeDesc"/>
+			<property name="Group" value="Science,Medical,TCMedical"/>
+			
 			<property class="Action0">
 				<property name="Create_item" value="foodPumpkinJudyPieSlice"/>
 				<property name="Create_item_count" value="6"/>
@@ -974,7 +986,7 @@
 			<property name="Tags" value="food,fitness"/>
 			<property name="HoldType" value="31"/>
 			<property name="DisplayType" value="food"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="CustomIcon" value="foodPumpkinPie"/>
 			<property name="CustomIconTint" value="28,142,199"/>
@@ -1013,7 +1025,7 @@
 			<property name="Tags" value="food"/>
 			<property name="HoldType" value="31"/>
 			<property name="DisplayType" value="food"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="Morganic"/>
 			<property name="CustomIcon" value="glassDebris01"/>
@@ -1038,7 +1050,7 @@
 			<property name="Tags" value="food"/>
 			<property name="HoldType" value="31"/>
 			<property name="DisplayType" value="food"/>
-			<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+			<property name="Meshfile" value="@:Other/Items/Food/parcelGenericPrefab.prefab"/>
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="CustomIcon" value="resourceScopeLens"/>
 			<property name="CustomIconTint" value="179,96,96"/>
@@ -1205,6 +1217,13 @@
 					<passive_effect name="EntityDamage" operation="perc_add" value="10"/>
 					<!--300% headshot damage on stealth-->
 					<passive_effect name="DamageModifier" operation="base_add" value="400" tags="head"/>
+					<!--extra damage for charged and infernals-->
+					<passive_effect name="DamageModifier" operation="base_add" value="200" tags="head"> 
+						<requirement name="EntityTagCompare" target="other" tags="charged"/>
+					</passive_effect>
+					<passive_effect name="DamageModifier" operation="base_add" value="300" tags="head">
+						<requirement name="EntityTagCompare" target="other" tags="infernal"/>
+					</passive_effect>
 			</effect_group>
 			
 			<!--silencer stuff-->

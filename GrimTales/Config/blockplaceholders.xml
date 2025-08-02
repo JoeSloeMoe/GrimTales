@@ -4,8 +4,8 @@
 		This is for the found Gyro storyline, not implemented yet but the initial gyro find is in the world-->
 	<set xpath="/blockplaceholders/placeholder[@name='cntServiceTruckWorkingStiffToolsRandomLootHelper']">
 		<block name="air" prob=".66"/>
-		<block name="gyrocopterWreckChassis" prob="0.08"/> <!--default 0.08-->
-		<block name="cntServiceTruckWorkingStiffTools" prob=".26"/>
+		<block name="gyrocopterWreckChassis" prob="0.07"/> <!--default 0.07-->
+		<block name="cntServiceTruckWorkingStiffTools" prob=".27"/>
 	</set> 
 	
 	<!--code for testing 

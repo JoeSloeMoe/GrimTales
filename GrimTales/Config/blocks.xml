@@ -1,4 +1,7 @@
 <configs>
+	
+	
+	<!--GRIM TALES CODE-->
 	<!--gyrocopter stuff for the found gyro storyline-->
 	<append xpath ="/blocks">
 		<block name="gyrocopterWreckTemplate">
@@ -59,8 +62,6 @@
 
 	</append>
 	<!--END gyrocopter stuff-->
-	
-	<!--GRIM TALES CODE-->
 	<!--coffin treasure chests-->
 	<append xpath="/blocks">
 		<!--base helper block-->
