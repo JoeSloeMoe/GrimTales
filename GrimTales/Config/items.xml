@@ -1121,6 +1121,7 @@
 			<property name="Material" value="MHandGunParts"/>
 			<property name="CustomIcon" value="gunHandgunT1Pistol"/>
 			<property name="CustomIconTint" value="209,200,185"/>
+			<property name="TintColor" value="209,200,185"/>
 			<property name="Weight" value="1"/>
 			<property name="ScrapTimeOverride" value="10.0"/>
 			<property name="RepairTools" value="resourceRepairKit"/>
