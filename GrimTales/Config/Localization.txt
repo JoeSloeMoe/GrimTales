@@ -285,7 +285,7 @@ quest_PigeonsEpilogueSpawnDesc,items,Interloper,,,"You are being hunted! Looks l
 quest_PigeonsEpilogueSpawnName,items,Interloper,,,[00B4FF]Hunted![-]
 quest_PigeonsEpilogueSpawn_hint1,Quest,Pigeon Fancier,,,[00B4FF]Kill the Pigeon Fancier[-]
 quest_InterloperEpilogueSpawn,items,Interloper,,,"Pickup the trade drop."
-quest_InterloperEpilogueSpawnDesc,items,Interloper,,,"Pick up drop for the mutually beneficial trade deal."
+quest_InterloperEpilogueSpawnDesc,items,Interloper,,,"Pick up the drop for the mutually beneficial trade deal."
 quest_InterloperEpilogueSpawnName,items,Interloper,,,[FFB400]Pickup the trade drop.[-]
 buffInterloperSpyMessageReceived,buffs,Buff,,,<<|>>
 buffInterloperFirstSpyMessageReceived,buffs,Interloper,,,"First Interloper Transmission Received."
@@ -463,3 +463,4 @@ playerExplosiveBarrelSchematicDesc,items,Traps,,,Learn the High Explosive Barrel
 thrownTimedChargeDesc,items,Gun,,,"A shaped charge designed for delicate work like blowing off a safe lock, a door, or a zombie's head. Automatically detonates after 5 seconds. Want to bring the house down? Try some dynamite instead.\nArm with [action:local:Secondary]\nThrow with [action:local:Primary]\n\nUsed as Impact Trigger in High Explosive Barrels"
 modMeleeStunBatonRepulsorDesc,item_modifiers,Mod,,,Install this mod into a stun baton and send zombies flying on the charged hit.\nIngredient for the CrowdControl Mod recipe.
 modGunMeleeRadRemoverDesc,item_modifiers,mod,,,Will disable the regeneration ability of radiated zombies for 90 seconds.\nIngredient in the CrowdControl Mod recipe.
+
