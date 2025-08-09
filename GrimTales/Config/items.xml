@@ -1690,7 +1690,7 @@
 			<property class="Action0">
 				<!--dukes stash-->
 				<property name="Create_item" value="ammoBundleShotgunSlug,ammoBundle9mmBulletAP,ammoBundle44MagnumBulletAP,ammoBundle762mmBulletAP,ammoRocketFrag,thrownGrenadeContact,thrownGrenade,thrownAmmoMolotovCocktail"/>
-				<property name="Create_item_count" value="8-12,8-12,6-10,12-15,20,6-25,6-25,6-25"/> 
+				<property name="Create_item_count" value="6-10,6-10,5-9,6-10,20,6-25,6-25,6-25"/> 
 			</property>
 		</item>		
 		
