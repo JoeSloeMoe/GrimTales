@@ -1057,6 +1057,8 @@
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperStoryFinalCountdown" operation="set" value="randomint(3600,7800)"/> <!--default 3600(60min), 7800(130min) - 60min==default 7dtd day length-->
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperStoryFinalCountdownStarted" operation="set" value="1"/> 
+				<!--turn off the second message, else the player can repeat the quest after success-->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperSecondSpyMsgReceived" operation="set" value="0"/>
 			</effect_group>
 			
 			<!--remove this buff as only used to set the above vars-->

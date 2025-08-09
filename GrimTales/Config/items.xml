@@ -1010,6 +1010,7 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffMarysRevengeFinalBossSummon">
 					<requirement name="!HasBuff" buff="buffMarysRevengeFinalBossSummon"/>
+					<requirement name="CVarCompare" cvar="marysRevengeFinalTrigger" operation="LT" value="1"/>
 				</triggered_effect>	
 			</effect_group>
 		</item>

@@ -49,4 +49,7 @@ Version Info:
   
  2.0.3 - ongoing
   - Pigeons can now be harvested
-  - Fixed Crowd Control mod to only reposnd to melee attacks
+  - Fixed Crowd Control mod to only respond to melee attacks
+  - Fixed All IS WELL so that the light works properly
+  - Magrat can only be summoned once
+  - Adjusted Interlope, Intercept the Supply Crate chapter ammo loot to match 2.x ammo changes
