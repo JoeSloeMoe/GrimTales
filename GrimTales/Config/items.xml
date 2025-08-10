@@ -553,7 +553,7 @@
 			</property>
 			
 			<effect_group name="meleeWpnBladeT1HuntingKnife">
-				<passive_effect name="AttacksPerMinute" operation="base_set" value="150" tags="perkDeepCuts,perkFlurryOfAgility"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="120" tags="perkDeepCuts,perkFlurryOfAgility"/>
 				<passive_effect name="StaminaLoss" operation="base_set" value="6" tags="primary"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="500,3000" tier="1,6" tags="perkDeepCuts"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
