@@ -379,7 +379,8 @@ resourceConeConstruction,items,Item,,,Construction Cone
 resourceCobweb,items,Item,,,Cobweb
 resourcegGraveStone,items,Item,,,Battered Old Gravestone
 resourceHubcap,items,Item,,,Hubcap
-resourceYoDawg,items,Item,,,"Yo dawg, I heard you like police cars ..."
+resourceYoDawg,items,Item,,,"Yo dawg"
+resourceYoDawgDesc,items,Item,,,"Yo dawg, I heard you like police cars ..."
 resourceLuggage,items,Item,,,Empty Broken Luggage
 resourceLetterV,items,Item,,,V
 resourceLetterE,items,Item,,,E

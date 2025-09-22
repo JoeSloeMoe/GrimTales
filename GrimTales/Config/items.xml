@@ -1383,7 +1383,7 @@
 			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="Morganic"/>
 			<property name="CustomIcon" value="cntPoliceCar01"/>
-			<property name="DescriptionKey" value="resourceYoDawg"/>
+			<property name="DescriptionKey" value="resourceYoDawgDesc"/>
 			<property name="Stacknumber" value="1"/> 
 			<property name="EconomicValue" value="0"/>
 			<property name="Group" value="Resources"/>
