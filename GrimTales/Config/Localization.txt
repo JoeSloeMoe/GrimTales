@@ -174,7 +174,7 @@ foundGyroRewardSchematicDesc,items,Traps,,,"Gyro World. \nIts all greek to me! G
 foundGyroAgentLuggage,items,Item,,,Small Reinforced Case
 foundGyroAgentLuggageDesc,items,Item,,,"An empty smashed metal case. A bloodied hand dangles from a set of handcuffs still attached to the handle. It looks like took a long while to get into the case using a variety of methods." 
 assassinsPistol,items,Pistol,,,Welrod MkXV11 9mm
-assassinsPistolDesc,items,Pistol,,,"Rare sanitised SOE Stealth Pistol. A quiet blow-back pistol with low heat generation. Uses a combination of a polyaramide bolt and an oil-tempered chrome vanadium recoil spring to support 124-grain 9mm ammunition. Does not support AP or HP ammo.\n\nSneak Bonuses:\nSneak Damage 10X.\nSneak Headshot Damage 400%."
+assassinsPistolDesc,items,Pistol,,,"Rare sanitised SOE Stealth Pistol. A quiet blow-back pistol with low heat generation. Uses a combination of a polyaramide bolt and an oil-tempered chrome vanadium recoil spring to support 124-grain 9mm ammunition. As a blowback pistol it does not support AP or HP ammo.\n\nSneak Bonuses:\nSneak Damage 10X.\nSneak Headshot Damage 400%."
 
 gyrocopterWreck,blocks,block,,,Crashed Gyrocopter
 gyrocopterWreckChassis,blocks,block,,,Crashed Gyrocopter
@@ -464,4 +464,5 @@ playerExplosiveBarrelSchematicDesc,items,Traps,,,Learn the High Explosive Barrel
 thrownTimedChargeDesc,items,Gun,,,"A shaped charge designed for delicate work like blowing off a safe lock, a door, or a zombie's head. Automatically detonates after 5 seconds. Want to bring the house down? Try some dynamite instead.\nArm with [action:local:Secondary]\nThrow with [action:local:Primary]\n\nUsed as Impact Trigger in High Explosive Barrels"
 modMeleeStunBatonRepulsorDesc,item_modifiers,Mod,,,Install this mod into a stun baton and send zombies flying on the charged hit.\nIngredient for the CrowdControl Mod recipe.
 modGunMeleeRadRemoverDesc,item_modifiers,mod,,,Will disable the regeneration ability of radiated zombies for 90 seconds.\nIngredient in the CrowdControl Mod recipe.
+
 
