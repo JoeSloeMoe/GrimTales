@@ -185,8 +185,11 @@
 			<effect_group>
 				<!--this buff is trigerred when a player levels, pigeon spawn is delayed so the spawn is not instant when the player levels-->
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$firstPigeonSpawnCountdown" operation="set" value="randomint(60,180)"/>  <!--this is in seconds. Default 60, 180-->
+				<!--add the pigeon tracking buff-->
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffTrackPigeons">
+					<requirement name="!HasBuff" buff="buffTrackPigeons"/></triggered_effect>
 			</effect_group>
-			
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffFirstPigeonDelivery"/>
 			<effect_group>
 				<!--Spawn the first pigeon - this can run multiple times of the person doesnt receive the delivery from the pigeon-->
 				<requirement name="PlayerLevel" operation="GTE" value="@firstPigeonLevel"/>
@@ -237,7 +240,11 @@
 					<requirement name="CVarCompare" cvar="firstPigeonMsgReceived" operation="LT" value="1"/> 
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$firstPigeonSpawnCountdown" operation="subtract" value="@$MetabolismDuration"/>
 			</effect_group>
-				
+			<effect_group>
+				<!--remove the pigeon tracking buff-->
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffTrackPigeons">
+					<requirement name="HasBuff" buff="buffTrackPigeons"/></triggered_effect>
+			</effect_group>
 		</buff>
 		
 		<!--buff that sends out the second pigeon - if the  delivery is not received it will resend the pigeon-->
@@ -247,6 +254,9 @@
 			<effect_group>
 				<!--this buff is trigerred when a player levels, pigeon spawn is delayed so the spawn is not instant when the player levels-->
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$secondPigeonSpawnCountdown" operation="set" value="randomint(60,180)"/>  <!--this is in seconds. Default 60, 180-->
+				<!--add the pigeon tracking buff-->
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffTrackPigeons">
+					<requirement name="!HasBuff" buff="buffTrackPigeons"/></triggered_effect>
 			</effect_group>
 			
 			<effect_group>
@@ -299,7 +309,11 @@
 					<requirement name="CVarCompare" cvar="secondPigeonMsgReceived" operation="LT" value="1"/> 
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$secondPigeonSpawnCountdown" operation="subtract" value="@$MetabolismDuration"/>
 			</effect_group>
-
+			<effect_group>
+				<!--remove the pigeon tracking buff-->
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffTrackPigeons">
+					<requirement name="HasBuff" buff="buffTrackPigeons"/></triggered_effect>
+			</effect_group>
 		</buff>
 		
 		<!--buff that sends out the third pigeon - if the delivery is not received it will resend the pigeon-->
@@ -310,6 +324,9 @@
 			<!--this buff is trigerred when a player levels, pigeon spawn is delayed so the spawn is not instant when the player levels-->
 			<effect_group>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$thirdPigeonSpawnCountdown" operation="set" value="randomint(60,180)"/>  <!--this is in seconds. Default 60, 180-->
+				<!--add the pigeon tracking buff-->
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffTrackPigeons">
+					<requirement name="!HasBuff" buff="buffTrackPigeons"/></triggered_effect>
 			</effect_group>
 			
 			<effect_group>
@@ -362,7 +379,11 @@
 					<requirement name="CVarCompare" cvar="thirdPigeonMsgReceived" operation="LT" value="1"/> 
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$thirdPigeonSpawnCountdown" operation="subtract" value="@$MetabolismDuration"/>
 			</effect_group>
-
+			<effect_group>
+				<!--remove the pigeon tracking buff-->
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffTrackPigeons">
+					<requirement name="HasBuff" buff="buffTrackPigeons"/></triggered_effect>
+			</effect_group>
 		</buff>
 		
 		<!--buff that send out the fourth pigeon - if the delivery is received it will resend the pigeon-->
@@ -372,6 +393,9 @@
 			<effect_group>
 				<!--this buff is trigerred when a player levels, pigeon spawn is delayed so the spawn is not instant when the player levels-->
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$fourthPigeonSpawnCountdown" operation="set" value="randomint(60,180)"/>  <!--this is in seconds. Default 60, 180-->
+				<!--add the pigeon tracking buff-->
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffTrackPigeons">
+					<requirement name="!HasBuff" buff="buffTrackPigeons"/></triggered_effect>
 			</effect_group>
 			
 			<effect_group>
@@ -422,9 +446,22 @@
 					<requirement name="CVarCompare" cvar="fourthPigeonMsgReceived" operation="LT" value="1"/> 
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$fourthPigeonSpawnCountdown" operation="subtract" value="@$MetabolismDuration"/>
 			</effect_group>
-
+			<effect_group>
+				<!--remove the pigeon tracking buff-->
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffTrackPigeons">
+					<requirement name="HasBuff" buff="buffTrackPigeons"/></triggered_effect>
+			</effect_group>
 		</buff>
 		
+		<!--This buff tracks the Pigeons added at the start of each pigeon spawning buff and removed when the buffs are complete
+			(e.g buffFirstPigeonDelivery, buffSecondPigeonDelivery etc.) -->
+		<buff name="buffTrackPigeons" hidden="true" remove_on_death="false">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<effect_group>
+				<passive_effect name="Tracking" operation="base_set" value="1" tags="trackingGeneralPigeon,trackingGeneralPigeonLoot"/>
+			</effect_group>
+		</buff>	
 		
 		<!--buff that manages the PigeonsCarryDiseases story and the start of the Interloper story which is delivered by the third pigeon.
 			See buffStatusCheck01 for variable initialisation-->
@@ -439,8 +476,11 @@
 				<requirement name="PlayerLevel" operation="GTE" value="@firstPigeonLevel"/>
 				<!--check if already done-->
 				<requirement name="CVarCompare" cvar="firstPigeonDeliveryComplete" operation="LT" value="1"/>
-				<!--check if in the process of being done-->
+				<!--check if in the process of being done-->	
 				<requirement name="!HasBuff" buff="buffFirstPigeonDelivery"/>
+					<!--add the pigeon tracking buff, buff will be removed when buffFirstPigeonDelivery completes -->
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffTrackPigeons">
+						<requirement name="!HasBuff" buff="buffTrackPigeons"/></triggered_effect>
 					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFirstPigeonDelivery"/>
 			</effect_group>
 			
@@ -451,6 +491,9 @@
 				<requirement name="CVarCompare" cvar="firstPigeonDeliveryComplete" operation="GTE" value="1"/>
 				<requirement name="CVarCompare" cvar="secondPigeonDeliveryComplete" operation="LT" value="1"/> 
 				<requirement name="!HasBuff" buff="buffSecondPigeonDelivery"/>
+					<!--add the pigeon tracking buff, buff will be removed when buffSecondPigeonDelivery completes -->
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffTrackPigeons">
+						<requirement name="!HasBuff" buff="buffTrackPigeons"/></triggered_effect>
 					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffSecondPigeonDelivery"/>
 			</effect_group>
 			
@@ -461,6 +504,9 @@
 				<requirement name="CVarCompare" cvar="secondPigeonDeliveryComplete" operation="GTE" value="1"/> 
 				<requirement name="CVarCompare" cvar="thirdPigeonDeliveryComplete" operation="LT" value="1"/>
 				<requirement name="!HasBuff" buff="buffThirdPigeonDelivery"/>
+					<!--add the pigeon tracking buff, buff will be removed when buffThirdPigeonDelivery completes -->
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffTrackPigeons">
+						<requirement name="!HasBuff" buff="buffTrackPigeons"/></triggered_effect>
 					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffThirdPigeonDelivery"/>
 			</effect_group>
 			
@@ -471,6 +517,9 @@
 				<requirement name="CVarCompare" cvar="thirdPigeonDeliveryComplete" operation="GTE" value="1"/> 
 				<requirement name="CVarCompare" cvar="fourthPigeonDeliveryComplete" operation="LT" value="1"/>
 				<requirement name="!HasBuff" buff="buffFourthPigeonDelivery"/>
+					<!--add the pigeon tracking buff, buff will be removed when buffFourthPigeonDelivery completes -->
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffTrackPigeons">
+						<requirement name="!HasBuff" buff="buffTrackPigeons"/></triggered_effect>
 					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFourthPigeonDelivery"/>
 			</effect_group>
 			
@@ -965,8 +1014,8 @@
 			e.g. Increase max health by 20, increase GameStage by 20 (may not be a actual book in game, is just an example)-->
 		
 		<!--First book -->
-		<buff name="buffInterloperRewardBookOne" name_key="buffInterloperRewardBookOne" description_key="buffInterloperRewardBookOneDesc" remove_on_death="false" >
-			<stack_type value="ignore"/>
+		<buff name="buffInterloperRewardBookOne" name_key="buffInterloperRewardBookOne" description_key="buffInterloperRewardBookOneDesc" remove_on_death="false" icon="ui_game_symbol_challenge_crafting_read_magazine" showonhud="false"  icon_color="255,152,152">
+			<stack_type value="ignore"/> 
 			<duration value="0"/>
 			<effect_group>
 				<!--increase Max Health-->
@@ -981,9 +1030,8 @@
 			</effect_group>
 		</buff>
 		<!--Second book -->
-		<buff name="buffInterloperRewardBookTwo" name_key="buffInterloperRewardBookTwo" description_key="buffInterloperRewardBookTwoDesc" remove_on_death="false" >
+		<buff name="buffInterloperRewardBookTwo" name_key="buffInterloperRewardBookTwo" description_key="buffInterloperRewardBookTwoDesc" remove_on_death="false" icon="ui_game_symbol_challenge_crafting_read_magazine" showonhud="false"  icon_color="0,171,255">
 			<stack_type value="ignore"/>
-			<duration value="0"/>
 			<effect_group>
 				<passive_effect name="StaminaMax" operation="base_add" value="50"/>
 				<!--Stamina Regen increase-->
@@ -995,7 +1043,7 @@
 			</effect_group>
 		</buff>
 		<!--Third  book -->
-		<buff name="buffInterloperRewardBookThree" name_key="buffInterloperRewardBookThree" description_key="buffInterloperRewardBookThreeDesc" remove_on_death="false" >
+		<buff name="buffInterloperRewardBookThree" name_key="buffInterloperRewardBookThree" description_key="buffInterloperRewardBookThreeDesc" remove_on_death="false" icon="ui_game_symbol_challenge_crafting_read_magazine" showonhud="false"  icon_color="0,255,171">
 			<stack_type value="ignore"/>
 			<duration value="0"/>
 			<effect_group>
@@ -1012,7 +1060,7 @@
 			</effect_group>
 		</buff>
 		<!--Fourth book -->
-		<buff name="buffInterloperRewardBookFour" name_key="buffInterloperRewardBookFour" description_key="buffInterloperRewardBookFourDesc" remove_on_death="false" >
+		<buff name="buffInterloperRewardBookFour" name_key="buffInterloperRewardBookFour" description_key="buffInterloperRewardBookFourDesc" remove_on_death="false" icon="ui_game_symbol_challenge_crafting_read_magazine" showonhud="false"  icon_color="219,218,0">
 			<stack_type value="ignore"/>
 			<duration value="0"/>
 			<effect_group>
@@ -1055,10 +1103,12 @@
 			<!--The countdown is used in the buffInterloperStory buff.
 				A short countdown so the final chapter follows quickly-->
 			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperStoryFinalCountdown" operation="set" value="randomint(3600,7800)"/> <!--default 3600(60min), 7800(130min) - 60min==default 7dtd day length-->
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperStoryFinalCountdown" operation="set" value="randomint(7200,12000)"/> <!--default 7200(120min), 12000(200min) - 60min==default 7dtd day length-->
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperStoryFinalCountdownStarted" operation="set" value="1"/> 
 				<!--turn off the second message, else the player can repeat the quest after success-->
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperSecondSpyMsgReceived" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="interloperSpyMsgAvailable" operation="set" value="0"/>
+				
 			</effect_group>
 			
 			<!--remove this buff as only used to set the above vars-->
@@ -1096,12 +1146,12 @@
 			See entityclasses.xml & nav_objects.xml.
 			For Magrat's Left Eye - Mary's revenge story.
 			This effect is permanent. -->
-		<buff name="buff_MagratsLeftEye" name_key="buff_MagratsLeftEye" description_key="buff_MagratsLeftEyeDesc" remove_on_death="false" >
+		<buff name="buff_MagratsLeftEye" name_key="buff_MagratsLeftEye" description_key="buff_MagratsLeftEyeDesc" remove_on_death="false" icon="ui_game_symbol_stealth" showonhud="false" icon_color="255,179,0">
 			<stack_type value="ignore"/>
 			<duration value="0"/>
 			<effect_group>
 				<passive_effect name="Tracking" operation="base_set" value="1" tags="trackingSNT"/>
-				<passive_effect name="GameStage" operation="base_add" value="10"/>
+				<passive_effect name="GameStage" operation="base_add" value="15"/>
 			</effect_group>
 		</buff>	
 
@@ -1111,8 +1161,8 @@
 			<duration value="0"/>
 			<!--remove  buff_MagratsLeftEye-->
 			<effect_group>
-				<requirement name="HasBuff" buff="buff_MagratsLeftEye"/>
-					<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buff_MagratsLeftEye" />
+					<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buff_MagratsLeftEye" >
+						<requirement name="HasBuff" buff="buff_MagratsLeftEye"/></triggered_effect>
 			</effect_group>
 			<!--remove self-->
 			<effect_group>
@@ -1329,7 +1379,7 @@
 		<!-- this buff is given to the player when they start a game - see buff ADDCONTROLLERBUFF below -->
 		<!-- Keeps track of various game counters e.g. number of zombie kills.
 			 Uses this info to set off events in game e.g. Give player 'Mary's Revenge Bundle' for 4000 zombie kills -->
-		<buff name="buffGameEventController" name_key="buffGameEventController" description_key="buffGameEventControllerDesc">
+		<buff name="buffGameEventController" name_key="buffGameEventController" description_key="buffGameEventControllerDesc" icon="ui_game_symbol_zombie" showonhud="false" >
 			<stack_type value="replace"/>
 			<duration value="0"/>
 			<display_value value=".buffGameEventControllerDisplay"/>
@@ -1463,7 +1513,7 @@
 			<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="pigeonSpawnAttempts" operation="set" value="5"/> <!-- default: 5-->
 		</effect_group>
 		<!-- END pigeons carry diseases variable initialisation-->
-		
+
 		<!--END PLAYER CONFIG VARIABLES-->
 		
 		<!--add mary's Revenge buff-->
@@ -1485,5 +1535,4 @@
 		
 	</append>
 	<!--END START GRIM TALES CODE-->
-
 </configs>

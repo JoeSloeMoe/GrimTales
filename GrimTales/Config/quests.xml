@@ -223,6 +223,12 @@
 			</action>
 			<!--gather the special personal supply package from the Supply Crate dropped above (InterloperDropSpawner)-->
 			<objective type="FetchKeep" id="interloperSupplyCrateDukesBundle" value="1" phase="1"/>
+			<!--reset the second spy msg trigger so tha the player cant continue to redo the quest after completion-->
+			<action type="SetCVar">
+				<property name="cvar" value="interloperSecondSpyMsgReceived" />
+				<property name="value" value="0" />
+				<property name="on_complete" value="true"/>
+			</action>
 		</quest>
 		
 		<!--intercept the supplies - calls quest_InterloperSupplySpawn above on success-->

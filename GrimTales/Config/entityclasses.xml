@@ -411,6 +411,7 @@
 			 EntityLootContainerHomingPigeon1 with lootbag homingPigeonDelivery1 (defined in loot.xml)-->
 		<entity_class name="EntityHomingPigeon1">
 			<property name="Class" value="EntityLootContainer"/>
+			<property name="NavObject" value="trackingGeneralPigeonLoot" />
 			<property name="UserSpawnType" value="Console"/>
 			<property name="Mesh" value="@:Entities/LootContainers/zpackRedPrefab.prefab"/>
 			<property name="ModelType" value="Custom"/>
@@ -426,6 +427,7 @@
 			 EntityLootContainerHomingPigeon2 with lootbag homingPigeonDelivery2 (defined in loot.xml)-->
 		<entity_class name="EntityHomingPigeon2">
 			<property name="Class" value="EntityLootContainer"/>
+			<property name="NavObject" value="trackingGeneralPigeonLoot" />
 			<property name="UserSpawnType" value="Console"/>
 			<property name="Mesh" value="@:Entities/LootContainers/zpackRedPrefab.prefab"/>
 			<property name="ModelType" value="Custom"/>
@@ -441,6 +443,7 @@
 			 EntityLootContainerHomingPigeon3 with lootbag homingPigeonDelivery3 (defined in loot.xml)-->
 		<entity_class name="EntityHomingPigeon3">
 			<property name="Class" value="EntityLootContainer"/>
+			<property name="NavObject" value="trackingGeneralPigeonLoot" />
 			<property name="UserSpawnType" value="Console"/>
 			<property name="Mesh" value="@:Entities/LootContainers/zpackRedPrefab.prefab"/>
 			<property name="ModelType" value="Custom"/>
@@ -455,6 +458,7 @@
 			 EntityLootContainerHomingPigeon4 with lootbag homingPigeonDelivery4 (defined in loot.xml)-->
 		<entity_class name="EntityHomingPigeon4">
 			<property name="Class" value="EntityLootContainer"/>
+			<property name="NavObject" value="trackingGeneralPigeonLoot" />
 			<property name="UserSpawnType" value="Console"/>
 			<property name="Mesh" value="@:Entities/LootContainers/zpackRedPrefab.prefab"/>
 			<property name="ModelType" value="Custom"/>
@@ -536,6 +540,7 @@
 			 Need a different pigeon defined for each different delivery drop-->
 		<entity_class name="animalHomingPigeonOne" extends="homingPigeonTemplate">
 			<property name="LootDropEntityClass" value="EntityHomingPigeon1"/> 
+			<property name="NavObject" value="trackingGeneralPigeon" />
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="2"/> 
 			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="15"/>
@@ -546,6 +551,7 @@
 		<!-- Second pigeon with next delivery package -->
 		<entity_class name="animalHomingPigeonTwo" extends="homingPigeonTemplate">
 			<property name="LootDropEntityClass" value="EntityHomingPigeon2"/>
+			<property name="NavObject" value="trackingGeneralPigeon" />
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="2"/> 
 			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="15"/>
@@ -556,6 +562,7 @@
 		<!-- third pigeon with next delivery package -->
 		<entity_class name="animalHomingPigeonThree" extends="homingPigeonTemplate">
 			<property name="LootDropEntityClass" value="EntityHomingPigeon3"/>
+			<property name="NavObject" value="trackingGeneralPigeon" />
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="2"/> 
 			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="15"/>
@@ -565,6 +572,7 @@
 		<!-- Fourth pigeon with next delivery package -->
 		<entity_class name="animalHomingPigeonFour" extends="homingPigeonTemplate">
 			<property name="LootDropEntityClass" value="EntityHomingPigeon4"/>
+			<property name="NavObject" value="trackingGeneralPigeon" />
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="2"/> 
 			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="15"/>
@@ -679,7 +687,7 @@
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1200"/>
 			</effect_group>
-			<property name="NavObject" value="supply_drop" />
+			<property name="NavObject" value="interceptSupplyDropTracker" />
 			<!-- If set this entity shows on the map -->
 			<property name="MapIcon" value="map_supply_crate"/> 
 		</entity_class>

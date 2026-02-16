@@ -1822,7 +1822,7 @@
 			<!--the book uses the same description as the buff that is received by reading the book-->
 			<property name="DescriptionKey" value="buffInterloperRewardBookOneDesc"/>
 			<property name="CustomIcon" value="cntBookPile05"/>
-			<property name="CustomIconTint" value="42C234"/>
+			<property name="CustomIconTint" value="255,152,152"/>
 			<property name="Stacknumber" value="1"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInterloperRewardBookOne"/>
@@ -1832,7 +1832,7 @@
 			<property name="Extends" value="schematicMaster"/>
 			<property name="DescriptionKey" value="buffInterloperRewardBookTwoDesc"/>
 			<property name="CustomIcon" value="cntBookPile07"/>
-			<property name="CustomIconTint" value="42C234"/>
+			<property name="CustomIconTint" value="0,171,255"/>
 			<property name="Stacknumber" value="1"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInterloperRewardBookTwo"/>
@@ -1842,7 +1842,7 @@
 			<property name="Extends" value="schematicMaster"/>
 			<property name="DescriptionKey" value="buffInterloperRewardBookThreeDesc"/>
 			<property name="CustomIcon" value="cntBookPile11"/>
-			<property name="CustomIconTint" value="42C234"/>
+			<property name="CustomIconTint" value="0,255,171"/>
 			<property name="Stacknumber" value="1"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInterloperRewardBookThree"/>
@@ -1852,7 +1852,7 @@
 			<property name="Extends" value="schematicMaster"/>
 			<property name="DescriptionKey" value="buffInterloperRewardBookFourDesc"/>
 			<property name="CustomIcon" value="cntBookPile14"/>
-			<property name="CustomIconTint" value="42C234"/>
+			<property name="CustomIconTint" value="230,229,0"/>
 			<property name="Stacknumber" value="1"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInterloperRewardBookFour"/>

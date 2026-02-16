@@ -54,3 +54,7 @@ Version Info:
   - Magrat can only be summoned once
 
   - Adjusted Interloper, Intercept the Supply Crate chapter ammo loot to match 2.x ammo changes
+
+ 2.0.7 - 15th Feb 2026
+  - A number of small changes for context.
+  - Fixed V2.5 issue with buff icons not displaying in the players Status Screen

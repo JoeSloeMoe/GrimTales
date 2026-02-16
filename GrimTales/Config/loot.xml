@@ -122,8 +122,8 @@
 			<item group="lootGroupElectricRagdoll" prob="0.22" force_prob="true"/>  <!--.22-->
 			<!--this is the generic parts for the mod: rad remover,stun repulsor-->
 			<item group="lootGroupElectricRagdollGeneric" prob="0.08" force_prob="true"/> <!--.08-->
-			<!--the schemtiac for the mod for the recipe-->
-			<item group="lootGroupElectricRagdollSchematic" prob="0.08" force_prob="true"/> <!--.08-->
+			<!--the schematic for the mod for the recipe-->
+			<item group="lootGroupElectricRagdollSchematic" prob="0.10" force_prob="true"/> <!--.10-->
 			
 			<!--chance for a couple solar panels-->
 			<item group="lootgroupPoliceCarSolarPanel" prob="0.08" force_prob="true"/> <!--.08-->
