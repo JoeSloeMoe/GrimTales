@@ -2,14 +2,6 @@
 
 	<append xpath="/recipes">
 		<!--Mary's revenge storyline recipes-->
-		<!--playerExplosiveBarrels - mary's revenge story-->
-		<recipe name="playerExplosiveBarrel" count="1" craft_time="30" craft_area="workbench" tags="workbenchCrafting,learnable">
-			<ingredient name="resourceForgedIron" count="4"/>
-			<ingredient name="thrownTimedCharge" count="1"/>
-			<ingredient name="ammoGasCan" count="100"/>
-			<ingredient name="resourceNail" count="50"/> 
-			<ingredient name="resourceRockSmall" count="50"/>
-		</recipe>
 		
 		<!--A summoning pie made from the bones and hair of Judy, Magrats sister.
 			Used to summon Magrat on placement - mary's revenge story.

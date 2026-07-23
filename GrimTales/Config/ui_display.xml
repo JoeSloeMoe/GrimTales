@@ -50,6 +50,14 @@
 				<display_entry name="DegradationMax" title_key="statDegradationMax" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner,perkBookAutoWeapons,perkTurrets,perkArchery,admin"/>
 			</item_display_info>
 		</item_display>
+		<!--Interloper story reward item-->
+		<item_display>
+			<item_display_info display_type="modMilitaryStructuralBrace" display_group="groupRanged">
+				<display_entry name="dBlockDamage" title_key="statBlockDamage" display_type="Percent" display_leading_plus="true"/>
+				<display_entry name="dEntityDamage" title_key="statEntityDamage" display_type="Percent" display_leading_plus="true"/>
+				<display_entry name="dDegradationPerUse" title_key="statDegradationPerUse" display_type="Percent" negative_preferred="true"/>
+			</item_display_info>
+		</item_display>
 	</append>
 	
 </configs>

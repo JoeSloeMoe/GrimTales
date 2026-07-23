@@ -4,68 +4,84 @@
 		
 		<!--Marys Revenge story code-->
 		<entitygroup name="MarysRevengeCovenHouseSpawnGroup">
-			marysRevengeCovenHouseScreamer
+			<e n="marysRevengeCovenHouseScreamer" p="1" />
 		</entitygroup>
 		<entitygroup name="MarysRevengeCovenHouseLootSpawnGroup">
-			marysRevengeCovenHouseLootScreamer
+			<e n="marysRevengeCovenHouseLootScreamer" p="1" />			
 		</entitygroup>
 		<entitygroup name="MarysRevengeScreamerSpawnGroup">
-			marysRevengeGraveScreamer
+			<e n="marysRevengeGraveScreamer" p="1" />	
+			
 		</entitygroup>
 		<entitygroup name="MagratSpawnGroup">
-			marysRevengeFinalBoss
+			<e n="marysRevengeFinalBoss" p="1" />	
+			
 		</entitygroup>
 		<entitygroup name="MagratMinionSpawnGroup">
-			marysRevengeFinalBossMinion
+			<e n="marysRevengeFinalBossMinion" p="1" />	
+			
 		</entitygroup>
 		<entitygroup name="GraveKeeperDireWolfGroup">
-			graveKeeperDireWolf
+			<e n="graveKeeperDireWolf" p="1" />	
+			
 		</entitygroup>
 		<entitygroup name="GraveKeeperDireBearGroup">
-			graveKeeperDireBear
+			<e n="graveKeeperDireBear" p="1" />	
+			
 		</entitygroup>
 		
 		<entitygroup name="RadiatedScreamerSpawnGroup">
-			zombieScreamerRadiated
+			<e n="zombieScreamerRadiated" p="1" />	
+			
 		</entitygroup>
 		<entitygroup name="FeralScreamerSpawnGroup">
-			zombieScreamerFeral
+			<e n="zombieScreamerFeral" p="1" />	
+			
 		</entitygroup>
 		<entitygroup name="ScreamerSpawnGroup">
-			zombieScreamer
+			<e n="zombieScreamer" p="1" />	
+			
 		</entitygroup>
 		<!--end Marys Revenge story code-->
 		
 		<!--code for Interloper story -->
 		<!--spawn a special supply crate see quests:quest_Interloper_InterceptTheSupplies-->
 		<entitygroup name="InterloperDrop">
-			interloperSecretDrop
+			<e n="interloperSecretDrop" p="1" />	
+			
 		</entitygroup> 
 		<!--spawn a reward/trade supply crate see quests:quest_InterloperEpilogueSpawn-->
 		<entitygroup name="InterloperEpilogue">
-			interloperTradeDrop
+			<e n="interloperTradeDrop" p="1" />	
+			
 		</entitygroup> 
 		
 		<!--end interloper story code-->
 		
 		<!--PigeonsCarryDiseases story spawn code-->
 		<entitygroup name="PigeonOneSpawnGroup">
-			animalHomingPigeonOne
+			<e n="animalHomingPigeonOne" p="1" />	
+			
 		</entitygroup>
 		<entitygroup name="PigeonTwoSpawnGroup">
-			animalHomingPigeonTwo
+			<e n="animalHomingPigeonTwo" p="1" />	
+			
 		</entitygroup>
 		<entitygroup name="PigeonThreeSpawnGroup">
-			animalHomingPigeonThree
+			<e n="animalHomingPigeonThree" p="1" />	
+			
 		</entitygroup>
 		<entitygroup name="PigeonFourSpawnGroup">
-			animalHomingPigeonFour
+			<e n="animalHomingPigeonFour" p="1" />	
+			
 		</entitygroup>
 		<entitygroup name="PigeonFinalBossSpawnerGroup">
-			pigeonFinalBoss
+			<e n="pigeonFinalBoss" p="1" />	
+			
 		</entitygroup>
 		<entitygroup name="PigeonFinalFlockSpawnerGroup">
-			animalPigeonFlock
+			<e n="animalPigeonFlock" p="1" />	
+			
 		</entitygroup>
 		<!--end PigeonsCarryDiseases spawn code-->
 	</append>

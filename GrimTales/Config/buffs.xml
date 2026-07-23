@@ -1461,10 +1461,10 @@
 		<!--Mary's Revenge-->
 		<effect_group>
 			<!--set the total kill streak required for Mary's revenge to trigger: default 3000-->
-			<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="killStreakTarget" operation="set" value="3000"/>
+			<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="killStreakTarget" operation="set" value="3000"/> <!--3000-->
 			
 			<!--When the player 'summons' Magrat, there is a delay before she actually spawns.-->
-			<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="magratFirstSpawnCountdownDefault" operation="set" value="2,7"/> <!--default 2,7 seconds-->
+			<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="magratFirstSpawnCountdownDefault" operation="set" value="randomint(2,7)"/> <!--default randomint(2,7) seconds-->
 			<!--If the player doesnt kill Magrat, the final boss, Magrat can respawn magratSpawnCountMax number of times.
 				Default is to only spawn once, the player is given a pie with 6 slices so they can repeat the quest if they fail.
 				If Magrat is set to spawn more than once, she will respawn randomly at another time if the player dies or goes out of render distance.

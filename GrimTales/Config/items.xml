@@ -1,11 +1,5 @@
 <configs>
 	
-	<!-- tags for story items - see also blocks.xml for other tag additions -->
-
-	<!--the expanded drum mag dropped in the pigeons have diseases story - the mod can only be placed on the M60 so need to a specifc tag 'expandedDrumMag' to the M60 for it-->
-	<set xpath ="/items/item[@name='gunMGT3M60']/property[@name='Tags']/@value">,expandedDrumMag</set> 
-	<!--end tags for story items-->
-
 	<!--solar panels can be repaired as they dont always come out at full health in loot-->
 	<append xpath="/items/item[@name='solarCell']">
 		<property name="RepairTools" value="resourceRepairKit"/>
@@ -156,17 +150,6 @@
 	
 	<insertAfter xpath ="items/item[@name='qt_raphael']">
 		<!--books, mags etc for general use-->
-		<item name="playerExplosiveBarrelSchematic">
-			<property name="Extends" value="schematicNoQualityMaster"/>
-			<property name="CreativeMode" value="Player"/>
-			<property name="CustomIcon" value="cntBarrelGasSingle00"/>
-			<property name="DescriptionKey" value="playerExplosiveBarrelSchematicDesc"/>
-			<property name="Unlocks" value="playerExplosiveBarrel"/>
-			<effect_group tiered="false">
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="playerExplosiveBarrel" operation="set" value="1"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
-			</effect_group>
-		</item>
 		
 		<!--The newspaper clippings tell a story, there are 4 parts to the story and the clippings are used 
 			in a recipe to create a 'full newspaper' to get the conclusion of the story.
@@ -366,9 +349,9 @@
 			<property name="Meshfile" value="@:Other/Items/Weapons/Ranged/LeverActionRifle/leverActionRiflePrefab.prefab"/>
 			<property name="Material" value="MRifleParts"/>
 			<property name="TintColor" value="239,200,162"/>
-			<property class="UMA">
+			<!--<property class="UMA">
 				<property name="UMA.Overlay0Tint" value="239,200,162"/>
-			</property>
+			</property>-->
 			<property name="DescriptionKey" value="marysRevengeHomemadeRifleDesc"/>
 			<property name="CustomIcon" value="gunRifleT2LeverActionRifle"/>
 			<property name="CustomIconTint" value="239,200,162"/>
@@ -424,6 +407,58 @@
 						<property name="zoomTriggerEffectTriggerPullDualsense" value="PistolZoom"/>
 						<property name="zoomTriggerEffectTriggerPullXbox" value="PistolZoom"/>
 			</property>
+			
+			<stats>
+				<!-- Base_Random_Roll -->
+				<stat name="EntityDamage"			value="0,0,1,0,.1"/>
+				<stat name="MagazineSize" 			value="0,0,1,0,.1"/>
+				<stat name="RoundsPerMinute" 		value="0,0,1,0,.02"/>
+				<stat name="DamageFalloffRange" 	value="0,0,1,0,.1"/>
+				<stat name="DegradationMax" 		value="0,0,1,0,.1"/>
+				<!-- Q1_Boosted_Rolls -->
+				<stat name="EntityDamage" 			value="1,0,.3,.1,.5"/>
+				<stat name="MagazineSize" 			value="1,0,.3,.1,.5"/>
+				<stat name="RoundsPerMinute" 		value="1,0,.3,.02,.1"/>
+				<stat name="DamageFalloffRange" 	value="1,0,.3,.1,.5"/>
+				<stat name="DegradationMax" 		value="1,0,.3,.1,.5"/>
+				<!-- Q2_Boosted_Rolls -->
+				<stat name="EntityDamage" 			value="2,10,.3,.1,.5"/>
+				<stat name="MagazineSize" 			value="2,10,.3,.1,.5"/>
+				<stat name="RoundsPerMinute" 		value="2,10,.3,.02,.1"/>
+				<stat name="DamageFalloffRange" 	value="2,10,.3,.1,.5"/>
+				<stat name="DegradationMax" 		value="2,10,.3,.1,.5"/>
+				<!-- Q3_Boosted_Rolls -->
+				<stat name="EntityDamage" 			value="3,11,.3,.1,.5"/>
+				<stat name="MagazineSize" 			value="3,11,.3,.1,.5"/>
+				<stat name="RoundsPerMinute" 		value="3,11,.3,.02,.1"/>
+				<stat name="DamageFalloffRange" 	value="3,11,.3,.1,.5"/>
+				<stat name="DegradationMax" 		value="3,11,.3,.1,.5"/>
+				<!-- Q4_Boosted_Rolls -->
+				<stat name="EntityDamage" 			value="4,12,.3,.1,.5"/>
+				<stat name="MagazineSize" 			value="4,12,.3,.1,.5"/>
+				<stat name="RoundsPerMinute" 		value="4,12,.3,.02,.1"/>
+				<stat name="DamageFalloffRange" 	value="4,12,.3,.1,.5"/>
+				<stat name="DegradationMax" 		value="4,12,.3,.1,.5"/>
+				<!-- Q5_Boosted_Rolls -->
+				<stat name="EntityDamage" 			value="5,14,.3,.1,.5"/>
+				<stat name="MagazineSize" 			value="5,14,.3,.1,.5"/>
+				<stat name="RoundsPerMinute" 		value="5,14,.3,.02,.1"/>
+				<stat name="DamageFalloffRange" 	value="5,14,.3,.1,.5"/>
+				<stat name="DegradationMax" 		value="5,14,.3,.1,.5"/>
+				<!-- Q6_Boosted_Rolls -->
+				<stat name="EntityDamage" 			value="6,16,.3,.1,.5"/>
+				<stat name="MagazineSize" 			value="6,16,.3,.1,.5"/>
+				<stat name="RoundsPerMinute" 		value="6,16,.3,.02,.1"/>
+				<stat name="DamageFalloffRange" 	value="6,16,.3,.1,.5"/>
+				<stat name="DegradationMax" 		value="6,16,.3,.1,.5"/>
+				<!-- Q6_Boosted_Rolls -->
+				<stat name="EntityDamage" 			value="6,20,.3,.5,.7"/>
+				<stat name="MagazineSize" 			value="6,20,.3,.5,1"/>
+				<stat name="RoundsPerMinute" 		value="6,20,.3,.2,.3"/>
+				<stat name="DamageFalloffRange" 	value="6,20,.3,.5,.7"/>
+				<stat name="DegradationMax" 		value="6,20,.3,.5,.7"/>
+			</stats>
+			
 			<effect_group name="marysRevengeHomemadeRifle">
 				<passive_effect name="MaxRange" operation="base_set" value="170" tags="perkDeadEye"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="75" tags="perkDeadEye"/>
@@ -517,8 +552,13 @@
 				<property name="Damage_type" value="Piercing"/>
 				<property name="Sphere" value=".15"/>
 				<property name="Sound_start" value="knife_metal_swinglight"/>
-				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
-				<property name="ToolCategory.Butcher" value="0" param1="5"/>
+				<property class="ToolCategory">
+					<property name="harvestingTools" value="0.5" param1="1"/>
+				</property>
+				<property class="ToolCategory">
+					<property name="Butcher" value="0" param1="5"/>
+				</property>
+
 				<property name="UseGrazingHits" value="true"/>
 				<property name="GrazeStart" value=".28"/>
 				<property name="GrazeEnd" value=".4"/>
@@ -536,8 +576,12 @@
 				<property name="Damage_type" value="Piercing"/>
 				<property name="Sphere" value=".15"/>
 				<property name="Sound_start" value="knife_metal_swingheavy"/>
-				<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
-				<property name="ToolCategory.Butcher" value="0" param1="5"/>
+				<property class="ToolCategory">
+					<property name="harvestingTools" value="0.5" param1="1"/>
+				</property>
+				<property class="ToolCategory">
+					<property name="Butcher" value="0" param1="5"/>
+				</property>
 				<property name="UsePowerAttackAnimation" value="true"/>
 				<property name="UseGrazingHits" value="true"/>
 				<property name="GrazeStart" value=".3"/>
@@ -552,10 +596,61 @@
 				</property>
 			</property>
 			
+			<stats>
+				<!-- Base_Random_Roll -->
+				<stat name="EntityDamage"			value="0,0,1,0,.1"/>
+				<stat name="BlockDamage" 			value="0,0,1,0,.1"/>
+				<stat name="AttacksPerMinute" 		value="0,0,1,0,.02"/>
+				<stat name="StaminaLoss" 			value="0,0,1,-.01,0"/>
+				<stat name="DegradationMax" 		value="0,0,1,0,.1"/>
+				<!-- Q1_Boosted_Rolls -->
+				<stat name="EntityDamage" 			value="1,0,.3,.1,.5"/>
+				<stat name="BlockDamage" 			value="1,0,.3,.1,.5"/>
+				<stat name="AttacksPerMinute" 		value="1,0,.3,.02,.1"/>
+				<stat name="StaminaLoss" 			value="1,0,.3,-.5,-.1"/>
+				<stat name="DegradationMax" 		value="1,0,.3,.1,.5"/>
+				<!-- Q2_Boosted_Rolls -->
+				<stat name="EntityDamage" 			value="2,10,.3,.1,.5"/>
+				<stat name="BlockDamage" 			value="2,10,.3,.1,.5"/>
+				<stat name="AttacksPerMinute" 		value="2,10,.3,.02,.1"/>
+				<stat name="StaminaLoss" 			value="2,10,.3,-.5,-.1"/>
+				<stat name="DegradationMax" 		value="2,10,.3,.1,.5"/>
+				<!-- Q3_Boosted_Rolls -->
+				<stat name="EntityDamage" 			value="3,11,.3,.1,.5"/>
+				<stat name="BlockDamage" 			value="3,11,.3,.1,.5"/>
+				<stat name="AttacksPerMinute" 		value="3,11,.3,.02,.1"/>
+				<stat name="StaminaLoss" 			value="3,11,.3,-.5,-.1"/>
+				<stat name="DegradationMax" 		value="3,11,.3,.1,.5"/>
+				<!-- Q4_Boosted_Rolls -->
+				<stat name="EntityDamage" 			value="4,12,.3,.1,.5"/>
+				<stat name="BlockDamage" 			value="4,12,.3,.1,.5"/>
+				<stat name="AttacksPerMinute" 		value="4,12,.3,.02,.1"/>
+				<stat name="StaminaLoss" 			value="4,12,.3,-.5,-.1"/>
+				<stat name="DegradationMax" 		value="4,12,.3,.1,.5"/>
+				<!-- Q5_Boosted_Rolls -->
+				<stat name="EntityDamage" 			value="5,14,.3,.1,.5"/>
+				<stat name="BlockDamage" 			value="5,14,.3,.1,.5"/>
+				<stat name="AttacksPerMinute" 		value="5,14,.3,.02,.1"/>
+				<stat name="StaminaLoss" 			value="5,14,.3,-.5,-.1"/>
+				<stat name="DegradationMax" 		value="5,14,.3,.1,.5"/>
+				<!-- Q6_Boosted_Rolls -->
+				<stat name="EntityDamage" 			value="6,16,.3,.1,.5"/>
+				<stat name="BlockDamage" 			value="6,16,.3,.1,.5"/>
+				<stat name="AttacksPerMinute" 		value="6,16,.3,.02,.1"/>
+				<stat name="StaminaLoss" 			value="6,16,.3,-.5,-.1"/>
+				<stat name="DegradationMax" 		value="6,16,.3,.1,.5"/>
+				<!-- Q6_Boosted_Rolls -->
+				<stat name="EntityDamage" 			value="6,20,.3,.5,.7"/>
+				<stat name="BlockDamage" 			value="6,20,.3,.5,.7"/>
+				<stat name="AttacksPerMinute" 		value="6,20,.3,.1,.2"/>
+				<stat name="StaminaLoss" 			value="6,20,.3,-.1,-.05"/>
+				<stat name="DegradationMax" 		value="6,20,.3,.5,.7"/>
+			</stats>
+			
 			<effect_group name="meleeWpnBladeT1HuntingKnife">
-				<passive_effect name="AttacksPerMinute" operation="base_set" value="120" tags="perkDeepCuts,perkFlurryOfAgility"/>
-				<passive_effect name="StaminaLoss" operation="base_set" value="6" tags="primary"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="500,3000" tier="1,6" tags="perkDeepCuts"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="90" tags="perkDeepCuts,perkFlurryOfAgility"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="8" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="500,4000" tier="1,6" tags="perkDeepCuts"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkDeepCuts"/>
 				<passive_effect name="MaxRange" operation="base_set" value="2.3" tags="perkDeepCuts"/>
 				<passive_effect name="BlockRange" operation="base_set" value="3" tags="perkDeepCuts"/>

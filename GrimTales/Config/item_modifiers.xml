@@ -58,10 +58,11 @@
 			</effect_group>
 		</item_modifier>
 
-		<!--pigeons carry diseases story end-loot mod. Reduces shotgun block damage to blocks with the shotgunBlockDamage tag.
-			The shotgunBlockDamage tag is added to Cobblestone, Concrete and Steel blocks in blocks.xml. 
-			Increases wood block damage.-->
-		<item_modifier name="modShotgunBlockDamage" installable_tags="shotgun" modifier_tags="shotgunBlockDamage,barrelAttachment" blocked_tags="noMods" type="attachment">
+		<!--pigeons carry diseases story end-loot mod. Reduces block damage to blocks with the shotgunBlockDamage tag.
+			The shotgunBlockDamage tag is added to Cobblestone, Concrete and Steel blocks in blocks.xml.  Increases wood block damage.
+			NOTE: This was originaly just for shotguns but has been extended to all guns for 7DTD 3.0 release (so its still called 'shotgunBlockDamage')
+			-->
+		<item_modifier name="modShotgunBlockDamage" installable_tags="gun" modifier_tags="barrelTipAttachment,shotgunBlockDamage" blocked_tags="noMods" type="attachment">
 			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 			<property name="CustomIcon" value="ductStraightCentered"/>
 			<property name="CustomIconTint" value="247,255,230"/>
@@ -69,32 +70,29 @@
 			
 			<effect_group tiered="false">
 				<passive_effect name="BlockDamage" operation="base_set" value="0" tags="shotgunBlockDamage">
-					<requirement name="HoldingItemHasTags" tags="perkBoomstick"/>
-				</passive_effect>
-			</effect_group>
-			<effect_group tiered="false">			
-				<passive_effect name="BlockDamage" operation="perc_add" value="4" tags="wood">
-					<requirement name="HoldingItemHasTags" tags="perkBoomstick"/>
+					<requirement name="HoldingItemHasTags" tags="gun"/>
 				</passive_effect>
 			</effect_group>
 			<effect_group tiered="false">
 				<passive_effect name="BlockDamage" operation="perc_add" value="-2" tags="shotgunBlockDamage">
-					<requirement name="HoldingItemHasTags" tags="perkBoomstick"/>
+					<requirement name="HoldingItemHasTags" tags="gun"/>
 				</passive_effect>
 			</effect_group>
 		</item_modifier>
 		
-		<!--pigeons carry diseases story end-loot mod. Expanded Drum mag for M60 -->
-		<item_modifier name="modM60DrumMagazine" installable_tags="expandedDrumMag" modifier_tags="modM60DrumMagazine,magazine" blocked_tags="noMods" type="attachment">
+		<!--pigeons carry diseases story end-loot mod. Expanded Drum mag for M60 and other drum weapons-->
+		<item_modifier name="modM60DrumMagazine" installable_tags="drumMagazine" modifier_tags="modM60DrumMagazine,magazine" blocked_tags="noMods" type="attachment">
 			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
 			<property name="CustomIcon" value="modGunDrumMagazineExtender"/>
 			<property name="CustomIconTint" value="88,141,69"/>
 			<property name="DescriptionKey" value="modM60DrumMagazineDesc"/>
 			
 			<effect_group tiered="false">
-				<passive_effect name="MagazineSize" operation="perc_add" value="3"/> <!-- = 300% = 240 rounds. Vanilla drum mag is 100% (120 rounds)-->
-				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-0.25"/> <!--vanilla drum mag is -0.25-->
+				<passive_effect name="MagazineSize" operation="perc_add" value="3" /> <!-- = 300% = 240 rounds for M60. Vanilla drum mag is 100% (120 rounds)-->
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="-.25" />
+
 			</effect_group>
+			
 		</item_modifier>
 		
 		<!--pigeons carry diseases story end-loot mod. Reciprocating Bolt Spring for machine guns. Increased fire rate.
@@ -111,18 +109,31 @@
 		</item_modifier>-->
 
 		<!--other mods used in stories-->
-		<!--Modified Structural Brace mod for special military ops-->
-		<item_modifier name="modMilitaryStructuralBrace" installable_tags="melee,perkArchery" modifier_tags="durability" blocked_tags="noMods" type="attachment">
-			<property name="Extends" value="modMeleeStructuralBrace" param1="CustomIcon"/>
+		<!--Modified Structural Brace mod for special military ops.
+			Generally the same as the TemperedBlade but with some added entity damage
+		-->
+		<item_modifier name="modMilitaryStructuralBrace" installable_tags="melee,perkArchery" modifier_tags="durability" blocked_tags="noMods" type="attachment"> 
+			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>
+			<property name="TraderStageTemplate" value="modsTier3"/>
+			<property name="ShowQuality" value="true"/>
+			<property name="DisplayType" value="modMilitaryStructuralBrace"/>
+			<property name="QualityMin" value="6"/>
 			<property name="CustomIcon" value="modMeleeStructuralBrace"/>
 			<property name="CustomIconTint" value="88,141,69"/>
 			<property name="DescriptionKey" value="modMilitaryStructuralBraceDesc"/>
 			
-			<effect_group tiered="false">
-				<passive_effect name="BlockDamage" operation="perc_add" value="0.1" /> 
-				<passive_effect name="EntityDamage" operation="perc_add" value="0.1" /> 
+			<!-- Increases Block, Entity Damage and Reduces Degradation Per Use 
+				 Generally the same as the TemperedBlade but with some added entity damage-->
+			<effect_group>
+				<passive_effect name="BlockDamage" operation="perc_add" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
+				<display_value name="dBlockDamage" value=".05,.1,.15,.2,.25,.3" tier="1,2,3,4,5,6"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".15,.15,.15,.15,.15,.15" tier="1,2,3,4,5,6"/>
+				<display_value name="dEntityDamage" value=".15,.15,.15,.15,.15,.15" tier="1,2,3,4,5,6"/>
+				<passive_effect name="DegradationPerUse" operation="perc_add" value="-.04,-.06,-.08,-.1,-.12,-.15" tier="1,2,3,4,5,6" tags="perkMiner69r,perkSalvageOperations,perkElectrocutioner,perkJavelinMaster,perkPummelPete,perkSkullCrusher,perkDeepCuts,perkBrawler,admin"/>
+				<display_value name="dDegradationPerUse" value="-.04,-.06,-.08,-.1,-.12,-.15" tier="1,2,3,4,5,6"/>
 			</effect_group>
 		</item_modifier>
+		
 		<!--Mary's Revenge : Iplore's Talisman that allows the player to identify Magrat the final Boss-->
 		<item_modifier name="modMagratTracker" installable_tags="head" modifier_tags="misc,modArmorHelmetLight" blocked_tags="noMods,clothing" type="attachment">
 			<property name="Extends" value="modGeneralMaster" param1="CustomIcon"/>

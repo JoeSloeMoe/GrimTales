@@ -51,20 +51,20 @@
 			</effect_group>
 		</entity_class>		
 		
-		<!--Loot bag for marysRevengeCovenHouseLootScreamer defined below-->
-		<entity_class name="EntityMarysRevengeCovenHouseLoot">
+		<!--Loot bag for marysRevengeCovenHouseLootScreamer defined below-->	
+		<entity_class name="EntityLootContainerCovenHouseLoot">
 			<property name="Class" value="EntityLootContainer"/>
+			<property name="UserSpawnType" value="Console"/>
 			<property name="Tags" value="trackingCovenHouseLoot"/>
 			<property name="NavObject" value="lootbagTrackingCovenHouse" />
-			<property name="UserSpawnType" value="Console"/>
 			<property name="Mesh" value="@:Entities/LootContainers/zpackRedPrefab.prefab"/>
 			<property name="ModelType" value="Custom"/>
 			<property name="Prefab" value="Backpack"/>
 			<property name="Parent" value="Backpack"/>
 			<property name="IsEnemyEntity" value="false"/>
-			<property name="TimeStayAfterDeath" value="6000"/>
+			<property name="TimeStayAfterDeath" value="3600"/>
+			<property name="LootList" value="marysRevengeCovenHouseLoot"/>
 			<property name="Faction" value="none"/>
-			<property name="LootListOnDeath" value="marysRevengeCovenHouseLoot"/>
 		</entity_class>
 		
 		<!--screamer spawned when the player clears Coven House : drops loot on death-->
@@ -84,7 +84,7 @@
 			<property name="AITarget-4" value=""/> 
 
 			<property name="ExperienceGain" value="1600"/>
-			<property name="LootDropEntityClass" value="EntityMarysRevengeCovenHouseLoot"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerCovenHouseLoot"/>
 			<property name="LootDropProb" value="1"/>
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/> <!-- fit, feral -->
 			<property name="JumpMaxDistance" value="4.6, 5"/>
@@ -123,7 +123,7 @@
 		</entity_class>		
 		
 		<!--Loot bag for marysRevengeFinalBoss defined below-->
-		<entity_class name="EntityMarysRevengeBossLoot">
+		<!--<entity_class name="EntityMarysRevengeBossLoot">
 			<property name="Class" value="EntityLootContainer"/>
 			<property name="NavObject" value="screamerTrackingMagrat" />
 			<property name="UserSpawnType" value="Console"/>
@@ -135,6 +135,20 @@
 			<property name="TimeStayAfterDeath" value="6000"/>
 			<property name="Faction" value="none"/>
 			<property name="LootListOnDeath" value="marysRevengeFinalBossLoot"/>
+		</entity_class>
+		-->
+		<entity_class name="EntityLootContainerMarysRevengeBossLoot">
+			<property name="Class" value="EntityLootContainer"/>
+			<property name="UserSpawnType" value="Console"/>
+			<property name="NavObject" value="screamerTrackingMagrat" />
+			<property name="Mesh" value="@:Entities/LootContainers/zpackRedPrefab.prefab"/>
+			<property name="ModelType" value="Custom"/>
+			<property name="Prefab" value="Backpack"/>
+			<property name="Parent" value="Backpack"/>
+			<property name="IsEnemyEntity" value="false"/>
+			<property name="TimeStayAfterDeath" value="3600"/>
+			<property name="LootList" value="marysRevengeFinalBossLoot"/>
+			<property name="Faction" value="none"/>
 		</entity_class>
 		
 		<!--MINIONSPAWNS Marys Revenge final boss and minions. The minions are the exact same as the boss 
@@ -288,7 +302,7 @@
 	
 			<property name="ExperienceGain" value="8000"/>
 			
-			<property name="LootDropEntityClass" value="EntityMarysRevengeBossLoot"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerMarysRevengeBossLoot"/>
 			<property name="LootDropProb" value="1"/>
 			<effect_group name="Effects">
 				<!--on death will set the final death trigger. This will stop any associated buffs, minion spawns etc-->
@@ -409,84 +423,85 @@
 		<!--pigeon delivery drop code-->
 		<!-- Loot bag for the first homing vulture/pigeon. 
 			 EntityLootContainerHomingPigeon1 with lootbag homingPigeonDelivery1 (defined in loot.xml)-->
-		<entity_class name="EntityHomingPigeon1">
+		<entity_class name="EntityLootContainerHomingPigeon1">
 			<property name="Class" value="EntityLootContainer"/>
-			<property name="NavObject" value="trackingGeneralPigeonLoot" />
 			<property name="UserSpawnType" value="Console"/>
+			<property name="NavObject" value="trackingGeneralPigeonLoot" />
 			<property name="Mesh" value="@:Entities/LootContainers/zpackRedPrefab.prefab"/>
 			<property name="ModelType" value="Custom"/>
 			<property name="Prefab" value="Backpack"/>
 			<property name="Parent" value="Backpack"/>
 			<property name="IsEnemyEntity" value="false"/>
-			<property name="TimeStayAfterDeath" value="6000"/>
+			<property name="TimeStayAfterDeath" value="3600"/>
+			<property name="LootList" value="homingPigeonDelivery1"/>
 			<property name="Faction" value="none"/>
-			<property name="LootListOnDeath" value="homingPigeonDelivery1"/>
 		</entity_class>
-
 		<!-- Loot bag for the second homing vulture/pigeon. 
 			 EntityLootContainerHomingPigeon2 with lootbag homingPigeonDelivery2 (defined in loot.xml)-->
-		<entity_class name="EntityHomingPigeon2">
+		<entity_class name="EntityLootContainerHomingPigeon2">
 			<property name="Class" value="EntityLootContainer"/>
-			<property name="NavObject" value="trackingGeneralPigeonLoot" />
 			<property name="UserSpawnType" value="Console"/>
+			<property name="NavObject" value="trackingGeneralPigeonLoot" />
 			<property name="Mesh" value="@:Entities/LootContainers/zpackRedPrefab.prefab"/>
 			<property name="ModelType" value="Custom"/>
 			<property name="Prefab" value="Backpack"/>
 			<property name="Parent" value="Backpack"/>
 			<property name="IsEnemyEntity" value="false"/>
-			<property name="TimeStayAfterDeath" value="6000"/>
+			<property name="TimeStayAfterDeath" value="3600"/>
+			<property name="LootList" value="homingPigeonDelivery2"/>
 			<property name="Faction" value="none"/>
-			<property name="LootListOnDeath" value="homingPigeonDelivery2"/>
 		</entity_class>
+		
 		
 		<!-- Loot bag for the third homing vulture/pigeon. 
 			 EntityLootContainerHomingPigeon3 with lootbag homingPigeonDelivery3 (defined in loot.xml)-->
-		<entity_class name="EntityHomingPigeon3">
+		<entity_class name="EntityLootContainerHomingPigeon3">
 			<property name="Class" value="EntityLootContainer"/>
-			<property name="NavObject" value="trackingGeneralPigeonLoot" />
 			<property name="UserSpawnType" value="Console"/>
+			<property name="NavObject" value="trackingGeneralPigeonLoot" />
 			<property name="Mesh" value="@:Entities/LootContainers/zpackRedPrefab.prefab"/>
 			<property name="ModelType" value="Custom"/>
 			<property name="Prefab" value="Backpack"/>
 			<property name="Parent" value="Backpack"/>
 			<property name="IsEnemyEntity" value="false"/>
-			<property name="TimeStayAfterDeath" value="6000"/>
+			<property name="TimeStayAfterDeath" value="3600"/>
+			<property name="LootList" value="homingPigeonDelivery3"/>
 			<property name="Faction" value="none"/>
-			<property name="LootListOnDeath" value="homingPigeonDelivery3"/>
 		</entity_class>
+		
 		<!-- Loot bag for the fourth homing vulture/pigeon. 
 			 EntityLootContainerHomingPigeon4 with lootbag homingPigeonDelivery4 (defined in loot.xml)-->
-		<entity_class name="EntityHomingPigeon4">
+		<entity_class name="EntityLootContainerHomingPigeon4">
 			<property name="Class" value="EntityLootContainer"/>
-			<property name="NavObject" value="trackingGeneralPigeonLoot" />
 			<property name="UserSpawnType" value="Console"/>
+			<property name="NavObject" value="trackingGeneralPigeonLoot" />
 			<property name="Mesh" value="@:Entities/LootContainers/zpackRedPrefab.prefab"/>
 			<property name="ModelType" value="Custom"/>
 			<property name="Prefab" value="Backpack"/>
 			<property name="Parent" value="Backpack"/>
 			<property name="IsEnemyEntity" value="false"/>
-			<property name="TimeStayAfterDeath" value="6000"/>
+			<property name="TimeStayAfterDeath" value="3600"/>
+			<property name="LootList" value="homingPigeonDelivery4"/>
 			<property name="Faction" value="none"/>
-			<property name="LootListOnDeath" value="homingPigeonDelivery4"/>
 		</entity_class>
+
 		<!--end pigeon delivery drop code-->
 		
 		<!-- Loot bag for the final boss 'pigeonFinalBoss' in this file. -->
-		<entity_class name="EntityPigeonBossLoot">
+		<entity_class name="EntityLootContainerHomingPigeonBossLoot">
 			<property name="Class" value="EntityLootContainer"/>
 			<property name="Tags" value="trackingPigeonBossLoot"/> 
 			<property name="UserSpawnType" value="Console"/>
+			<property name="NavObject" value="lootbagTrackingFinalPigeon" />
 			<property name="Mesh" value="@:Entities/LootContainers/zpackRedPrefab.prefab"/>
 			<property name="ModelType" value="Custom"/>
 			<property name="Prefab" value="Backpack"/>
 			<property name="Parent" value="Backpack"/>
 			<property name="IsEnemyEntity" value="false"/>
-			<property name="TimeStayAfterDeath" value="6000"/>
+			<property name="TimeStayAfterDeath" value="3600"/>
+			<property name="LootList" value="pigeonFinalBossLoot"/>
 			<property name="Faction" value="none"/>
-			<property name="LootListOnDeath" value="pigeonFinalBossLoot"/>
-			<property name="NavObject" value="lootbagTrackingFinalPigeon" />
 		</entity_class>
-		
 		<!-- Homing pigeon/vulture base class/template and derived classes-->
 		
 		<!-- Template as there needs to be a different pigeon defined for each different note delivery-->
@@ -528,18 +543,19 @@
 		<!--homing pigeon template. the homing pigeons are individual pigeons and each has its own loot drop.-->
 		<entity_class name="homingPigeonTemplate" extends="basicPigeonTemplate">
 			<!--default lootdrop - should be overidden by different pigeons-->
-			<property name="LootDropEntityClass" value="EntityHomingPigeon1"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerHomingPigeon1"/>
 			<!--homing pigeons have a particle effect on them so they are noticable to the player-->
 			<property name="LootDropProb" value="1"/>
 			<effect_group>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AttachParticleEffectToEntity" particle="RadiatedParticlesOnMesh" local_offset="0,0,0" parent_transform="LOD0" shape_mesh="true"/>
 			</effect_group>
 		</entity_class>
-		
+
 		<!-- Pigeon to drop the first delivery package
 			 Need a different pigeon defined for each different delivery drop-->
 		<entity_class name="animalHomingPigeonOne" extends="homingPigeonTemplate">
-			<property name="LootDropEntityClass" value="EntityHomingPigeon1"/> 
+			<!--<property name="LootDropEntityClass" value="EntityHomingPigeon1"/> -->
+			<property name="LootDropEntityClass" value="EntityLootContainerHomingPigeon1"/> 
 			<property name="NavObject" value="trackingGeneralPigeon" />
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="2"/> 
@@ -548,20 +564,21 @@
 			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
 			<drop event="Harvest" name="resourcePigeonPoop" tag="allToolsHarvest" count="4"/>
 		</entity_class>
-		<!-- Second pigeon with next delivery package -->
 		<entity_class name="animalHomingPigeonTwo" extends="homingPigeonTemplate">
-			<property name="LootDropEntityClass" value="EntityHomingPigeon2"/>
+			<!--<property name="LootDropEntityClass" value="EntityHomingPigeon1"/> -->
+			<property name="LootDropEntityClass" value="EntityLootContainerHomingPigeon2"/> 
 			<property name="NavObject" value="trackingGeneralPigeon" />
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="2"/> 
 			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="15"/>
 			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="3"/>
 			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-			<drop event="Harvest" name="resourcePigeonLice" tag="allToolsHarvest" count="3"/>
+			<drop event="Harvest" name="resourcePigeonPoop" tag="allToolsHarvest" count="4"/>
 		</entity_class>
+
 		<!-- third pigeon with next delivery package -->
 		<entity_class name="animalHomingPigeonThree" extends="homingPigeonTemplate">
-			<property name="LootDropEntityClass" value="EntityHomingPigeon3"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerHomingPigeon3"/>
 			<property name="NavObject" value="trackingGeneralPigeon" />
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="2"/> 
@@ -571,7 +588,7 @@
 		</entity_class>
 		<!-- Fourth pigeon with next delivery package -->
 		<entity_class name="animalHomingPigeonFour" extends="homingPigeonTemplate">
-			<property name="LootDropEntityClass" value="EntityHomingPigeon4"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerHomingPigeon4"/>
 			<property name="NavObject" value="trackingGeneralPigeon" />
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="2"/> 
@@ -643,7 +660,7 @@
 			<property name="PainResistPerHit" value=".9"/><!-- Radiated -->
 			<property name="HandItem" value="meleeHandZombieCopRadiated"/> <!--cop hands-->
 			<property name="ExperienceGain" value="8000"/><!-- XP strong radiated -->
-			<property name="LootDropEntityClass" value="EntityPigeonBossLoot"/>
+			<property name="LootDropEntityClass" value="EntityLootContainerHomingPigeonBossLoot"/>
 			<property name="LootDropProb" value="1"/>
 			<property name="MoveSpeedAggro" value="0.6, 1.45"/> <!-- fit, feral -->
 			<property name="JumpMaxDistance" value="4.6, 5"/>
@@ -672,7 +689,6 @@
 			<property name="Prefab" value="SupplyCrate"/>
 			<property name="Mesh" value="@:Entities/SupplyCrate/SupplyCrateEntityPrefab.prefab"/>
 			<property name="ModelType" value="SupplyCrate"/>
-			<property name="TintColor" value="00a9FF"/>
 			<property name="Faction" value="none"/>
 			<property name="MaxHealth" value="1200"/>
 			<property name="Weight" value="100"/>
@@ -680,19 +696,25 @@
 			<property name="SurfaceCategory" value="wood"/>
 			<property name="ParticleOnDeath" value="supply_crate_gib_Prefab"/>
 			<property name="LootListAlive" value="interloperSecretDrop"/>
+			<property name="LootListOnDeath" value="interloperSecretDrop"/> 
+			<property name="LootList" value="interloperSecretDrop"/>
 			<property name="IsEnemyEntity" value="false"/>
 			<property name="SoundParachuteOpen" value="SupplyDrops/Parachute_Opens"/>
 			<property name="SoundLanding" value="SupplyDrops/Supply_Crate_Land"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1200"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningEnvironment"/>
 			</effect_group>
-			<property name="NavObject" value="interceptSupplyDropTracker" />
+			<property name="NavObject" value="supply_drop" />
+			<property name="TintColor" value="00a9FF"/>
 			<!-- If set this entity shows on the map -->
 			<property name="MapIcon" value="map_supply_crate"/> 
+			<!-- If set this entity shows on the map -->
+			<!--<property name="MapIcon" value="map_supply_crate"/> -->
 		</entity_class>
 		<!--end airdrop entity for the secret supply drop-->
-	
+
 		<!--supply drop entity for the interloper epilogue magazine-for-books trade drop-->
 		<entity_class name="interloperTradeDrop">
 			<property name="Class" value="EntitySupplyCrate"/>
@@ -708,17 +730,21 @@
 			<property name="SurfaceCategory" value="wood"/>
 			<property name="ParticleOnDeath" value="supply_crate_gib_Prefab"/>
 			<property name="LootListAlive" value="interloperTradeDrop"/>
+			<property name="LootListOnDeath" value="interloperTradeDrop"/> 
+			<property name="LootList" value="interloperTradeDrop"/>
 			<property name="IsEnemyEntity" value="false"/>
 			<property name="SoundParachuteOpen" value="SupplyDrops/Parachute_Opens"/>
 			<property name="SoundLanding" value="SupplyDrops/Supply_Crate_Land"/>
 			<property name="TimeStayAfterDeath" value="0"/>
 			<effect_group name="Base Effects">
 				<passive_effect name="HealthMax" operation="base_set" value="1200"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningEnvironment"/>
 			</effect_group>
 			<property name="NavObject" value="supply_drop" />
 			<!-- If set this entity shows on the map -->
 			<property name="MapIcon" value="map_supply_crate"/> 
 		</entity_class>
+
 		<!--end airdrop entity for the secret supply drop-->
 		
 		<!--begin shortwave radio interface THIS CODE IS TEST CODE - NOT IMPLEMENTED YET -->
