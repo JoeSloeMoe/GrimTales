@@ -3,9 +3,9 @@
 	<!--placeholder for the Gyro in the world, use the Working stiffs truck placeholder as its spawns less than cars.
 		This is for the found Gyro storyline, not implemented yet but the initial gyro find is in the world-->
 	<set xpath="/blockplaceholders/placeholder[@name='cntServiceTruckWorkingStiffToolsRandomLootHelper']">
-		<block name="air" prob=".66"/>
-		<block name="gyrocopterWreckChassis" prob="0.04"/> <!--default 0.04-->
-		<block name="cntServiceTruckWorkingStiffTools" prob=".30"/>
+		<block name="air" prob=".70"/>
+		<block name="gyrocopterWreckChassis" prob="0.02"/> <!--default 0.02-->
+		<block name="cntServiceTruckWorkingStiffTools" prob=".28"/>
 	</set> 
 	
 	<!--code for testing 
